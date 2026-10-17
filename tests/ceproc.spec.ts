@@ -171,8 +171,10 @@ test("menú móvil: abre, cierra con Escape y devuelve el foco", async ({ page, 
   test.skip(!isMobile, "solo celular");
   await page.goto("/");
   await page.getByRole("button", { name: "Abrir menú" }).click();
-  const links = page.locator("#menu-movil a");
-  await expect(links).toHaveText(["Capacitaciones", "La institución", "El proyecto", "Contacto"]);
+  const links = page.locator("#menu-movil nav a");
+  await expect(links).toHaveText([/Capacitaciones$/, /La institución$/, /El proyecto$/, /Contacto$/]);
+  await expect(page.locator("#menu-movil").getByRole("link", { name: "WhatsApp" })).toHaveAttribute("href", /wa\.me\/5492645563755/);
+  await expect(page.locator("#menu-movil").getByRole("link", { name: "@ceproc_oficial" })).toHaveAttribute("href", "https://www.instagram.com/ceproc_oficial/");
   await page.keyboard.press("Escape");
   await expect(page.locator("#menu-movil")).toBeHidden();
   await expect(page.getByRole("button", { name: "Abrir menú" })).toBeFocused();
@@ -195,7 +197,7 @@ test("movimiento reducido: contenido completo y sin animaciones del fondo", asyn
   await ctx.close();
 });
 
-test("quiénes somos: dos retratos ilustrativos distintos, marcados como ilustrativos", async ({ page }) => {
+test("la institución: dos retratos distintos, sin leyendas sobre la foto", async ({ page }) => {
   const problems = watch(page);
   await page.goto("/#quienes-somos");
   const imgs = page.locator("#quienes-somos [class*=portrait] img");
@@ -205,9 +207,9 @@ test("quiénes somos: dos retratos ilustrativos distintos, marcados como ilustra
   for (let i = 0; i < 2; i++) {
     await imgs.nth(i).scrollIntoViewIfNeeded();
     await expect.poll(() => imgs.nth(i).evaluate((e: HTMLImageElement) => e.naturalWidth)).toBeGreaterThan(0);
-    await expect(imgs.nth(i)).toHaveAttribute("alt", /ilustrativo/);
+    await expect(imgs.nth(i)).toHaveAttribute("alt", /Silueta/);
   }
-  await expect(page.locator("#quienes-somos [class*=portrait] figcaption")).toHaveText(["Retrato ilustrativo", "Retrato ilustrativo"]);
+  await expect(page.locator("#quienes-somos [class*=portrait] figcaption")).toHaveCount(0);
   expect(problems).toEqual([]);
 });
 
@@ -235,4 +237,34 @@ test("maquinaria: carrusel con las vistas del camión que avanza solo y se pausa
     await expect(front).toContainText("Taller 02 / 05");
   }
   expect(problems).toEqual([]);
+});
+
+test("sin leyendas de «imagen ilustrativa» ni créditos fotográficos visibles", async ({ page }) => {
+  await page.goto("/");
+  await instant(page);
+  const H = await page.evaluate(() => document.documentElement.scrollHeight);
+  for (let y = 0; y < H; y += 800) await page.evaluate((y) => scrollTo(0, y), y);
+  const text = await page.evaluate(() => document.body.innerText);
+  expect(text).not.toMatch(/ilustrativ/i);
+  expect(text).not.toMatch(/cr[ée]ditos/i);
+  expect(text).not.toMatch(/Wikimedia|Pexels|CC BY|licencia/i);
+  await expect(page.locator('a[href*="wikimedia"], a[href*="pexels"]')).toHaveCount(0);
+});
+
+test("contacto: todos los WhatsApp van al número nuevo y el Instagram es el oficial", async ({ page }) => {
+  await page.goto("/");
+  const wa = await page.$$eval('a[href*="wa.me"]', (a) => a.map((x) => x.getAttribute("href")!));
+  expect(wa.length).toBeGreaterThanOrEqual(3); // flotante, Contacto y pie (y el menú móvil)
+  for (const href of wa) {
+    expect(href).toMatch(/^https:\/\/wa\.me\/5492645563755\?text=/);
+    expect(decodeURIComponent(href.split("?text=")[1])).toBe("Hola, CEPROC. Quiero consultar por las capacitaciones.");
+  }
+  const html = await page.content();
+  expect(html).not.toContain("2645239410");
+  expect(html).not.toContain("523-9410");
+  const ig = await page.$$eval('a[href*="instagram.com"]', (a) => a.map((x) => x.getAttribute("href")));
+  expect(ig.length).toBeGreaterThanOrEqual(2);
+  for (const href of ig) expect(href).toBe("https://www.instagram.com/ceproc_oficial/");
+  await expect(page.locator("#contacto").getByRole("link", { name: /@ceproc_oficial/ })).toBeVisible();
+  await expect(page.locator('#contacto a[href="tel:+542645563755"]')).toHaveCount(1);
 });

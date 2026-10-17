@@ -6,7 +6,7 @@ import { GET, POST, detectKind, signLink, verifyLink } from "../api/cv.ts";
  * window.open se intercepta para leer la URL exacta que se abriría.
  */
 
-const WA = "https://wa.me/5492645239410?text=";
+const WA = "https://wa.me/5492645563755?text=";
 
 async function setup(page: Page, opts: { blockPopup?: boolean } = {}) {
   await page.addInitScript((block) => {
@@ -59,23 +59,30 @@ async function toCv(page: Page) {
   await step(page, 6);
 }
 
-test("acceso flotante: se aparta en la portada y está en el resto del recorrido; abre el asistente y Escape lo cierra", async ({ page }) => {
+test("acceso flotante: se aparta en la portada y en Contacto; abre el asistente, Escape lo cierra y su WhatsApp es el oficial", async ({ page }) => {
   const problems: string[] = [];
   page.on("pageerror", (e) => problems.push(e.message));
   page.on("console", (m) => m.type() === "error" && problems.push(m.text()));
   await setup(page);
   await page.goto("/");
-  const fab = page.locator("button[class*=fab]");
-  await expect(fab).toHaveAttribute("data-off", "true");
-  for (const id of ["areas", "quienes-somos", "el-proyecto", "contacto"]) {
+  const group = page.locator("[role=group][class*=fab]");
+  const fab = group.locator("button");
+  await expect(group).toHaveAttribute("data-off", "true");
+  // Contacto ya muestra los mismos accesos: el flotante se aparta para no taparlos.
+  await page.evaluate(() => document.getElementById("contacto")!.scrollIntoView({ behavior: "instant" }));
+  await expect(group).toHaveAttribute("data-off", "true");
+  for (const id of ["areas", "quienes-somos", "el-proyecto"]) {
     await page.evaluate((id) => document.getElementById(id)!.scrollIntoView({ behavior: "instant" }), id);
-    await expect(fab, `visible en #${id}`).not.toHaveAttribute("data-off", "true");
+    await expect(group, `visible en #${id}`).not.toHaveAttribute("data-off", "true");
   }
+  const wa = group.getByRole("link", { name: /WhatsApp/ });
+  await expect(wa).toHaveAttribute("href", /^https:\/\/wa\.me\/5492645563755\?text=/);
+  await expect(wa).toHaveAttribute("target", "_blank");
   await fab.click();
   await expect(wizard(page)).toBeVisible();
   await expect(wizard(page).getByRole("heading", { name: "¿Qué te gustaría aprender?" })).toBeFocused();
   await expect(page.locator("dialog[open]")).toHaveCount(1); // un solo asistente
-  await expect(fab).toHaveAttribute("data-off", "true");
+  await expect(group).toHaveAttribute("data-off", "true");
   await page.keyboard.press("Escape");
   await expect(wizard(page)).toBeHidden();
   await expect(fab).toBeFocused();
@@ -170,7 +177,7 @@ test("si el navegador bloquea la ventana, se ofrece el enlace y no se confirma n
   await btn(page, "Omitir").click();
   await btn(page, /Enviar por WhatsApp/).click();
   await expect(wizard(page).getByText("Tu navegador no dejó abrir WhatsApp.")).toBeVisible();
-  await expect(wizard(page).getByRole("link", { name: "Abrí este enlace" })).toHaveAttribute("href", /^https:\/\/wa\.me\/5492645239410/);
+  await expect(wizard(page).getByRole("link", { name: "Abrí este enlace" })).toHaveAttribute("href", /^https:\/\/wa\.me\/5492645563755/);
   await expect(wizard(page).getByText("tocá Enviar en WhatsApp")).toHaveCount(0);
 });
 
@@ -276,7 +283,7 @@ test("encabezado: en escritorio el botón abre el mismo asistente", async ({ pag
 test("contacto: consulta general por WhatsApp separada del asistente", async ({ page }) => {
   await page.goto("/#contacto");
   const general = page.locator("#contacto").getByRole("link", { name: /WhatsApp · consulta general/ });
-  await expect(general).toHaveAttribute("href", /^https:\/\/wa\.me\/5492645239410\?text=/);
+  await expect(general).toHaveAttribute("href", /^https:\/\/wa\.me\/5492645563755\?text=/);
 });
 
 /* ------------------------------------------------------------------ Función /api/cv (sin red) */

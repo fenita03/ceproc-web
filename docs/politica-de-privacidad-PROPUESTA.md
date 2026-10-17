@@ -4,7 +4,7 @@
 > Marco de referencia en Argentina: Ley 25.326 de Protección de los Datos Personales.
 
 **Responsable:** CEPROC — Centro Productivo de Capacitación en Oficios Regionales y Minería, Rawson, San Juan.
-Contacto: araozsabrina4@gmail.com · 264 523-9410.
+Contacto: araozsabrina4@gmail.com · 264 556-3755.
 
 **Qué datos se piden.** En «Capacitate con nosotros»: nombre y apellido, teléfono o WhatsApp, correo (opcional),
 área y taller de interés, objetivo, experiencia previa, disponibilidad preferida, comentarios (opcional) y

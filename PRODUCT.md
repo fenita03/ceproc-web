@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Vite + React 19 + TypeScript, CSS Modules, Three.js (núcleo orbital de la portada: esfera con el logo extruido y las siete áreas en órbita; carga diferida, geometría del logo en un Web Worker, versión plana en SVG sin WebGL). Sitio estático más una función de Vercel (`api/cv.ts`) para los CV en Vercel Blob privado.
+Vite + React 19 + TypeScript, CSS Modules, tipografías locales (Manrope, DM Sans, IBM Plex Mono), Three.js (núcleo orbital de la portada: esfera con el logo extruido y las siete áreas en órbita; carga diferida, geometría del logo en un Web Worker, versión plana en SVG sin WebGL). Sitio estático más una función de Vercel (`api/cv.ts`) para los CV en Vercel Blob privado.
 
 ## Users
 
@@ -26,7 +26,7 @@ Una propuesta de formación práctica conectada con el trabajo, presentada con s
 
 - Proyecto en etapa de presentación: no hay sede, alumnos, convenios ni resultados. No inventar.
 - 7 áreas y 56 talleres propuestos, con objetivos específicos literales del PDF.
-- Contacto publicado en la portada del PDF: teléfono 2645239410 y correo araozsabrina4@gmail.com. Firma de la carta: no se publica.
+- Contacto oficial (oct. 2026): teléfono y WhatsApp 264 556-3755, Instagram @ceproc_oficial y correo araozsabrina4@gmail.com, centralizados en `src/content/contact.ts`. Firma de la carta: no se publica.
 
 ## Brand Commitments
 
@@ -37,7 +37,7 @@ Una propuesta de formación práctica conectada con el trabajo, presentada con s
 ## Evidence on Hand
 
 - `CEPROC_corregido_Jorge_Leopoldo_Espejo.pdf` (proyecto de 15 páginas + carta).
-- Sin fotografías propias: las imágenes de áreas son ilustrativas (Wikimedia Commons, con créditos).
+- Sin fotografías propias: las imágenes de áreas son de referencia, con licencias que no exigen atribución visible (Pexels, CC0, dominio público); fuentes en `docs/image-sources.md`.
 
 ## Product Principles
 

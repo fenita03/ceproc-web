@@ -157,7 +157,7 @@
 /* Titular: Manrope 800, interletrado cerrado; cada línea sube desde su propia máscara. */
 .title {
   margin-top: clamp(20px, 3vh, 32px);
-  font-size: min(var(--fs-display), 14.2cqi);
+  font-size: min(var(--fs-display), 12.4cqi);
   font-weight: 800;
   line-height: 0.98;
   letter-spacing: -0.045em;
@@ -402,7 +402,7 @@
     padding-top: 36px;
   }
   .title {
-    font-size: min(4.75rem, 14.6cqi);
+    font-size: min(4.75rem, 12.6cqi);
     margin-top: 18px;
   }
   .factLink {

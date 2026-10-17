@@ -4,22 +4,22 @@
 @import "@fontsource/ibm-plex-mono/latin-400.css";
 @import "@fontsource/ibm-plex-mono/latin-500.css";
 
-/* Respaldos con métricas ajustadas: el texto no salta cuando llega la fuente real. */
+/* Respaldos con métricas medidas (scripts/fallback-metrics.mjs): el texto no salta cuando llega la fuente real. */
 @font-face {
   font-family: "Manrope Fallback";
   src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
-  size-adjust: 103.5%;
-  ascent-override: 102%;
-  descent-override: 28.7%;
+  size-adjust: 100.3%;
+  ascent-override: 106.7%;
+  descent-override: 29.9%;
   line-gap-override: 0%;
 }
 
 @font-face {
   font-family: "DM Sans Fallback";
   src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
-  size-adjust: 98.5%;
-  ascent-override: 100.5%;
-  descent-override: 31.4%;
+  size-adjust: 93.2%;
+  ascent-override: 106.2%;
+  descent-override: 33.3%;
   line-gap-override: 0%;
 }
 
@@ -455,8 +455,8 @@ summary {
   font-size: 0.9688rem;
   font-weight: 600;
   letter-spacing: -0.005em;
+  max-width: 100%;
   text-decoration: none;
-  white-space: nowrap;
   cursor: pointer;
   transition:
     color var(--dur-state) var(--ease-out),
@@ -593,6 +593,10 @@ summary {
 .disclosure > summary {
   list-style: none;
   width: fit-content;
+  max-width: 100%;
+  padding-block: 10px;
+  white-space: normal;
+  text-align: left;
 }
 
 .disclosure > summary::-webkit-details-marker {

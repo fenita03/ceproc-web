@@ -72,7 +72,7 @@ export function Hero() {
             <dd>{totalWorkshops}</dd>
           </div>
           <div className={styles.in} style={{ "--d": "880ms" } as React.CSSProperties}>
-            <dt>Departamento · San Juan</dt>
+            <dt>Departamento</dt>
             <dd className={styles.place}>Rawson</dd>
           </div>
           </dl>
