@@ -7,6 +7,9 @@ export function Articulation() {
     <section id="articulacion" className={`on-paper-2 ${styles.section}`} aria-labelledby="articulacion-title">
       <div className="wrap">
         <div className={styles.head} data-reveal>
+          <p className="index">
+            <b>05</b> Articulación
+          </p>
           <h2 id="articulacion-title" className={styles.title}>
             Articulación con el Municipio y las empresas
           </h2>
@@ -18,10 +21,12 @@ export function Articulation() {
 
         <div className={styles.cols}>
           <article className={styles.col} aria-labelledby="municipio-title" data-reveal>
+            <p className={styles.who}>
+              <span className={styles.letter} aria-hidden="true">A</span> Municipio de Rawson
+            </p>
             <h3 id="municipio-title" className={styles.colTitle}>
               {municipality.title}
             </h3>
-            <p className={styles.who}>Municipio de Rawson</p>
             <p className={styles.text}>{municipality.intro}</p>
             <blockquote className={styles.quote}>
               <p>{municipality.reason}</p>
@@ -47,10 +52,12 @@ export function Articulation() {
           </article>
 
           <article className={styles.col} aria-labelledby="empresas-title" data-reveal style={{ "--d": "80ms" } as React.CSSProperties}>
+            <p className={styles.who}>
+              <span className={styles.letter} aria-hidden="true">B</span> Empresas mineras, industriales y de servicios
+            </p>
             <h3 id="empresas-title" className={styles.colTitle}>
               {companies.title}
             </h3>
-            <p className={styles.who}>Empresas mineras, industriales y de servicios</p>
             <p className={styles.text}>{companies.intro}</p>
             <blockquote className={styles.quote}>
               <p>{companies.commitment}</p>
@@ -71,9 +78,10 @@ export function Articulation() {
           </article>
         </div>
 
-        <p className={styles.closing} data-reveal>
-          {benefits.closing}
-        </p>
+        <div className={styles.closing} data-reveal>
+          <p className={styles.closingLabel}>Solicitud institucional</p>
+          <p className={styles.closingText}>{benefits.closing}</p>
+        </div>
       </div>
     </section>
   );

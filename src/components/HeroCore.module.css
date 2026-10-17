@@ -121,13 +121,16 @@
   max-width: 13rem;
   padding: 6px 8px;
   border-radius: var(--radius-sm);
-  font-size: 0.8125rem;
-  font-weight: 400;
+  font-size: 0.8438rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
   line-height: 1.25;
-  text-shadow: 0 1px 10px rgba(6, 17, 31, 0.9);
+  text-shadow: 0 1px 12px rgba(6, 17, 31, 0.95);
   transition:
-    color 180ms var(--ease-std),
-    background-color 180ms var(--ease-std);
+    color var(--dur-state) var(--ease-out),
+    background-color var(--dur-state) var(--ease-out),
+    box-shadow var(--dur-state) var(--ease-out),
+    transform 320ms var(--ease-out-expo);
 }
 
 .label[data-side="right"] .labelText,
@@ -163,8 +166,23 @@
 }
 
 .label[data-on] .labelText {
-  background: rgba(6, 17, 31, 0.72);
-  box-shadow: inset 0 0 0 1px rgba(214, 174, 92, 0.5);
+  background: rgba(6, 17, 31, 0.82);
+  box-shadow: inset 0 0 0 1px rgba(214, 174, 92, 0.55);
+  text-shadow: none;
+}
+
+/* El rótulo activo se separa 3 px de su nodo, hacia afuera: respuesta precisa al cursor. */
+.label[data-on][data-side="right"] .labelText,
+.label[data-on]:not([data-side]) .labelText {
+  transform: translate(3px, -50%);
+}
+
+.label[data-on][data-side="left"] .labelText {
+  transform: translate(-3px, -50%);
+}
+
+.label[data-on][data-side^="above"] .labelText {
+  transform: translateY(-3px);
 }
 
 .label:focus-visible {
@@ -185,6 +203,7 @@
 .num {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
+  font-weight: 500;
   color: var(--gold-on-night);
   font-variant-numeric: tabular-nums;
 }
@@ -200,27 +219,32 @@
 }
 
 .panelIn {
-  animation: swap 220ms var(--ease-std);
+  animation: swap 320ms var(--ease-out);
 }
 
 @keyframes swap {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translate3d(0, 8px, 0);
   }
 }
 
 .meta {
   color: var(--on-night-2);
+  gap: 10px;
+}
+
+.metaNum {
+  color: var(--gold-on-night);
 }
 
 .title {
   margin-top: 12px;
   font-family: var(--font-display);
-  font-size: clamp(1.1875rem, 1rem + 0.5vw, 1.4375rem);
-  font-weight: 500;
-  line-height: 1.18;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.1875rem, 1rem + 0.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
   color: #fff;
 }
 
@@ -243,7 +267,7 @@
   margin-top: 8px;
   padding-block: 6px;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--gold-on-night);
   text-decoration: none;
 }
@@ -274,19 +298,6 @@
   object-fit: cover;
 }
 
-.photo figcaption {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
-  background: rgba(6, 17, 31, 0.72);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  color: var(--on-night);
-}
-
 .chips {
   display: flex;
   gap: 8px;
@@ -309,15 +320,23 @@
   min-height: 44px;
   padding: 0 14px;
   border: 0;
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   background: rgba(10, 26, 47, 0.8);
   box-shadow: inset 0 0 0 1px var(--line-night-2);
   color: var(--on-night);
   font-size: 0.875rem;
+  font-weight: 500;
   white-space: nowrap;
   scroll-snap-align: start;
   cursor: pointer;
-  transition: background-color 180ms var(--ease-std);
+  transition:
+    background-color var(--dur-state) var(--ease-out),
+    color var(--dur-state) var(--ease-out),
+    transform var(--dur-micro) var(--ease-out);
+}
+
+.chip:active {
+  transform: scale(0.97);
 }
 
 .chip[aria-pressed="true"] {

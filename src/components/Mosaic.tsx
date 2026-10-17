@@ -4,15 +4,15 @@ import { photo } from "../content/photos";
 import { useReducedMotion } from "../hooks/media";
 import styles from "./Mosaic.module.css";
 
-/** Tres oficios del proyecto (fotos ilustrativas de sus áreas reales). */
+/** Tres oficios del proyecto, de la mina al telar y al taller de madera. */
 const TILES = [0, 4, 6].map((i) => ({ area: areas[i], num: String(i + 1).padStart(2, "0"), p: photo(areas[i].image) }));
 /** Desplazamiento de cada foto con el scroll (px por cada pantalla recorrida): profundidad sutil. */
-const DEPTH = [-36, 28, -18];
+const DEPTH = [-40, 30, -22];
 
 /**
- * Mosaico editorial de «Quiénes somos»: las fotos entran con una cortina al aparecer y se
- * desplazan a distinto ritmo con el scroll. Solo transform y clip-path; sin movimiento si se
- * prefiere reducirlo.
+ * Recorrido fotográfico de «La institución»: tres láminas escalonadas, cada una con su área y su
+ * sección del documento. Entran con una cortina al aparecer y se desplazan a distinto ritmo con
+ * el scroll (solo transform y clip-path; sin movimiento si se prefiere reducirlo).
  */
 export function Mosaic() {
   const ref = useRef<HTMLDivElement>(null);
@@ -25,7 +25,7 @@ export function Mosaic() {
       ([e]) => {
         if (e.isIntersecting) el.dataset.in = "true";
       },
-      { threshold: 0.2 },
+      { threshold: 0.15 },
     );
     io.observe(el);
     if (reduced) return () => io.disconnect();
@@ -36,9 +36,9 @@ export function Mosaic() {
     const read = () => {
       raf = 0;
       const r = el.getBoundingClientRect();
-      // -1 cuando el mosaico entra por abajo, 0 en el centro, 1 cuando sale por arriba.
+      // -1 cuando el recorrido entra por abajo, 0 en el centro, 1 cuando sale por arriba.
       const t = (innerHeight / 2 - (r.top + r.height / 2)) / innerHeight;
-      imgs.forEach((im) => (im.style.transform = `translate3d(0, ${(Number(im.dataset.depth) * t).toFixed(1)}px, 0) scale(1.12)`));
+      imgs.forEach((im) => (im.style.transform = `translate3d(0, ${(Number(im.dataset.depth) * t).toFixed(1)}px, 0) scale(1.14)`));
     };
     const onScroll = () => {
       if (visible && !raf) raf = requestAnimationFrame(read);
@@ -59,28 +59,32 @@ export function Mosaic() {
   }, [reduced]);
 
   return (
-    <div ref={ref} className={styles.mosaic} aria-label="Algunos oficios del proyecto (imágenes ilustrativas)" role="group">
+    <div ref={ref} className={styles.mosaic} aria-label="Algunos oficios del proyecto" role="group">
       {TILES.map(({ area, num, p }, i) => (
-        <figure key={area.id} className={styles.tile} style={{ "--d": `${i * 120}ms` } as React.CSSProperties}>
-          <img
-            src={p.src}
-            srcSet={p.srcSet}
-            sizes="(max-width: 960px) 90vw, 30vw"
-            width={p.width}
-            height={p.height}
-            alt={area.imageAlt}
-            loading="lazy"
-            decoding="async"
-            data-depth={DEPTH[i]}
-            style={{ objectPosition: `${p.focus[0] * 100}% ${p.focus[1] * 100}%` }}
-          />
+        <figure key={area.id} className={styles.tile} style={{ "--d": `${i * 140}ms` } as React.CSSProperties}>
+          <div className={styles.frame}>
+            <img
+              src={p.src}
+              srcSet={p.srcSet}
+              sizes="(max-width: 960px) 90vw, 32vw"
+              width={p.width}
+              height={p.height}
+              alt={area.imageAlt}
+              loading="lazy"
+              decoding="async"
+              data-depth={DEPTH[i]}
+              style={{ objectPosition: `${p.focus[0] * 100}% ${p.focus[1] * 100}%` }}
+            />
+          </div>
           <figcaption>
-            <span>{num}</span>
-            {area.label}
+            <span className={styles.num}>{num}</span>
+            <span>
+              <span className={styles.label}>{area.label}</span>
+              <span className={styles.section}>{area.section}</span>
+            </span>
           </figcaption>
         </figure>
       ))}
-      <p className={styles.note}>Imágenes ilustrativas</p>
     </div>
   );
 }

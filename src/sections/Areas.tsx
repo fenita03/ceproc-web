@@ -1,7 +1,7 @@
 import { ArrowDown } from "@phosphor-icons/react/dist/csr/ArrowDown";
 import { ArrowLeft } from "@phosphor-icons/react/dist/csr/ArrowLeft";
 import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
-import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import { GraduationCap } from "@phosphor-icons/react/dist/csr/GraduationCap";
 import { useReducedMotion } from "../hooks/media";
 import { AREA_EVENT, openEnroll } from "../hooks/enroll";
@@ -54,12 +54,29 @@ export function Areas() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const hover = useRef(false);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const markRef = useRef<HTMLSpanElement>(null);
   const area = areas[ai];
   const list = area.workshops;
   const pics = fotosDe(area.id);
   const n = list.length;
 
   const auto = area.id === TRUCK_AREA && !reduced;
+
+  // Indicador de la pestaña activa: un hilo dorado que se desliza (solo transform).
+  useLayoutEffect(() => {
+    const place = () => {
+      const t = tabRefs.current[ai];
+      const m = markRef.current;
+      if (!t || !m) return;
+      m.style.transform = `translateX(${t.offsetLeft}px) scaleX(${t.offsetWidth})`;
+    };
+    place();
+    const parent = tabRefs.current[ai]?.parentElement;
+    if (!parent) return;
+    const ro = new ResizeObserver(place);
+    ro.observe(parent);
+    return () => ro.disconnect();
+  }, [ai]);
 
   const pick = (i: number) => {
     setGlide(false);
@@ -176,8 +193,8 @@ export function Areas() {
       <div className="wrap">
         <div className={styles.head} data-reveal>
           <div>
-            <p className={`eyebrow ${styles.kicker}`}>
-              {areas.length} áreas · {areas.reduce((t, a) => t + a.workshops.length, 0)} talleres
+            <p className="index">
+              <b>01</b> {areas.length} áreas · {areas.reduce((t, a) => t + a.workshops.length, 0)} talleres
             </p>
             <h2 id="areas-title" className={styles.title}>
               Capacitaciones
@@ -205,16 +222,19 @@ export function Areas() {
               className={styles.tab}
               onClick={() => pickArea(i)}
             >
-              <span className={styles.dot} aria-hidden="true" />
-              {a.label}
+              <span className={styles.tabNum} aria-hidden="true">
+                {num(i)}
+              </span>
+              <span className={styles.tabLabel}>{a.label}</span>
             </button>
           ))}
+          <span ref={markRef} className={styles.tabMark} aria-hidden="true" />
         </div>
 
         <div id="area-panel" role="tabpanel" aria-labelledby={`tab-${area.id}`} className={styles.stage}>
           <div className={styles.info} key={area.id}>
             <p className={`eyebrow ${styles.areaMeta}`}>
-              Área {num(ai)} · {area.section}
+              <span className={styles.areaNum}>Área {num(ai)}</span> {area.section}
             </p>
             <h3 className={styles.areaTitle}>{area.label}</h3>
             <p className={styles.areaLead}>{area.title}</p>
@@ -286,7 +306,6 @@ export function Areas() {
                             draggable={false}
                           />
                         )}
-                        {!pic?.truck && <span className={styles.badge}>Imagen ilustrativa</span>}
                       </div>
                       <div className={styles.cardBody}>
                         <p className={`eyebrow ${styles.cardNum}`}>

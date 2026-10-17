@@ -1,56 +1,74 @@
-/* Acceso flotante, discreto: pastilla de noche con acento dorado; no compite con la escena. */
+/* Acceso flotante: pastilla compacta de noche (44 px) partida en dos; el dorado queda para el estado. */
 .fab {
   position: fixed;
-  right: max(16px, env(safe-area-inset-right));
-  bottom: max(16px, calc(env(safe-area-inset-bottom) + 8px));
+  right: max(14px, env(safe-area-inset-right));
+  bottom: max(14px, calc(env(safe-area-inset-bottom) + 6px));
   z-index: 40;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  padding: 4px 18px 4px 4px;
-  border: 0;
+  display: flex;
+  align-items: stretch;
+  height: 44px;
   border-radius: 999px;
-  background: rgba(10, 26, 47, 0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(6, 17, 31, 0.94);
   box-shadow:
     inset 0 0 0 1px var(--line-night-2),
-    0 10px 30px -10px rgba(6, 17, 31, 0.7);
+    0 12px 28px -14px rgba(6, 17, 31, 0.75);
   color: #fff;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
   transition:
-    opacity 200ms var(--ease-out),
-    transform 200ms var(--ease-out),
-    box-shadow 200ms ease;
+    opacity 260ms var(--ease-out),
+    transform 360ms var(--ease-out-expo);
 }
 
 .fab[data-off] {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translate3d(0, 12px, 0);
   pointer-events: none;
 }
 
-.fab:active {
-  transform: scale(0.97);
+.main,
+.wa {
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    color var(--dur-state) var(--ease-out),
+    transform var(--dur-micro) var(--ease-out);
 }
 
-.fab:focus-visible {
+.main {
+  gap: 9px;
+  padding: 0 14px 0 16px;
+  border-radius: 999px 0 0 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.mainIcon {
+  color: var(--gold-on-night);
+}
+
+/* Hilo vertical entre las dos partes. */
+.wa {
+  justify-content: center;
+  width: 46px;
+  border-radius: 0 999px 999px 0;
+  box-shadow: inset 1px 0 0 var(--line-night-2);
+  color: var(--on-night-2);
+}
+
+.main:active,
+.wa:active {
+  transform: scale(0.95);
+}
+
+.main:focus-visible,
+.wa:focus-visible {
   outline: 2px solid var(--gold-on-night);
-  outline-offset: 3px;
-}
-
-.icon {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: var(--gold);
-  color: var(--night);
+  outline-offset: 2px;
 }
 
 .short {
@@ -58,19 +76,16 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .fab:hover {
-    box-shadow:
-      inset 0 0 0 1px var(--gold-on-night),
-      0 10px 30px -10px rgba(6, 17, 31, 0.7);
+  .main:hover {
+    color: var(--gold-on-night);
+  }
+  .wa:hover {
+    color: #fff;
   }
 }
 
 /* Celular: rótulo corto para ocupar lo mínimo. */
 @media (max-width: 640px) {
-  .fab {
-    gap: 8px;
-    padding-right: 14px;
-  }
   .long {
     position: absolute;
     width: 1px;

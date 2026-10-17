@@ -1,75 +1,106 @@
+/* Dos mitades: la foto a sangre a la izquierda, el contenido en la retícula a la derecha. */
 .section {
-  padding-block: var(--section-y);
+  display: grid;
+  grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
+  min-height: 100svh;
 }
 
-.grid {
+.media {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  background: var(--night-2);
+}
+
+.media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Velo inferior: une la foto con la noche de Capacitaciones y le da peso. */
+.media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 17, 31, 0.35) 0%, rgba(6, 17, 31, 0) 30%, rgba(6, 17, 31, 0) 70%, rgba(6, 17, 31, 0.3) 100%);
+  pointer-events: none;
+}
+
+.body {
+  padding: var(--section-y) var(--gutter) var(--section-y) clamp(32px, 6vw, 112px);
+  max-width: calc(var(--max) * 0.56);
+}
+
+.head {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 6vw, 96px);
-  align-items: start;
+  gap: 22px;
 }
 
 .title {
-  font-size: var(--step-headline);
-  max-width: 14ch;
+  font-size: var(--fs-h1);
+  font-weight: 800;
+  letter-spacing: -0.042em;
+  line-height: 0.98;
+  max-width: 13ch;
 }
 
 .lead {
-  margin-top: 24px;
-  max-width: 46ch;
+  max-width: 48ch;
   color: var(--ink-2);
-  font-size: 1.0625rem;
+  font-size: var(--fs-lead);
+  line-height: 1.55;
 }
 
 .lists {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(24px, 3vw, 48px);
+  margin-top: clamp(48px, 6vw, 80px);
 }
 
 .subtitle {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--ink-3);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .lists ul {
   border-top: 2px solid var(--ink);
 }
 
-.lists li {
+.bullets li {
   position: relative;
-  padding: 12px 0 12px 22px;
-  border-bottom: 1px solid var(--line-paper);
+  padding: 13px 0 13px 24px;
+  border-bottom: 1px solid var(--line-paper-2);
   color: var(--ink-2);
-  font-size: 0.9375rem;
+  font-size: var(--fs-small);
 }
 
-.lists li::before {
+.bullets li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 1.35em;
-  width: 10px;
+  top: 1.45em;
+  width: 12px;
   height: 1px;
   background: var(--green-on-paper);
 }
 
 .tracksText {
   color: var(--ink-2);
-  font-size: 0.9375rem;
-  margin-bottom: 14px;
+  font-size: var(--fs-small);
+  margin-bottom: 16px;
 }
 
-.lists .tracks li {
-  padding: 0;
-}
-
-.lists .tracks li::before {
-  content: none;
+.tracks li {
+  border-bottom: 1px solid var(--line-paper-2);
 }
 
 .tracks a {
@@ -77,39 +108,69 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  min-height: 56px;
-  padding-block: 12px;
+  min-height: 72px;
+  padding-block: 14px;
   color: var(--ink);
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   text-decoration: none;
-}
-
-.tracks svg {
-  flex: none;
-  color: var(--gold-on-paper);
-  transition: transform 180ms var(--ease-std);
 }
 
 .trackMeta {
   display: block;
-  font-size: 0.8125rem;
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-size: 0.8438rem;
   font-weight: 400;
+  letter-spacing: 0;
   color: var(--ink-3);
 }
 
+.trackIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line-paper-2);
+  color: var(--gold-on-paper);
+  transition:
+    background-color var(--dur-state) var(--ease-out),
+    color var(--dur-state) var(--ease-out),
+    box-shadow var(--dur-state) var(--ease-out);
+}
+
+.trackIcon svg {
+  transition: transform 320ms var(--ease-out-expo);
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .tracks a:hover svg {
-    transform: translateX(3px);
+  .tracks a:hover .trackIcon {
+    background: var(--ink);
+    color: #fff;
+    box-shadow: none;
   }
-  .tracks a:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--gold-on-paper);
+  .tracks a:hover .trackIcon svg {
+    transform: translateX(2px);
   }
 }
 
 @media (max-width: 960px) {
-  .grid {
+  .section {
     grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+  .media {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .body {
+    max-width: none;
+    padding-inline: var(--gutter);
+    padding-top: clamp(48px, 9vw, 80px);
   }
 }
 

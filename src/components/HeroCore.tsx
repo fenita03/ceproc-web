@@ -305,11 +305,10 @@ export function HeroCore({ onActive }: { onActive: (i: number | null) => void })
             {narrow && (
               <figure className={styles.photo}>
                 <img src={info.photo.small} alt={info.alt} width={640} height={Math.round(640 / info.photo.aspect)} decoding="async" />
-                <figcaption>Imagen ilustrativa</figcaption>
               </figure>
             )}
             <p className={`eyebrow ${styles.meta}`}>
-              Área {info.num} · {info.section} · {info.count} talleres
+              <span className={styles.metaNum}>Área {info.num}</span> {info.section} · {info.count} talleres
             </p>
             <p className={styles.title}>{info.title}</p>
             <p className={styles.summary}>{info.short}</p>
@@ -327,12 +326,6 @@ export function HeroCore({ onActive }: { onActive: (i: number | null) => void })
           </div>
         ) : (
           <div key="idle" className={styles.panelIn}>
-            {narrow && (
-              <figure className={styles.photo}>
-                <img src="/img/paisaje-640.webp" alt="Rayos de sol sobre las sierras y el embalse de Ullum, San Juan." width={640} height={303} />
-                <figcaption>San Juan · imagen ilustrativa</figcaption>
-              </figure>
-            )}
             <p className={`eyebrow ${styles.meta}`}>
               {N} áreas · {totalWorkshops} talleres propuestos
             </p>

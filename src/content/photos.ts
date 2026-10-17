@@ -2,14 +2,13 @@ import data from "./photos.json";
 
 export type PhotoKey = keyof typeof data;
 
-/** Fotografías ilustrativas de Wikimedia Commons (no muestran instalaciones de CEPROC). */
+/** Fotografías de referencia de cada área (Pexels, CC0 o dominio público; fuentes en docs/image-sources.md). */
 export function photo(key: string) {
   const p = data[key as PhotoKey];
   return {
     ...p,
     src: `/img/${key}-1080.webp`,
     srcSet: p.widths.map((w) => `/img/${key}-${w}.webp ${Math.min(w, p.width)}w`).join(", "),
-    credit: `${p.author} · ${p.license} · Wikimedia Commons`,
   };
 }
 

@@ -2,21 +2,30 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: max(100svh, 680px);
+  min-height: max(100svh, 720px);
   display: flex;
   padding-top: var(--header-h);
   background: var(--night);
 }
 
-.inner {
-  flex: 1;
-}
-
-/* --- Fondo: paisaje con parallax, bruma y luz cálida --- */
+/* --- Fondo: afloramiento de San Juan con parallax, bruma y luz cálida --- */
 .backdrop {
   position: absolute;
   inset: 0;
   z-index: -1;
+}
+
+/* Al entrar, la fotografía se asienta (1,08 → 1) mientras aparece el texto. */
+.settle {
+  position: absolute;
+  inset: 0;
+  animation: settle 1800ms var(--ease-out-expo) both;
+}
+
+@keyframes settle {
+  from {
+    transform: scale(1.08);
+  }
 }
 
 .scene {
@@ -33,10 +42,10 @@
   object-fit: cover;
   background-size: cover;
   opacity: 0;
-  transform: scale(1.05);
+  transform: scale(1.06);
   transition:
-    opacity 360ms var(--ease-out),
-    transform 900ms var(--ease-out);
+    opacity 520ms var(--ease-out),
+    transform 1400ms var(--ease-out-expo);
 }
 
 .bg[data-on] {
@@ -48,7 +57,7 @@
   visibility: hidden;
 }
 
-/* Con un área activa la foto gana protagonismo; la luz cálida del paisaje se apaga. */
+/* Con un área activa la foto gana protagonismo; la luz cálida se apaga. */
 .hero:not([data-active="none"]) .glow {
   opacity: 0;
   animation: none;
@@ -57,8 +66,9 @@
 .glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(30% 36% at 38% 34%, rgba(255, 196, 120, 0.2), rgba(255, 196, 120, 0) 70%);
+  background: radial-gradient(34% 40% at 72% 30%, rgba(255, 196, 120, 0.16), rgba(255, 196, 120, 0) 70%);
   mix-blend-mode: screen;
+  transition: opacity 400ms var(--ease-out);
   animation: breathe 9s var(--ease-in-out) infinite alternate;
 }
 
@@ -80,16 +90,16 @@
 }
 
 .hazeA {
-  top: 46%;
-  height: 32%;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(170, 190, 215, 0.12), rgba(170, 190, 215, 0) 70%);
+  top: 52%;
+  height: 30%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(170, 190, 215, 0.1), rgba(170, 190, 215, 0) 70%);
   animation: drift 48s linear infinite alternate;
 }
 
 .hazeB {
-  top: 60%;
-  height: 26%;
-  background: radial-gradient(45% 50% at 40% 50%, rgba(214, 174, 120, 0.08), rgba(214, 174, 120, 0) 70%);
+  top: 64%;
+  height: 24%;
+  background: radial-gradient(45% 50% at 40% 50%, rgba(214, 174, 120, 0.07), rgba(214, 174, 120, 0) 70%);
   animation: drift 64s linear -20s infinite alternate-reverse;
 }
 
@@ -102,41 +112,55 @@
   }
 }
 
-/* Velo: lectura a la izquierda, paisaje vivo a la derecha, fundido hacia la sección siguiente. */
+/* Velo: lectura a la izquierda, roca viva a la derecha, fundido hacia la sección siguiente. */
 .shade {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(6, 17, 31, 0.9) 0%, rgba(6, 17, 31, 0.66) 38%, rgba(6, 17, 31, 0.18) 70%, rgba(6, 17, 31, 0.28) 100%),
-    linear-gradient(180deg, rgba(6, 17, 31, 0.72) 0%, rgba(6, 17, 31, 0.04) 22%, rgba(6, 17, 31, 0.1) 62%, var(--night) 100%);
+    linear-gradient(90deg, rgba(6, 17, 31, 0.94) 0%, rgba(6, 17, 31, 0.78) 34%, rgba(6, 17, 31, 0.36) 66%, rgba(6, 17, 31, 0.5) 100%),
+    linear-gradient(180deg, rgba(6, 17, 31, 0.7) 0%, rgba(6, 17, 31, 0.12) 24%, rgba(6, 17, 31, 0.2) 60%, var(--night) 100%);
 }
 
-/* --- Retícula: 12 columnas. Texto 1–7, logo 9–12, datos a todo el ancho abajo. --- */
+/* Estratos al pie de la portada: continúan la roca de la foto hacia la sección siguiente. */
+.strata {
+  bottom: 0;
+  opacity: 0.1;
+}
+
+/* --- Retícula de 12 columnas: texto 1–6, núcleo 6–12, datos a todo el ancho abajo. --- */
 .inner {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-template-rows: 1fr auto;
   column-gap: 24px;
-  padding-block: clamp(48px, 9vh, 120px) clamp(24px, 4vh, 40px);
+  padding-block: clamp(40px, 8vh, 112px) clamp(24px, 4vh, 40px);
 }
 
 .copy {
-  grid-column: 1 / span 5;
+  grid-column: 1 / span 6;
   align-self: center;
   container-type: inline-size;
 }
 
 .kicker {
   color: var(--on-night-2);
+  gap: 14px;
 }
 
-/* Titular: Geist 500, interletrado ajustado; la jerarquía la dan el tamaño y la tensión. */
+.kickerRule {
+  width: 32px;
+  height: 1px;
+  background: var(--gold-on-night);
+}
+
+/* Titular: Manrope 800, interletrado cerrado; cada línea sube desde su propia máscara. */
 .title {
-  margin-top: 28px;
-  font-size: min(5.5rem, 13.4cqi);
-  font-weight: 500;
-  line-height: 0.96;
-  letter-spacing: -0.05em;
+  margin-top: clamp(20px, 3vh, 32px);
+  font-size: min(var(--fs-display), 14.2cqi);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
   color: #fff;
 }
 
@@ -144,14 +168,14 @@
   display: block;
   overflow: hidden;
   white-space: nowrap;
-  padding-bottom: 0.08em;
-  margin-bottom: -0.08em;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
 }
 
 .line > span {
   display: block;
-  animation: lineUp 700ms var(--ease-out) both;
-  animation-delay: calc(140ms + var(--i) * 90ms);
+  animation: lineUp 900ms var(--ease-out-expo) backwards;
+  animation-delay: calc(200ms + var(--i) * 110ms);
 }
 
 .line:last-child > span {
@@ -160,32 +184,44 @@
 
 @keyframes lineUp {
   from {
-    transform: translateY(108%);
+    transform: translate3d(0, 105%, 0);
   }
 }
 
 .in {
-  animation: rise 560ms var(--ease-out) both;
+  animation: rise 700ms var(--ease-out) backwards;
   animation-delay: var(--d, 0ms);
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translate3d(0, 14px, 0);
+  }
+}
+
+/* El núcleo se enciende detrás del titular: fundido y escala corta. */
+.stageIn {
+  animation: stageIn 1100ms var(--ease-out-expo) 320ms backwards;
+}
+
+@keyframes stageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
   }
 }
 
 .lead {
-  margin-top: 28px;
-  max-width: 46ch;
-  font-size: var(--step-lead);
+  margin-top: clamp(22px, 3.4vh, 32px);
+  max-width: 44ch;
+  font-size: var(--fs-lead);
   line-height: 1.55;
   color: var(--on-night-2);
 }
 
 .name {
-  font-weight: 500;
+  font-weight: 600;
   color: #fff;
 }
 
@@ -193,81 +229,117 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 36px;
+  margin-top: clamp(28px, 4vh, 40px);
 }
 
 /* Núcleo orbital a la derecha: tan grande como permite la altura de la pantalla. */
 .stage {
-  --ring-max: min(600px, calc(100svh - var(--header-h) - 360px));
-  grid-column: 6 / -1;
+  --ring-max: min(600px, calc(100svh - var(--header-h) - 340px));
+  position: relative;
+  grid-column: 7 / -1;
   align-self: center;
   min-width: 0;
-  margin-right: calc(var(--gutter) * -0.6);
+  margin-right: calc(var(--gutter) * -0.5);
 }
 
-/* Franja de datos: «baldosas» de instrumento separadas por hilos de 1 px. */
+.coords {
+  position: absolute;
+  right: calc(var(--gutter) * 0.5);
+  top: -8px;
+  color: var(--on-night-3);
+  letter-spacing: 0.08em;
+}
+
+/* Franja de datos: cifras en Manrope con rótulos técnicos; el hilo superior se dibuja al entrar. */
 .facts {
+  position: relative;
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
   margin-top: clamp(24px, 4vh, 48px);
-  border-top: 1px solid var(--line-night-2);
+  padding-top: 22px;
 }
 
-.facts > div {
-  padding: 20px 20px 0 0;
+.facts::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: var(--line-night-2);
+  transform-origin: left;
+  animation: draw 1200ms var(--ease-out-expo) 700ms backwards;
 }
 
-.facts > div + div {
-  padding-left: 20px;
-  border-left: 1px solid var(--line-night);
+@keyframes draw {
+  from {
+    transform: scaleX(0);
+  }
 }
 
-.facts dt {
+.factsList {
+  display: flex;
+  gap: clamp(28px, 5vw, 88px);
+}
+
+.factsList > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+
+.factsList dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--on-night-2);
 }
 
-.facts dt::before {
-  display: none;
-}
-
-.facts dd {
-  margin-top: 14px;
-  font-size: clamp(1.75rem, 1.3rem + 1.4vw, 2.5rem);
-  font-weight: 400;
-  line-height: 1;
+.factsList dd {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.4rem + 1.8vw, 3.25rem);
+  font-weight: 700;
+  line-height: 0.95;
   letter-spacing: -0.04em;
   color: #fff;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
-.facts .place {
-  font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.625rem);
-  line-height: 1.6;
+.factsList .place {
+  font-weight: 600;
 }
 
 .factLink {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  flex: none;
 }
 
 .scroll {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 0;
+  gap: 14px;
+  padding: 6px 0;
   color: var(--on-night-2);
+  font-size: 0.875rem;
+  font-weight: 500;
   text-decoration: none;
-  transition: color 180ms var(--ease-std);
+  transition: color var(--dur-state) var(--ease-out);
 }
 
-.scroll .eyebrow::before {
-  display: none;
+.scrollIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line-night-2);
+  transition: box-shadow var(--dur-state) var(--ease-out);
 }
 
-.scroll svg {
-  animation: nudge 2200ms var(--ease-in-out) 1600ms 3;
+.scrollIcon svg {
+  animation: nudge 2400ms var(--ease-in-out) 2200ms 2;
 }
 
 @keyframes nudge {
@@ -285,30 +357,22 @@
   .scroll:hover {
     color: #fff;
   }
-}
-
-.note {
-  position: absolute;
-  right: var(--gutter);
-  top: calc(var(--header-h) + 14px);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--on-night-3);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .line > span,
-  .in,
-  .glow,
-  .haze,
-  .scroll svg {
-    animation: none;
+  .scroll:hover .scrollIcon {
+    box-shadow: inset 0 0 0 1px var(--gold-on-night);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .settle,
+  .line > span,
+  .in,
+  .stageIn,
+  .glow,
+  .haze,
+  .scrollIcon svg,
+  .facts::before {
+    animation: none;
+  }
   .bg {
     transform: none;
     transition: opacity 200ms linear;
@@ -323,7 +387,10 @@
   .stage {
     --ring-max: min(520px, 100%);
     grid-column: 1 / -1;
-    margin: 40px 0 0;
+    margin: 32px 0 0;
+  }
+  .coords {
+    display: none;
   }
 }
 
@@ -332,42 +399,35 @@
     min-height: 0;
   }
   .inner {
-    padding-top: 40px;
+    padding-top: 36px;
   }
   .title {
-    font-size: min(4.5rem, 13.6cqi);
-    margin-top: 20px;
-  }
-  .facts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .facts > div:nth-child(3) {
-    padding-left: 0;
-    border-left: 0;
-  }
-  .facts > div:nth-child(n + 3) {
-    border-top: 1px solid var(--line-night);
-    margin-top: 20px;
+    font-size: min(4.75rem, 14.6cqi);
+    margin-top: 18px;
   }
   .factLink {
     display: none;
   }
-  .note {
-    top: auto;
-    bottom: 10px;
-    left: var(--gutter);
-    right: auto;
+  .factsList {
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .factsList dt {
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
   }
   .shade {
-    background: linear-gradient(180deg, rgba(6, 17, 31, 0.86) 0%, rgba(6, 17, 31, 0.7) 45%, rgba(6, 17, 31, 0.62) 75%, var(--night) 100%);
+    background:
+      linear-gradient(180deg, rgba(6, 17, 31, 0.86) 0%, rgba(6, 17, 31, 0.66) 40%, rgba(6, 17, 31, 0.72) 70%, var(--night) 100%);
   }
 }
 
-@media (max-width: 480px) {
-  .facts dd {
-    font-size: 1.75rem;
+@media (max-width: 420px) {
+  .factsList dd {
+    font-size: 1.875rem;
   }
-  .facts > div:nth-child(2) {
-    padding-left: 16px;
+  .factsList > div:last-child dt {
+    max-width: 9ch;
   }
 }

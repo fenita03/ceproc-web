@@ -1,19 +1,19 @@
 {
  "maquinaria": {
-  "title": "Haul truck under repair at Brockman 4, September 2018.jpg",
-  "author": "Calistemon",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Haul_truck_under_repair_at_Brockman_4,_September_2018.jpg",
-  "width": 3072,
-  "height": 2304,
+  "title": "Excavadora cargando un camión volquete en una cantera",
+  "author": "Pexels",
+  "license": "Licencia Pexels",
+  "source": "https://www.pexels.com/photo/29506742/",
+  "width": 2400,
+  "height": 1800,
   "widths": [
    640,
    1080,
    1600
   ],
   "focus": [
-   0.45,
-   0.45
+   0.5,
+   0.5
   ]
  },
  "seguridad": {
@@ -34,20 +34,20 @@
   ]
  },
  "regional": {
-  "title": "Baker woman's hands kneading bread dough.jpg",
-  "author": "Shixart1985",
-  "license": "CC BY 2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Baker_woman%27s_hands_kneading_bread_dough.jpg",
-  "width": 5154,
-  "height": 3441,
+  "title": "Mujer horneando pan en un horno de piedra tradicional",
+  "author": "Pexels",
+  "license": "Licencia Pexels",
+  "source": "https://www.pexels.com/photo/6196391/",
+  "width": 2400,
+  "height": 1600,
   "widths": [
    640,
    1080,
    1600
   ],
   "focus": [
-   0.55,
-   0.55
+   0.5,
+   0.5
   ]
  },
  "cocina": {
@@ -68,19 +68,19 @@
   ]
  },
  "textil": {
-  "title": "Ishigaki Island minsa.jpg",
-  "author": "norio nakayama",
-  "license": "CC BY-SA 2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Ishigaki_Island_minsa.jpg",
-  "width": 4000,
-  "height": 3000,
+  "title": "Manos tejiendo hilos de colores en un telar de madera",
+  "author": "Pexels",
+  "license": "Licencia Pexels",
+  "source": "https://www.pexels.com/photo/6634692/",
+  "width": 2400,
+  "height": 1600,
   "widths": [
    640,
    1080,
    1600
   ],
   "focus": [
-   0.45,
+   0.5,
    0.5
   ]
  },
@@ -102,29 +102,29 @@
   ]
  },
  "carpinteria": {
-  "title": "Ménuisiers au travail 2.jpg",
-  "author": "Minette Lontsie",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:M%C3%A9nuisiers_au_travail_2.jpg",
-  "width": 4608,
-  "height": 3072,
+  "title": "Dos carpinteros trabajando juntos en un taller",
+  "author": "Pexels",
+  "license": "Licencia Pexels",
+  "source": "https://www.pexels.com/photo/7484154/",
+  "width": 2400,
+  "height": 1600,
   "widths": [
    640,
    1080,
    1600
   ],
   "focus": [
-   0.4,
-   0.6
+   0.5,
+   0.45
   ]
  },
  "paisaje": {
-  "title": "Embalse Ullum desde cerro Tres María, provincia de San Juan, Argentina.jpg",
-  "author": "Enrique Guardia",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Embalse_Ullum_desde_cerro_Tres_Mar%C3%ADa,_provincia_de_San_Juan,_Argentina.jpg",
-  "width": 4128,
-  "height": 1956,
+  "title": "Cerro Alcázar.jpg",
+  "author": "Funeslandia",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cerro_Alc%C3%A1zar.jpg",
+  "width": 4704,
+  "height": 2216,
   "widths": [
    640,
    1080,
@@ -133,8 +133,8 @@
    3200
   ],
   "focus": [
-   0.42,
-   0.5
+   0.6,
+   0.55
   ]
  }
 }

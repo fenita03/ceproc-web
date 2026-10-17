@@ -1,11 +1,13 @@
+import { ArrowUpRight } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
 import { EnvelopeSimple } from "@phosphor-icons/react/dist/csr/EnvelopeSimple";
-import { MapPin } from "@phosphor-icons/react/dist/csr/MapPin";
 import { GraduationCap } from "@phosphor-icons/react/dist/csr/GraduationCap";
+import { InstagramLogo } from "@phosphor-icons/react/dist/csr/InstagramLogo";
+import { MapPin } from "@phosphor-icons/react/dist/csr/MapPin";
 import { Phone } from "@phosphor-icons/react/dist/csr/Phone";
 import { WhatsappLogo } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
 import { useEffect, useRef } from "react";
-import { contact, institution } from "../content/ceproc";
-import { generalInquiryUrl } from "../content/wizard";
+import { institution } from "../content/ceproc";
+import { contact, generalInquiryUrl } from "../content/contact";
 import { openEnroll } from "../hooks/enroll";
 import { useReducedMotion } from "../hooks/media";
 import styles from "./Contact.module.css";
@@ -55,6 +57,9 @@ export function Contact() {
   return (
     <section id="contacto" className={styles.section} aria-labelledby="contacto-title">
       <div className="wrap">
+        <p className="index" data-reveal>
+          <b>07</b> Contacto
+        </p>
         <p ref={ref} className={styles.tagline}>
           {WORDS.map((w, i) => (
             <span key={w}>
@@ -72,46 +77,52 @@ export function Contact() {
         </p>
 
         <div className={styles.grid}>
-          <div data-reveal>
+          <div className={styles.intro} data-reveal>
             <h2 id="contacto-title" className={styles.title}>
-              Contacto
+              Hablemos de tu capacitación
             </h2>
-            <div className={styles.paths}>
-              <div>
-                <p className={styles.pathTitle}>Quiero capacitarme</p>
-                <p className={styles.text}>Contanos qué área te interesa y te orientamos por WhatsApp. Podés sumar tu CV.</p>
-                <button type="button" className="btn btn-gold" onClick={() => openEnroll()}>
-                  <GraduationCap size={18} aria-hidden="true" />
-                  Capacitate con nosotros
-                </button>
-              </div>
-              <div>
-                <p className={styles.pathTitle}>Otra consulta</p>
-                <p className={styles.text}>
-                  Para instituciones, empresas o consultas generales, escribinos por WhatsApp o por correo.
-                </p>
-              </div>
-            </div>
+            <p className={styles.text}>
+              Contanos qué área te interesa y te orientamos por WhatsApp. Instituciones, empresas y consultas generales
+              también son bienvenidas.
+            </p>
+            <button type="button" className="btn btn-gold" onClick={() => openEnroll()}>
+              <GraduationCap size={18} aria-hidden="true" />
+              Capacitate con nosotros
+            </button>
           </div>
 
-          <div className={styles.card} data-reveal style={{ "--d": "80ms" } as React.CSSProperties}>
-            <ul className={styles.channels}>
+          <div className={styles.channels}>
+            <ul className={styles.primary} data-reveal="stagger">
               <li>
-                <a href={generalInquiryUrl} target="_blank" rel="noopener noreferrer" className={styles.channel}>
-                  <span className={styles.icon}>
-                    <WhatsappLogo size={20} aria-hidden="true" />
+                <a href={generalInquiryUrl} target="_blank" rel="noopener noreferrer" className={styles.big}>
+                  <span className={styles.bigIcon}>
+                    <WhatsappLogo size={26} aria-hidden="true" />
                   </span>
-                  <span>
+                  <span className={styles.bigText}>
                     <span className={styles.label}>WhatsApp · consulta general</span>
-                    <span className={styles.value}>{contact.phoneDisplay}</span>
+                    <span className={styles.bigValue}>{contact.phoneDisplay}</span>
                   </span>
+                  <ArrowUpRight size={22} aria-hidden="true" className={styles.arrow} />
                 </a>
               </li>
               <li>
-                <a href={`tel:+54${contact.phone}`} className={styles.channel}>
-                  <span className={styles.icon}>
-                    <Phone size={20} aria-hidden="true" />
+                <a href={contact.instagram.url} target="_blank" rel="noopener noreferrer" className={styles.big}>
+                  <span className={styles.bigIcon}>
+                    <InstagramLogo size={26} aria-hidden="true" />
                   </span>
+                  <span className={styles.bigText}>
+                    <span className={styles.label}>Instagram oficial</span>
+                    <span className={styles.bigValue}>@{contact.instagram.user}</span>
+                  </span>
+                  <ArrowUpRight size={22} aria-hidden="true" className={styles.arrow} />
+                </a>
+              </li>
+            </ul>
+
+            <ul className={styles.secondary} data-reveal="stagger" style={{ "--d": "120ms" } as React.CSSProperties}>
+              <li>
+                <a href={`tel:${contact.tel}`} className={styles.small}>
+                  <Phone size={18} aria-hidden="true" />
                   <span>
                     <span className={styles.label}>Teléfono</span>
                     <span className={styles.value}>{contact.phoneDisplay}</span>
@@ -119,20 +130,16 @@ export function Contact() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${contact.email}`} className={styles.channel}>
-                  <span className={styles.icon}>
-                    <EnvelopeSimple size={20} aria-hidden="true" />
-                  </span>
+                <a href={`mailto:${contact.email}`} className={styles.small}>
+                  <EnvelopeSimple size={18} aria-hidden="true" />
                   <span>
                     <span className={styles.label}>Correo</span>
                     <span className={styles.value}>{contact.email}</span>
                   </span>
                 </a>
               </li>
-              <li className={styles.channel}>
-                <span className={styles.icon}>
-                  <MapPin size={20} aria-hidden="true" />
-                </span>
+              <li className={styles.small}>
+                <MapPin size={18} aria-hidden="true" />
                 <span>
                   <span className={styles.label}>Ubicación</span>
                   <span className={styles.value}>{contact.place}</span>

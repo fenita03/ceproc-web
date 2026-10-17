@@ -12,7 +12,8 @@ import { Sparkle } from "@phosphor-icons/react/dist/csr/Sparkle";
 import { Scissors } from "@phosphor-icons/react/dist/csr/Scissors";
 import { TrendUp } from "@phosphor-icons/react/dist/csr/TrendUp";
 import type { Icon } from "@phosphor-icons/react";
-import { areas, contact } from "./ceproc";
+import { areas } from "./ceproc";
+import { whatsappHref } from "./contact";
 
 /**
  * Asistente «Capacitate con nosotros».
@@ -21,11 +22,8 @@ import { areas, contact } from "./ceproc";
  * Áreas y talleres salen de ceproc.ts: no se inventan opciones.
  */
 
-/** Número de WhatsApp oficial (54 9 + área + número). Reemplazable con VITE_WHATSAPP_NUMBER. */
-export const WHATSAPP_NUMBER: string = (import.meta.env.VITE_WHATSAPP_NUMBER || `549${contact.phone}`).replace(/\D/g, "");
-
-export const whatsappHref = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-export const generalInquiryUrl = whatsappHref("Hola, CEPROC. Quiero hacer una consulta.");
+/** El número oficial y el armado del enlace viven en contact.ts (fuente única). */
+export { whatsappHref };
 
 export interface Choice {
   id: string;

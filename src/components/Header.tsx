@@ -1,16 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import lockupReverse from "../brand/ceproc-lockup-reverse.svg";
 import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
+import { InstagramLogo } from "@phosphor-icons/react/dist/csr/InstagramLogo";
+import { WhatsappLogo } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
 import { nav } from "../content/ceproc";
+import { contact, generalInquiryUrl } from "../content/contact";
 import { openEnroll } from "../hooks/enroll";
 import styles from "./Header.module.css";
 
 export function Header() {
   const [solid, setSolid] = useState(false);
+  const [tucked, setTucked] = useState(false);
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLUListElement>(null);
+  const markRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const hero = document.getElementById("inicio");
@@ -31,11 +37,49 @@ export function Header() {
       const el = document.getElementById(id);
       if (el) spy.observe(el);
     });
+    // Al bajar la cabecera se guarda (deja leer); al subir vuelve. Nunca sobre la portada.
+    let lastY = scrollY;
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const y = scrollY;
+        const dy = y - lastY;
+        if (Math.abs(dy) > 6) {
+          setTucked(dy > 0 && y > innerHeight * 0.9);
+          lastY = y;
+        }
+      });
+    };
+    addEventListener("scroll", onScroll, { passive: true });
     return () => {
       solidIo.disconnect();
       spy.disconnect();
+      removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
     };
   }, []);
+
+  // Indicador compartido: un solo hilo dorado que se desliza hasta la sección actual.
+  useLayoutEffect(() => {
+    const list = navRef.current;
+    const mark = markRef.current;
+    if (!list || !mark) return;
+    const place = () => {
+      const a = current ? list.querySelector<HTMLElement>(`a[href="#${current}"]`) : null;
+      if (!a) {
+        mark.style.opacity = "0";
+        return;
+      }
+      mark.style.opacity = "1";
+      mark.style.transform = `translateX(${a.offsetLeft + 12}px) scaleX(${a.offsetWidth - 24})`;
+    };
+    place();
+    const ro = new ResizeObserver(place);
+    ro.observe(list);
+    return () => ro.disconnect();
+  }, [current]);
 
   useEffect(() => {
     if (!open) return;
@@ -47,7 +91,7 @@ export function Header() {
         toggleRef.current?.focus();
       }
       if (e.key === "Tab" && panel) {
-        const items = [toggleRef.current!, ...Array.from(panel.querySelectorAll<HTMLElement>("a"))];
+        const items = [toggleRef.current!, ...Array.from(panel.querySelectorAll<HTMLElement>("a, button"))];
         const i = items.indexOf(document.activeElement as HTMLElement);
         if (e.shiftKey && i <= 0) {
           e.preventDefault();
@@ -67,13 +111,17 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className={`${styles.header} ${solid || open ? styles.solid : ""}`}>
+    <header
+      className={`${styles.header} ${solid || open ? styles.solid : ""}`}
+      data-tucked={(tucked && !open) || undefined}
+      onFocusCapture={() => setTucked(false)}
+    >
       <div className={`wrap ${styles.bar}`}>
         <a href="#inicio" className={styles.brand} aria-label="CEPROC, ir al inicio">
           <img src={lockupReverse} alt="" width={140} height={60} />
         </a>
         <nav aria-label="Secciones" className={styles.nav}>
-          <ul>
+          <ul ref={navRef}>
             {nav.map((n) => (
               <li key={n.href}>
                 <a href={n.href} aria-current={current === n.href.slice(1) ? "location" : undefined}>
@@ -82,6 +130,7 @@ export function Header() {
               </li>
             ))}
           </ul>
+          <span ref={markRef} className={styles.mark} aria-hidden="true" />
         </nav>
         <button type="button" className={`btn btn-gold ${styles.cta}`} onClick={() => openEnroll()}>
           Capacitate con nosotros
@@ -102,17 +151,44 @@ export function Header() {
         </button>
       </div>
       <div id="menu-movil" ref={panelRef} className={styles.panel} hidden={!open}>
-        <nav aria-label="Secciones" className="wrap">
-          <ul>
-            {nav.map((n, i) => (
-              <li key={n.href} style={{ "--i": i } as React.CSSProperties}>
-                <a href={n.href} aria-current={current === n.href.slice(1) ? "location" : undefined} onClick={() => setOpen(false)}>
-                  {n.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className={`wrap ${styles.panelIn}`}>
+          <nav aria-label="Secciones">
+            <ul>
+              {nav.map((n, i) => (
+                <li key={n.href} style={{ "--i": i } as React.CSSProperties}>
+                  <a href={n.href} aria-current={current === n.href.slice(1) ? "location" : undefined} onClick={() => setOpen(false)}>
+                    <span className={styles.panelNum} aria-hidden="true">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    {n.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className={styles.panelFoot} style={{ "--i": nav.length } as React.CSSProperties}>
+            <button
+              type="button"
+              className="btn btn-gold"
+              onClick={() => {
+                setOpen(false);
+                openEnroll();
+              }}
+            >
+              Capacitate con nosotros
+              <ArrowRight size={16} aria-hidden="true" />
+            </button>
+            <div className={styles.panelSocial}>
+              <a href={generalInquiryUrl} target="_blank" rel="noopener noreferrer">
+                <WhatsappLogo size={20} aria-hidden="true" />
+                WhatsApp
+              </a>
+              <a href={contact.instagram.url} target="_blank" rel="noopener noreferrer">
+                <InstagramLogo size={20} aria-hidden="true" />@{contact.instagram.user}
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );

@@ -8,6 +8,7 @@ import { areas, institution } from "../content/ceproc";
 import { heroAreas } from "../content/heroAreas";
 import { photo } from "../content/photos";
 import { useNarrow, useReducedMotion } from "../hooks/media";
+import strataUrl from "../brand/estratos.svg";
 import styles from "./Hero.module.css";
 
 const totalWorkshops = areas.reduce((n, a) => n + a.workshops.length, 0);
@@ -23,8 +24,10 @@ export function Hero() {
       <Backdrop active={active} />
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.copy}>
-          <p className={`eyebrow ${styles.in} ${styles.kicker}`} style={{ "--d": "60ms" } as React.CSSProperties}>
-            CEPROC · Rawson, San Juan
+          <p className={`eyebrow ${styles.in} ${styles.kicker}`} style={{ "--d": "120ms" } as React.CSSProperties}>
+            <span>{institution.short}</span>
+            <span className={styles.kickerRule} aria-hidden="true" />
+            <span>Rawson, San Juan</span>
           </p>
           <h1 id="hero-title" className={styles.title}>
             <span className={styles.line} style={{ "--i": 0 } as React.CSSProperties}>
@@ -34,11 +37,11 @@ export function Hero() {
               <span>construye futuro.</span>
             </span>
           </h1>
-          <p className={`${styles.in} ${styles.lead}`} style={{ "--d": "380ms" } as React.CSSProperties}>
+          <p className={`${styles.in} ${styles.lead}`} style={{ "--d": "520ms" } as React.CSSProperties}>
             <strong className={styles.name}>{institution.name}.</strong> Formación práctica en oficios para jóvenes y
             adultos de Rawson, conectada con el trabajo.
           </p>
-          <div className={`${styles.in} ${styles.actions}`} style={{ "--d": "460ms" } as React.CSSProperties}>
+          <div className={`${styles.in} ${styles.actions}`} style={{ "--d": "620ms" } as React.CSSProperties}>
             <a href="#areas" className="btn btn-gold">
               Ver las capacitaciones
               <ArrowRight size={18} aria-hidden="true" />
@@ -51,32 +54,38 @@ export function Hero() {
         </div>
 
         {/* Núcleo 3D: las siete áreas en órbita alrededor del logo de CEPROC. */}
-        <div className={`${styles.in} ${styles.stage}`} style={{ "--d": "200ms" } as React.CSSProperties}>
+        <div className={`${styles.stageIn} ${styles.stage}`}>
+          <p className={`eyebrow ${styles.coords}`} aria-hidden="true">
+            31°34′ S · 68°32′ O
+          </p>
           <HeroCore onActive={onActive} />
         </div>
 
-        <dl className={`${styles.in} ${styles.facts}`} style={{ "--d": "560ms" } as React.CSSProperties}>
-          <div>
-            <dt className="eyebrow">Áreas de formación</dt>
-            <dd>{areas.length}</dd>
+        <div className={styles.facts}>
+          <dl className={styles.factsList}>
+          <div className={styles.in} style={{ "--d": "760ms" } as React.CSSProperties}>
+            <dt>Áreas de formación</dt>
+            <dd>{String(areas.length).padStart(2, "0")}</dd>
           </div>
-          <div>
-            <dt className="eyebrow">Talleres propuestos</dt>
+          <div className={styles.in} style={{ "--d": "820ms" } as React.CSSProperties}>
+            <dt>Talleres propuestos</dt>
             <dd>{totalWorkshops}</dd>
           </div>
-          <div>
-            <dt className="eyebrow">Departamento</dt>
-            <dd className={styles.place}>Rawson, San Juan</dd>
+          <div className={styles.in} style={{ "--d": "880ms" } as React.CSSProperties}>
+            <dt>Departamento · San Juan</dt>
+            <dd className={styles.place}>Rawson</dd>
           </div>
-          <div className={styles.factLink}>
+          </dl>
+          <div className={`${styles.in} ${styles.factLink}`} style={{ "--d": "940ms" } as React.CSSProperties}>
             <a href="#areas" className={styles.scroll}>
-              <span className="eyebrow">Seguir</span>
-              <ArrowDown size={16} aria-hidden="true" />
+              <span>Recorrer las áreas</span>
+              <span className={styles.scrollIcon}>
+                <ArrowDown size={16} aria-hidden="true" />
+              </span>
             </a>
           </div>
-        </dl>
+        </div>
       </div>
-      <p className={styles.note}>Imágenes ilustrativas · créditos al pie</p>
     </section>
   );
 }
@@ -168,6 +177,7 @@ function Backdrop({ active: activeIn }: { active: number | null }) {
 
   return (
     <div className={styles.backdrop} aria-hidden="true">
+      <div className={styles.settle}>
       <div ref={sceneRef} className={styles.scene}>
         <img
           className={styles.bg}
@@ -196,10 +206,14 @@ function Backdrop({ active: activeIn }: { active: number | null }) {
             />
           ))}
       </div>
+      </div>
       <span className={styles.glow} />
       <span className={`${styles.haze} ${styles.hazeA}`} />
       <span className={`${styles.haze} ${styles.hazeB}`} />
       <span className={styles.shade} />
+      <span className={`strata ${styles.strata}`}>
+        <img src={strataUrl} alt="" />
+      </span>
     </div>
   );
 }

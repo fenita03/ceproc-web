@@ -3,7 +3,7 @@ import { photo } from "./photos";
 
 /**
  * Fuente única del núcleo de la portada: cada área real del documento con su fotografía.
- * Textos y cantidades salen de `ceproc.ts`; las fotos, de `photos.json` (con su crédito).
+ * Textos y cantidades salen de `ceproc.ts`; las fotos, de `photos.json`.
  */
 export const heroAreas = areas.map((a, i) => {
   const p = photo(a.image);
@@ -25,7 +25,6 @@ export const heroAreas = areas.map((a, i) => {
       src: `/img/${a.image}-1600.webp`,
       focus: p.focus as [number, number],
       aspect: p.width / p.height,
-      credit: p.credit,
     },
   };
 });

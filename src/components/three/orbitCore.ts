@@ -73,6 +73,14 @@ export async function createOrbitCore(canvas: HTMLCanvasElement, opts: OrbitOpti
   glow.position.z = -0.2;
   root.add(glow);
   disposables.push(glowTex, glowMat);
+  // Segunda luz, verde y más amplia: las dos tintas del logo iluminan el núcleo.
+  const rimTex = haloTexture("rgba(111,191,142,0.22)", "rgba(111,191,142,0)");
+  const rimMat = new SpriteMaterial({ map: rimTex, transparent: true, depthWrite: false, blending: AdditiveBlending, opacity: 0.55 });
+  const rim = new Sprite(rimMat);
+  rim.scale.setScalar(CORE_R * 7.2);
+  rim.position.set(CORE_R * 0.6, -CORE_R * 0.35, -0.3);
+  root.add(rim);
+  disposables.push(rimTex, rimMat);
 
   // --- órbitas: más opacas por delante, tenues por detrás (alfa por vértice) ---
   const orbitGroups: Group[] = [];

@@ -19,17 +19,12 @@ export const institution = {
   header: "Formación, producción y desarrollo laboral",
 };
 
-export const contact = {
-  phone: "2645239410",
-  phoneDisplay: "264 523-9410",
-  email: "araozsabrina4@gmail.com",
-  place: "Rawson, San Juan",
-};
+export { contact } from "./contact";
 
 /**
- * `photo`: retrato ilustrativo temporal (no es la persona). Para publicar la foto real, reemplazar
- * el archivo con el mismo nombre en public/img/equipo/ (WebP o JPG renombrado, proporción 4:5) y
- * cambiar `photoIsIllustrative` a false.
+ * `photo`: silueta temporal (no es la persona). Para publicar la foto real, reemplazar el archivo
+ * con el mismo nombre en public/img/equipo/ (WebP o JPG renombrado, proporción 4:5) y cambiar
+ * `photoIsPlaceholder` a false.
  */
 export const team = [
   {
@@ -37,14 +32,14 @@ export const team = [
     name: "Sabrina Araoz",
     detail: "Dirección y coordinación institucional del proyecto.",
     photo: "/img/equipo/directora.webp",
-    photoIsIllustrative: true,
+    photoIsPlaceholder: true,
   },
   {
     role: "Vicedirector",
     name: "Marcelo Ortega",
     detail: "Coordinación y acompañamiento de las áreas productivas y técnicas.",
     photo: "/img/equipo/vicedirector.webp",
-    photoIsIllustrative: true,
+    photoIsPlaceholder: true,
   },
 ];
 
@@ -170,7 +165,7 @@ export const areas: Area[] = [
       "Procedimientos seguros para trabajos con equipos y herramientas.",
     ],
     image: "maquinaria",
-    imageAlt: "Camión minero de gran porte en mantenimiento dentro de un taller.",
+    imageAlt: "Excavadora cargando un camión volquete en una cantera.",
   },
   {
     id: "mineros-2",
@@ -212,7 +207,7 @@ export const areas: Area[] = [
       { name: "Juegos industriales", goal: "Diseño y elaboración de propuestas recreativas y productos para espacios institucionales y productivos." },
     ],
     image: "regional",
-    imageAlt: "Manos amasando pan sobre una mesa enharinada.",
+    imageAlt: "Mujer horneando pan en un horno de piedra tradicional.",
   },
   {
     id: "gastronomia",
@@ -264,7 +259,7 @@ export const areas: Area[] = [
       "Que cada participante pueda completar productos, comprender materiales y herramientas, mejorar terminaciones, organizar su trabajo y calcular de manera básica materiales y tiempos de producción.",
     ],
     image: "textil",
-    imageAlt: "Manos tejiendo en un telar con hilos azules.",
+    imageAlt: "Manos tejiendo hilos de colores en un telar de madera.",
   },
   {
     id: "creativa",
@@ -319,7 +314,7 @@ export const areas: Area[] = [
       "Cálculo inicial de materiales, tiempos y costos.",
     ],
     image: "carpinteria",
-    imageAlt: "Carpinteros trabajando con máquinas en un taller de madera.",
+    imageAlt: "Dos carpinteros trabajando juntos en un taller.",
   },
 ];
 

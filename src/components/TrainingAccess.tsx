@@ -1,5 +1,7 @@
 import { GraduationCap } from "@phosphor-icons/react/dist/csr/GraduationCap";
 import { Suspense, lazy, useEffect, useState } from "react";
+import { WhatsappLogo } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
+import { contact, generalInquiryUrl } from "../content/contact";
 import { ENROLL_EVENT, openEnroll, type EnrollPreset } from "../hooks/enroll";
 import styles from "./TrainingAccess.module.css";
 
@@ -43,36 +45,49 @@ export function TrainingAccess() {
 }
 
 /**
- * Acceso flotante: visible en todo el recorrido. Solo se aparta mientras la portada muestra sus
- * propios botones, para no duplicar la acción ni tapar el núcleo 3D.
+ * Acceso flotante en dos partes: «Capacitate» abre el asistente y el ícono abre WhatsApp directo.
+ * Se aparta sobre la portada (tiene sus propios botones) y mientras Contacto está en pantalla
+ * (ya muestra los mismos accesos), para no duplicar acciones ni tapar contenido.
  */
 function Fab({ hidden }: { hidden: boolean }) {
   const [onHero, setOnHero] = useState(true);
+  const [onContact, setOnContact] = useState(false);
   useEffect(() => {
     const hero = document.getElementById("inicio");
-    if (!hero) return;
-    const io = new IntersectionObserver(([e]) => setOnHero(e.intersectionRatio > 0.6), { threshold: [0, 0.6, 1] });
-    io.observe(hero);
+    const contacto = document.getElementById("contacto");
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.target === hero) setOnHero(e.intersectionRatio > 0.6);
+          if (e.target === contacto) setOnContact(e.isIntersecting);
+        }
+      },
+      { threshold: [0, 0.6, 1] },
+    );
+    if (hero) io.observe(hero);
+    if (contacto) io.observe(contacto);
     return () => io.disconnect();
   }, []);
-  const off = hidden || onHero;
+  const off = hidden || onHero || onContact;
   return (
-    <button
-      type="button"
-      className={styles.fab}
-      data-off={off || undefined}
-      aria-hidden={off || undefined}
-      tabIndex={off ? -1 : 0}
-      onPointerEnter={() => void load()}
-      onClick={() => openEnroll()}
-    >
-      <span className={styles.icon} aria-hidden="true">
-        <GraduationCap size={18} />
-      </span>
-      <span className={styles.long}>Capacitate con nosotros</span>
-      <span className={styles.short} aria-hidden="true">
-        Capacitate
-      </span>
-    </button>
+    <div className={styles.fab} data-off={off || undefined} aria-hidden={off || undefined} role="group" aria-label="Accesos rápidos">
+      <button type="button" className={styles.main} tabIndex={off ? -1 : 0} onPointerEnter={() => void load()} onClick={() => openEnroll()}>
+        <GraduationCap size={18} aria-hidden="true" className={styles.mainIcon} />
+        <span className={styles.long}>Capacitate con nosotros</span>
+        <span className={styles.short} aria-hidden="true">
+          Capacitate
+        </span>
+      </button>
+      <a
+        href={generalInquiryUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.wa}
+        tabIndex={off ? -1 : 0}
+        aria-label={`Escribir a CEPROC por WhatsApp (${contact.phoneDisplay})`}
+      >
+        <WhatsappLogo size={20} aria-hidden="true" />
+      </a>
+    </div>
   );
 }
