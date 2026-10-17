@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>CEPROC · Centro Productivo de Capacitación en Oficios Regionales y Minería</title>
+    <meta
+      name="description"
+      content="CEPROC es una propuesta de formación práctica, producción y desarrollo laboral en Rawson, San Juan: oficios mineros, industriales, regionales, gastronómicos, textiles y de servicios."
+    />
+    <meta name="theme-color" content="#06111f" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content="CEPROC · Formación que construye futuro" />
+    <meta
+      property="og:description"
+      content="Centro Productivo de Capacitación en Oficios Regionales y Minería · Rawson, San Juan."
+    />
+    <meta property="og:image" content="/og.png" />
+    <script>
+      // Activa los estados iniciales de animación solo con JS; el scroll suave, después de cargar.
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        addEventListener("load", function () {
+          setTimeout(function () {
+            d.classList.add("smooth");
+          }, 300);
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

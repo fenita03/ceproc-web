@@ -1,0 +1,42 @@
+
+escritorio 1920×1080
+  entrada (3 s)     53.3 fps · p95 16.8 ms · 1.9% lentos
+  cambios (1.ª vez) 60 fps · p95 16.7 ms · 0% lentos
+  cambios de área   60 fps · p95 16.8 ms · 0% lentos
+  scroll            59.7 fps · p95 16.8 ms · 0.4% lentos
+  LCP 644 ms · paisaje cargado 85 ms · tareas largas 3 · heap JS 10 MB · errores 0
+
+portátil 1366×768
+  entrada (3 s)     55.3 fps · p95 16.8 ms · 2.3% lentos
+  cambios (1.ª vez) 60 fps · p95 16.7 ms · 0% lentos
+  cambios de área   60 fps · p95 16.7 ms · 0% lentos
+  scroll            60 fps · p95 16.8 ms · 0% lentos
+  LCP 488 ms · paisaje cargado 60 ms · tareas largas 3 · heap JS 10 MB · errores 0
+
+retina 1440×900 @2x
+  entrada (3 s)     53.4 fps · p95 16.8 ms · 4.1% lentos
+  cambios (1.ª vez) 59.4 fps · p95 16.8 ms · 1% lentos
+  cambios de área   58.2 fps · p95 16.8 ms · 3.2% lentos
+  scroll            53.4 fps · p95 33.3 ms · 11% lentos
+  LCP 520 ms · paisaje cargado 163 ms · tareas largas 3 · heap JS 10 MB · errores 0
+
+tablet 768×1024 · CPU ×2
+  entrada (3 s)     47.7 fps · p95 16.8 ms · 4.2% lentos
+  cambios (1.ª vez) 59.5 fps · p95 16.8 ms · 0.9% lentos
+  cambios de área   60 fps · p95 16.7 ms · 0% lentos
+  scroll            60 fps · p95 16.7 ms · 0% lentos
+  LCP 580 ms · paisaje cargado 148 ms · tareas largas 6 · heap JS 10 MB · errores 0
+
+móvil 390×844 @3x · CPU ×4
+  entrada (3 s)     44.7 fps · p95 33.2 ms · 5% lentos
+  cambios (1.ª vez) 51.8 fps · p95 49.9 ms · 10.2% lentos
+  cambios de área   55.5 fps · p95 33.3 ms · 5.4% lentos
+  scroll            57.8 fps · p95 16.8 ms · 3.7% lentos
+  LCP 1088 ms · paisaje cargado 250 ms · tareas largas 6 · heap JS 10 MB · errores 0
+
+móvil 360×800 @3x · CPU ×4
+  entrada (3 s)     46.1 fps · p95 33.3 ms · 6.3% lentos
+  cambios (1.ª vez) 50.6 fps · p95 33.4 ms · 14% lentos
+  cambios de área   51.8 fps · p95 33.4 ms · 13.1% lentos
+  scroll            58.2 fps · p95 16.8 ms · 2.9% lentos
+  LCP 1256 ms · paisaje cargado 330 ms · tareas largas 6 · heap JS 10 MB · errores 0

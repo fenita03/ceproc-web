@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T00:00:00Z",
+  "title": "Design System: CEPROC",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "neutral",
+        "displayName": "Azul Institucional",
+        "canonical": "#0b2545",
+        "tonalRamp": [
+          "#030b15",
+          "#06142a",
+          "#0b2545",
+          "#1a3a63",
+          "#35567f",
+          "#5a789c",
+          "#8ea4bf",
+          "#cbd6e3"
+        ]
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Verde Formación",
+        "canonical": "#1f6b3e",
+        "tonalRamp": [
+          "#0a2414",
+          "#123d24",
+          "#1f6b3e",
+          "#2f8752",
+          "#4ba26c",
+          "#6fbf8e",
+          "#a2d7b5",
+          "#d6eedf"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Dorado del Arco",
+        "canonical": "#c49a45",
+        "tonalRamp": [
+          "#3a2a0b",
+          "#5c4416",
+          "#7f5f1c",
+          "#a37d33",
+          "#c49a45",
+          "#d6ae5c",
+          "#e6cd96",
+          "#f5ead2"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Noche",
+        "canonical": "#06111f",
+        "tonalRamp": [
+          "#06111f",
+          "#0a1a2f",
+          "#10243f",
+          "#2a3c58",
+          "#56647a",
+          "#7d8ba0",
+          "#a9b6c8",
+          "#e9eef6"
+        ]
+      },
+      "night-2": {
+        "role": "neutral",
+        "displayName": "Noche 2",
+        "canonical": "#0a1a2f"
+      },
+      "night-3": {
+        "role": "neutral",
+        "displayName": "Noche 3",
+        "canonical": "#10243f"
+      },
+      "on-night": {
+        "role": "neutral",
+        "displayName": "Texto Noche",
+        "canonical": "#e9eef6"
+      },
+      "on-night-2": {
+        "role": "neutral",
+        "displayName": "Texto Noche 2",
+        "canonical": "#a9b6c8"
+      },
+      "on-night-3": {
+        "role": "neutral",
+        "displayName": "Texto Noche 3",
+        "canonical": "#7d8ba0"
+      },
+      "line-night": {
+        "role": "neutral",
+        "displayName": "Hilo Noche",
+        "canonical": "rgba(196, 214, 240, 0.1)"
+      },
+      "line-night-2": {
+        "role": "neutral",
+        "displayName": "Hilo Noche 2",
+        "canonical": "rgba(196, 214, 240, 0.18)"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#f5f3ee",
+        "tonalRamp": [
+          "#35435a",
+          "#56647a",
+          "#8f8a7e",
+          "#c9c3b6",
+          "#e4dfd3",
+          "#ebe7de",
+          "#f5f3ee",
+          "#fffdf8"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Papel 2",
+        "canonical": "#ebe7de"
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Tinta 2",
+        "canonical": "#35435a"
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Tinta 3",
+        "canonical": "#56647a"
+      },
+      "line-paper": {
+        "role": "neutral",
+        "displayName": "Hilo Papel",
+        "canonical": "rgba(11, 37, 69, 0.12)"
+      },
+      "line-paper-2": {
+        "role": "neutral",
+        "displayName": "Hilo Papel 2",
+        "canonical": "rgba(11, 37, 69, 0.22)"
+      },
+      "gold-on-night": {
+        "role": "primary",
+        "displayName": "Dorado Noche",
+        "canonical": "#d6ae5c"
+      },
+      "gold-on-paper": {
+        "role": "primary",
+        "displayName": "Dorado Papel",
+        "canonical": "#7f5f1c"
+      },
+      "green-on-night": {
+        "role": "secondary",
+        "displayName": "Verde Noche",
+        "canonical": "#6fbf8e"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titular de portada en dos líneas; la segunda en dorado noche."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de sección."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Enunciados de sección y subtítulos de bloque."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Bajadas de portada y aperturas, 44-46ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Lectura en Geist, 44-70ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Números de secuencia, metadatos y rótulos de dato en cifras tabulares."
+      }
+    },
+    "shadows": [
+      {
+        "name": "gold-glow",
+        "value": "0 0 0 1px rgba(255,255,255,0.18) inset, 0 10px 26px -12px rgba(196,154,69,0.55)",
+        "purpose": "Botón dorado."
+      },
+      {
+        "name": "hairline-inset",
+        "value": "inset 0 0 0 1px rgba(196, 214, 240, 0.18)",
+        "purpose": "Borde de tarjetas, paneles, botón ghost, chips e iconos."
+      },
+      {
+        "name": "active-halo",
+        "value": "0 0 0 6px rgba(214,174,92,0.14)",
+        "purpose": "Nodo encendido del circuito."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Entradas y cambios de estado."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "Pulso del botón de scroll de la portada."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity + translateY(14px), 600ms ease-out",
+        "purpose": "Aparición al entrar en pantalla; con movimiento reducido, fundido lineal de 240ms."
+      },
+      {
+        "name": "hub-spring",
+        "value": "k 0.16, amortiguación 0.62, imán 150",
+        "purpose": "Indicador del núcleo que sigue al cursor; con movimiento reducido salta al destino."
+      },
+      {
+        "name": "press",
+        "value": "scale(0.97), 160ms ease-out",
+        "purpose": "Botón presionado."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "panel-nav",
+        "value": "1000px"
+      },
+      {
+        "name": "hero-stack",
+        "value": "960px"
+      },
+      {
+        "name": "pathway-vertical",
+        "value": "860px"
+      },
+      {
+        "name": "hub-chips",
+        "value": "760px"
+      },
+      {
+        "name": "single-column",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón dorado",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "Acción principal sobre noche.",
+      "html": "<button class=\"ds-btn-gold\">Conocé CEPROC <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></button>",
+      "css": ".ds-btn-gold { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #c49a45; color: #06111f; font-family: 'Geist Variable', Geist, system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; cursor: pointer; box-shadow: 0 0 0 1px rgba(255,255,255,0.18) inset, 0 10px 26px -12px rgba(196,154,69,0.55); transition: background-color 200ms cubic-bezier(0.23,1,0.32,1), transform 160ms cubic-bezier(0.23,1,0.32,1); } .ds-btn-gold svg { transition: transform 220ms cubic-bezier(0.23,1,0.32,1); } .ds-btn-gold:hover { background: #d3ab5b; } .ds-btn-gold:hover svg { transform: translateX(3px); } .ds-btn-gold:active { transform: scale(0.97); } .ds-btn-gold:focus-visible { outline: 2px solid #d6ae5c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón ghost",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Acción secundaria sobre noche.",
+      "html": "<button class=\"ds-btn-ghost\">Explorá las áreas</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: rgba(255,255,255,0.04); color: #e9eef6; font-family: 'Geist Variable', Geist, system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(196,214,240,0.18); transition: background-color 200ms cubic-bezier(0.23,1,0.32,1), box-shadow 200ms cubic-bezier(0.23,1,0.32,1), transform 160ms cubic-bezier(0.23,1,0.32,1); } .ds-btn-ghost:hover { background: rgba(255,255,255,0.08); box-shadow: inset 0 0 0 1px rgba(214,174,92,0.6); } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid #d6ae5c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Enlaces de cabecera con subrayado dorado en la sección actual.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Quiénes somos</a><a href=\"#\" aria-current=\"location\">Áreas</a><a href=\"#\">Contacto</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 4px; background: #06111f; padding: 12px; } .ds-nav a { position: relative; display: block; padding: 8px 12px; border-radius: 6px; font-family: 'Geist Variable', Geist, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #a9b6c8; text-decoration: none; transition: color 200ms cubic-bezier(0.23,1,0.32,1); } .ds-nav a::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 3px; height: 1px; background: #d6ae5c; transform: scaleX(0); transition: transform 260ms cubic-bezier(0.23,1,0.32,1); } .ds-nav a:hover, .ds-nav a[aria-current] { color: #fff; } .ds-nav a[aria-current]::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 2px solid #d6ae5c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Chip de área",
+      "kind": "chip",
+      "refersTo": "chip-area",
+      "description": "Fila táctil de áreas en pantallas angostas.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-selected=\"true\"><span>01</span>Maquinaria y mecánica</button><button class=\"ds-chip\" aria-selected=\"false\"><span>02</span>Seguridad y servicios</button></div>",
+      "css": ".ds-chips { display: flex; gap: 8px; background: #06111f; padding: 12px; } .ds-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: rgba(255,255,255,0.04); box-shadow: inset 0 0 0 1px rgba(196,214,240,0.18); color: #a9b6c8; font-family: 'Geist Variable', Geist, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background-color 220ms cubic-bezier(0.23,1,0.32,1), color 220ms cubic-bezier(0.23,1,0.32,1); } .ds-chip span { font-size: 0.75rem; font-weight: 600; color: #7d8ba0; font-variant-numeric: tabular-nums; } .ds-chip[aria-selected='true'] { background: #d6ae5c; color: #06111f; box-shadow: none; } .ds-chip[aria-selected='true'] span { color: #06111f; } .ds-chip:focus-visible { outline: 2px solid #d6ae5c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Tarjeta noche",
+      "kind": "card",
+      "refersTo": "card-night",
+      "description": "Panel o tarjeta sobre noche con borde interno de 1 px.",
+      "html": "<div class=\"ds-card\"><h3>Maquinaria y mecánica</h3><p>Texto secundario sobre noche.</p></div>",
+      "css": ".ds-card { border-radius: 14px; background: #0a1a2f; box-shadow: inset 0 0 0 1px rgba(196,214,240,0.18); padding: 24px; color: #a9b6c8; font-family: 'Geist Variable', Geist, system-ui, sans-serif; font-size: 0.9375rem; } .ds-card h3 { margin: 0 0 12px; font-family: 'Montserrat Variable', Montserrat, sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; color: #fff; } .ds-card p { margin: 0; }"
+    },
+    {
+      "name": "Lista de papel",
+      "kind": "custom",
+      "description": "Lectura sobre papel: filete de 2 px y filas con hilo, viñeta verde de 10 x 1 px.",
+      "html": "<ul class=\"ds-paper-list\"><li>Primera fila de lectura</li><li>Segunda fila de lectura</li></ul>",
+      "css": ".ds-paper-list { margin: 0; padding: 16px 0 0; list-style: none; background: #f5f3ee; border-top: 2px solid #0b2545; font-family: 'Geist Variable', Geist, system-ui, sans-serif; } .ds-paper-list li { position: relative; padding: 12px 0 12px 22px; border-bottom: 1px solid rgba(11,37,69,0.12); color: #35435a; font-size: 0.9375rem; } .ds-paper-list li::before { content: ''; position: absolute; left: 0; top: 1.35em; width: 10px; height: 1px; background: #1f6b3e; }"
+    },
+    {
+      "name": "Paso del circuito",
+      "kind": "custom",
+      "description": "Nodo de 15 px, número tabular y paso en Montserrat; encendido en dorado con halo.",
+      "html": "<ol class=\"ds-path\"><li data-on=\"true\"><span class=\"ds-node\"></span><p class=\"ds-num\">01</p><p class=\"ds-step\">Capacitación</p></li><li><span class=\"ds-node\"></span><p class=\"ds-num\">02</p><p class=\"ds-step\">Selección</p></li></ol>",
+      "css": ".ds-path { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 0; padding: 20px; list-style: none; background: #06111f; font-family: 'Geist Variable', Geist, system-ui, sans-serif; } .ds-node { display: block; width: 15px; height: 15px; border-radius: 50%; background: #0a1a2f; box-shadow: inset 0 0 0 1px rgba(196,214,240,0.18); } .ds-path li[data-on='true'] .ds-node { background: #d6ae5c; box-shadow: inset 0 0 0 1px #d6ae5c, 0 0 0 6px rgba(214,174,92,0.14); } .ds-num { margin: 22px 0 0; font-size: 0.8125rem; font-weight: 600; color: #7d8ba0; font-variant-numeric: tabular-nums; } .ds-path li[data-on='true'] .ds-num { color: #d6ae5c; } .ds-step { margin: 6px 0 0; font-family: 'Montserrat Variable', Montserrat, sans-serif; font-size: 1.1875rem; font-weight: 700; letter-spacing: -0.02em; color: #a9b6c8; } .ds-path li[data-on='true'] .ds-step { color: #fff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Núcleo",
+    "overview": "El logo real de CEPROC es el centro de gravedad del sistema: aparece extruido en 3D en el centro del núcleo fotográfico de la portada, plano en el centro del núcleo de Áreas y como lockup en cabecera y pie. Todo lo demás se organiza a su alrededor con hilos de 1 px: órbitas, conexiones, rieles y separadores. La paleta no es elegida, es heredada: las tres tintas del logo (azul, verde, dorado) generan una noche azul para las superficies oscuras y un papel cálido para la lectura editorial.\n\nEl sitio alterna dos superficies. La noche (Portada, Proyecto, Áreas, Contacto) lleva la interacción y la profundidad; el papel (Quiénes somos, Articulación, Beneficios, Seguridad, pie) lleva la lectura larga, con listas separadas por hilos y sin tarjetas. El dorado es el color del estado activo y de la acción principal; el verde marca lo propio de la formación (roles, metadatos de área, viñetas de lista).\n\nLa densidad es institucional y sobria: titulares de Montserrat ajustados, lectura en Geist con medidas de 44–70ch, y movimiento que explica (el indicador que sigue al cursor, el riel que se llena con el scroll) en lugar de decorar.",
+    "keyCharacteristics": [
+      "Dos superficies: noche azul (#06111f) y papel cálido (#f5f3ee), alternadas por sección.",
+      "Dorado como único color de estado activo; verde como color de formación.",
+      "Hilos de 1 px para órbitas, conexiones, rieles y divisores; bordes como `inset` box-shadow.",
+      "Radios de 8 y 14 px en superficies; píldora en botones y chips.",
+      "Numeración de dos dígitos solo en elementos secuenciales (circuito, áreas, objetivos).",
+      "Movimiento por `transform` y `opacity`, con alternativa para `prefers-reduced-motion`."
+    ],
+    "rules": [
+      {
+        "name": "La Regla del Logo como Fuente",
+        "body": "Ningún tono nuevo entra al sistema si no deriva de las tres tintas del logo; las superficies son el azul llevado a noche o el blanco llevado a papel.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Dorado Activo",
+        "body": "El dorado significa \"esto está activo o es la acción principal\". No se usa como decoración neutra.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Acento con Contraste",
+        "body": "Sobre texto y hilos finos se usa siempre la variante `-on-night` o `-on-paper`, nunca la tinta cruda del logo.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Titular Compacto",
+        "body": "h1–h3 en Montserrat 700, interlineado 1,04, tracking −0,03em y `text-wrap: balance`; la portada aprieta a −0,04em.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla de la Secuencia Numerada",
+        "body": "El número de dos dígitos (`01`, `02`…) en cifras tabulares aparece solo donde hay orden real: pasos del circuito, las siete áreas (núcleo, chips y catálogo) y los objetivos específicos. Nunca como rótulo decorativo de sección.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla del Hilo",
+        "body": "Los límites se trazan con hilos de 1 px (`vector-effect: non-scaling-stroke` en SVG), no con sombras.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do derivar cualquier color nuevo de navy, green o gold, y usar `gold-on-night` / `gold-on-paper` / `green-on-night` sobre texto e hilos finos.",
+      "Do alternar noche para interacción y papel para lectura, usando las clases de superficie `on-paper` y `on-paper-2`.",
+      "Do dibujar órbitas, conexiones, rieles y divisores con hilos de 1 px y bordes como `inset` box-shadow.",
+      "Do mover solo con `transform` y `opacity` y curvas `--ease-out` (cubic-bezier(0.23, 1, 0.32, 1)); dar a cada animación una alternativa bajo `prefers-reduced-motion: reduce` (fundido lineal o sin movimiento).",
+      "Do limitar los efectos de hover a `(hover: hover) and (pointer: fine)` y garantizar selección táctil equivalente.",
+      "Do mantener el contenido visible sin JS: las apariciones al entrar en pantalla solo ocultan cuando existe la clase `js`.",
+      "Do usar el logo real (lockup o isotipo) como núcleo; nunca un sustituto."
+    ],
+    "donts": [
+      "Don't poner rótulos tipo kicker o eyebrow sobre los títulos de sección.",
+      "Don't numerar lo que no es una secuencia: los números de dos dígitos quedan para el circuito, las áreas y los objetivos específicos.",
+      "Don't inventar cifras, contadores o métricas: los datos visibles salen del documento oficial (7 áreas, 56 talleres, Rawson).",
+      "Don't usar el logo negro y dorado de la portada del PDF.",
+      "Don't convertir el papel en una grilla de tarjetas; sobre papel se lee en listas y filas con hilos.",
+      "Don't usar sombras duras desplazadas ni bordes gruesos fuera del filete de 2 px de las listas de papel."
+    ]
+  }
+}

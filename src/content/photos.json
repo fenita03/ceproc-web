@@ -1,0 +1,140 @@
+{
+ "maquinaria": {
+  "title": "Haul truck under repair at Brockman 4, September 2018.jpg",
+  "author": "Calistemon",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Haul_truck_under_repair_at_Brockman_4,_September_2018.jpg",
+  "width": 3072,
+  "height": 2304,
+  "widths": [
+   640,
+   1080,
+   1600
+  ],
+  "focus": [
+   0.45,
+   0.45
+  ]
+ },
+ "seguridad": {
+  "title": "Construction worker harness (9253634989).jpg",
+  "author": "National Institute for Occupational Safety and Health (NIOSH) from USA",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Construction_worker_harness_(9253634989).jpg",
+  "width": 3888,
+  "height": 2592,
+  "widths": [
+   640,
+   1080,
+   1600
+  ],
+  "focus": [
+   0.62,
+   0.35
+  ]
+ },
+ "regional": {
+  "title": "Baker woman's hands kneading bread dough.jpg",
+  "author": "Shixart1985",
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Baker_woman%27s_hands_kneading_bread_dough.jpg",
+  "width": 5154,
+  "height": 3441,
+  "widths": [
+   640,
+   1080,
+   1600
+  ],
+  "focus": [
+   0.55,
+   0.55
+  ]
+ },
+ "cocina": {
+  "title": "Chefs at Work (Unsplash).jpg",
+  "author": "Michael Browning michaelwb",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chefs_at_Work_(Unsplash).jpg",
+  "width": 5184,
+  "height": 3456,
+  "widths": [
+   640,
+   1080,
+   1600
+  ],
+  "focus": [
+   0.45,
+   0.4
+  ]
+ },
+ "textil": {
+  "title": "Ishigaki Island minsa.jpg",
+  "author": "norio nakayama",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ishigaki_Island_minsa.jpg",
+  "width": 4000,
+  "height": 3000,
+  "widths": [
+   640,
+   1080,
+   1600
+  ],
+  "focus": [
+   0.45,
+   0.5
+  ]
+ },
+ "creativa": {
+  "title": "Making pottery (Unsplash).jpg",
+  "author": "Jared Sluyter jaredsluyter",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Making_pottery_(Unsplash).jpg",
+  "width": 5519,
+  "height": 3679,
+  "widths": [
+   640,
+   1080,
+   1600
+  ],
+  "focus": [
+   0.55,
+   0.55
+  ]
+ },
+ "carpinteria": {
+  "title": "Ménuisiers au travail 2.jpg",
+  "author": "Minette Lontsie",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:M%C3%A9nuisiers_au_travail_2.jpg",
+  "width": 4608,
+  "height": 3072,
+  "widths": [
+   640,
+   1080,
+   1600
+  ],
+  "focus": [
+   0.4,
+   0.6
+  ]
+ },
+ "paisaje": {
+  "title": "Embalse Ullum desde cerro Tres María, provincia de San Juan, Argentina.jpg",
+  "author": "Enrique Guardia",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Embalse_Ullum_desde_cerro_Tres_Mar%C3%ADa,_provincia_de_San_Juan,_Argentina.jpg",
+  "width": 4128,
+  "height": 1956,
+  "widths": [
+   640,
+   1080,
+   1600,
+   2400,
+   3200
+  ],
+  "focus": [
+   0.42,
+   0.5
+  ]
+ }
+}

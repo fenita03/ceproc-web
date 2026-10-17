@@ -1,0 +1,146 @@
+.section {
+  padding-block: var(--section-y);
+  background:
+    radial-gradient(50% 50% at 80% 20%, rgba(196, 154, 69, 0.1), rgba(6, 17, 31, 0) 70%),
+    var(--night);
+  color: var(--on-night);
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.2rem + 4.4vw, 5.25rem);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  max-width: 14ch;
+}
+
+.tagline [data-w] {
+  color: rgba(233, 238, 246, 0.24);
+  transition: color 480ms var(--ease-out);
+}
+
+.tagline [data-w][data-on="true"] {
+  color: #fff;
+}
+
+.tagline > span:last-child [data-w][data-on="true"] {
+  color: var(--gold-on-night);
+}
+
+.sep {
+  color: var(--gold-on-night);
+}
+
+.grid {
+  margin-top: clamp(56px, 8vw, 104px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--line-night-2);
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.title {
+  font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem);
+  color: #fff;
+}
+
+.text {
+  margin-top: 8px;
+  color: var(--on-night-2);
+  font-size: 1.0625rem;
+  max-width: 52ch;
+}
+
+.paths {
+  display: grid;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.paths > div + div {
+  padding-top: 24px;
+  border-top: 1px solid var(--line-night);
+}
+
+.paths :global(.btn) {
+  margin-top: 18px;
+}
+
+.pathTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.card {
+  border-radius: var(--radius);
+  background: var(--night-2);
+  box-shadow: inset 0 0 0 1px var(--line-night-2);
+  padding: clamp(18px, 2.4vw, 28px);
+}
+
+.channels li + li {
+  border-top: 1px solid var(--line-night);
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-block: 14px;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line-night-2);
+  color: var(--gold-on-night);
+  transition: background-color 200ms var(--ease-out);
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--on-night-3);
+}
+
+.value {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.channel:hover .icon {
+    background: rgba(214, 174, 92, 0.14);
+  }
+  a.channel:hover .value {
+    text-decoration: underline;
+    text-decoration-color: var(--gold-on-night);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tagline [data-w] {
+    transition: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

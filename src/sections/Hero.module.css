@@ -1,0 +1,373 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: max(100svh, 680px);
+  display: flex;
+  padding-top: var(--header-h);
+  background: var(--night);
+}
+
+.inner {
+  flex: 1;
+}
+
+/* --- Fondo: paisaje con parallax, bruma y luz cálida --- */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.scene {
+  position: absolute;
+  inset: -3% -2% -14%;
+  will-change: transform;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition:
+    opacity 360ms var(--ease-out),
+    transform 900ms var(--ease-out);
+}
+
+.bg[data-on] {
+  opacity: 1;
+  transform: none;
+}
+
+.bg[data-state="off"] {
+  visibility: hidden;
+}
+
+/* Con un área activa la foto gana protagonismo; la luz cálida del paisaje se apaga. */
+.hero:not([data-active="none"]) .glow {
+  opacity: 0;
+  animation: none;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(30% 36% at 38% 34%, rgba(255, 196, 120, 0.2), rgba(255, 196, 120, 0) 70%);
+  mix-blend-mode: screen;
+  animation: breathe 9s var(--ease-in-out) infinite alternate;
+}
+
+@keyframes breathe {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.haze {
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.hazeA {
+  top: 46%;
+  height: 32%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(170, 190, 215, 0.12), rgba(170, 190, 215, 0) 70%);
+  animation: drift 48s linear infinite alternate;
+}
+
+.hazeB {
+  top: 60%;
+  height: 26%;
+  background: radial-gradient(45% 50% at 40% 50%, rgba(214, 174, 120, 0.08), rgba(214, 174, 120, 0) 70%);
+  animation: drift 64s linear -20s infinite alternate-reverse;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-6%, 0, 0);
+  }
+  to {
+    transform: translate3d(6%, 0, 0);
+  }
+}
+
+/* Velo: lectura a la izquierda, paisaje vivo a la derecha, fundido hacia la sección siguiente. */
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 17, 31, 0.9) 0%, rgba(6, 17, 31, 0.66) 38%, rgba(6, 17, 31, 0.18) 70%, rgba(6, 17, 31, 0.28) 100%),
+    linear-gradient(180deg, rgba(6, 17, 31, 0.72) 0%, rgba(6, 17, 31, 0.04) 22%, rgba(6, 17, 31, 0.1) 62%, var(--night) 100%);
+}
+
+/* --- Retícula: 12 columnas. Texto 1–7, logo 9–12, datos a todo el ancho abajo. --- */
+.inner {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: 1fr auto;
+  column-gap: 24px;
+  padding-block: clamp(48px, 9vh, 120px) clamp(24px, 4vh, 40px);
+}
+
+.copy {
+  grid-column: 1 / span 5;
+  align-self: center;
+  container-type: inline-size;
+}
+
+.kicker {
+  color: var(--on-night-2);
+}
+
+/* Titular: Geist 500, interletrado ajustado; la jerarquía la dan el tamaño y la tensión. */
+.title {
+  margin-top: 28px;
+  font-size: min(5.5rem, 13.4cqi);
+  font-weight: 500;
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  color: #fff;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.line > span {
+  display: block;
+  animation: lineUp 700ms var(--ease-out) both;
+  animation-delay: calc(140ms + var(--i) * 90ms);
+}
+
+.line:last-child > span {
+  color: var(--gold-on-night);
+}
+
+@keyframes lineUp {
+  from {
+    transform: translateY(108%);
+  }
+}
+
+.in {
+  animation: rise 560ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.lead {
+  margin-top: 28px;
+  max-width: 46ch;
+  font-size: var(--step-lead);
+  line-height: 1.55;
+  color: var(--on-night-2);
+}
+
+.name {
+  font-weight: 500;
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+/* Núcleo orbital a la derecha: tan grande como permite la altura de la pantalla. */
+.stage {
+  --ring-max: min(600px, calc(100svh - var(--header-h) - 360px));
+  grid-column: 6 / -1;
+  align-self: center;
+  min-width: 0;
+  margin-right: calc(var(--gutter) * -0.6);
+}
+
+/* Franja de datos: «baldosas» de instrumento separadas por hilos de 1 px. */
+.facts {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(24px, 4vh, 48px);
+  border-top: 1px solid var(--line-night-2);
+}
+
+.facts > div {
+  padding: 20px 20px 0 0;
+}
+
+.facts > div + div {
+  padding-left: 20px;
+  border-left: 1px solid var(--line-night);
+}
+
+.facts dt {
+  color: var(--on-night-2);
+}
+
+.facts dt::before {
+  display: none;
+}
+
+.facts dd {
+  margin-top: 14px;
+  font-size: clamp(1.75rem, 1.3rem + 1.4vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.facts .place {
+  font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.625rem);
+  line-height: 1.6;
+}
+
+.factLink {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  color: var(--on-night-2);
+  text-decoration: none;
+  transition: color 180ms var(--ease-std);
+}
+
+.scroll .eyebrow::before {
+  display: none;
+}
+
+.scroll svg {
+  animation: nudge 2200ms var(--ease-in-out) 1600ms 3;
+}
+
+@keyframes nudge {
+  0%,
+  60%,
+  100% {
+    transform: none;
+  }
+  30% {
+    transform: translateY(4px);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .scroll:hover {
+    color: #fff;
+  }
+}
+
+.note {
+  position: absolute;
+  right: var(--gutter);
+  top: calc(var(--header-h) + 14px);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--on-night-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line > span,
+  .in,
+  .glow,
+  .haze,
+  .scroll svg {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg {
+    transform: none;
+    transition: opacity 200ms linear;
+  }
+}
+
+/* Tablet: el núcleo pasa debajo del texto. */
+@media (max-width: 1100px) {
+  .copy {
+    grid-column: 1 / -1;
+  }
+  .stage {
+    --ring-max: min(520px, 100%);
+    grid-column: 1 / -1;
+    margin: 40px 0 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero {
+    min-height: 0;
+  }
+  .inner {
+    padding-top: 40px;
+  }
+  .title {
+    font-size: min(4.5rem, 13.6cqi);
+    margin-top: 20px;
+  }
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .facts > div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .facts > div:nth-child(n + 3) {
+    border-top: 1px solid var(--line-night);
+    margin-top: 20px;
+  }
+  .factLink {
+    display: none;
+  }
+  .note {
+    top: auto;
+    bottom: 10px;
+    left: var(--gutter);
+    right: auto;
+  }
+  .shade {
+    background: linear-gradient(180deg, rgba(6, 17, 31, 0.86) 0%, rgba(6, 17, 31, 0.7) 45%, rgba(6, 17, 31, 0.62) 75%, var(--night) 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .facts dd {
+    font-size: 1.75rem;
+  }
+  .facts > div:nth-child(2) {
+    padding-left: 16px;
+  }
+}

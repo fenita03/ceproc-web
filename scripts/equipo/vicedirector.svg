@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <radialGradient id="bg" cx="0.26" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#e9b873"/><stop offset="0.18" stop-color="#8a6a4c"/><stop offset="0.45" stop-color="#1d3355"/><stop offset="1" stop-color="#050c18"/>
+    </radialGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0" stop-color="#1c2438"/><stop offset="0.35" stop-color="#0c1220"/><stop offset="1" stop-color="#05080f"/>
+    </linearGradient>
+    <linearGradient id="rimMask" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff"/><stop offset="0.42" stop-color="#fff" stop-opacity="0.15"/><stop offset="0.55" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.25" stop-color="#fff"/><stop offset="0.9" stop-color="#fff" stop-opacity="0.15"/></linearGradient>
+    <mask id="rim"><rect width="800" height="1000" fill="url(#rimMask)"/></mask>
+    <mask id="rimV"><rect width="800" height="1000" fill="url(#fade)"/></mask>
+    <clipPath id="sil"><path d="M400 214 C 462 212, 504 252, 512 318 C 518 366, 514 402, 504 438 C 494 476, 476 506, 458 522 C 456 548, 462 576, 480 594 C 556 614, 650 650, 690 740 C 712 800, 724 900, 726 1000 L 74 1000 C 76 900, 88 800, 110 740 C 150 650, 244 614, 320 594 C 338 576, 344 548, 342 522 C 324 506, 306 476, 296 438 C 286 402, 282 366, 288 318 C 296 252, 338 216, 400 214 Z"/></clipPath>
+    <filter id="blur18"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="blur3"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <filter id="blur10"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0"/></filter>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <!-- fondo desenfocado: sierras y luces -->
+  <g filter="url(#blur18)" opacity="0.85">
+    <path d="M0 640 L 120 560 L 200 600 L 320 500 L 430 580 L 540 520 L 660 590 L 800 540 L 800 1000 L 0 1000 Z" fill="#14223a"/>
+    <path d="M0 720 L 160 650 L 300 700 L 460 640 L 620 700 L 800 660 L 800 1000 L 0 1000 Z" fill="#0b1527"/>
+    <circle cx="680" cy="300" r="26" fill="#f2c27a" opacity="0.35"/>
+    <circle cx="610" cy="380" r="16" fill="#f2c27a" opacity="0.28"/>
+    <circle cx="720" cy="430" r="12" fill="#9fb6d8" opacity="0.3"/>
+  </g>
+  <path d="M400 214 C 462 212, 504 252, 512 318 C 518 366, 514 402, 504 438 C 494 476, 476 506, 458 522 C 456 548, 462 576, 480 594 C 556 614, 650 650, 690 740 C 712 800, 724 900, 726 1000 L 74 1000 C 76 900, 88 800, 110 740 C 150 650, 244 614, 320 594 C 338 576, 344 548, 342 522 C 324 506, 306 476, 296 438 C 286 402, 282 366, 288 318 C 296 252, 338 216, 400 214 Z" fill="#f3c27c" opacity="0.5" filter="url(#blur18)" transform="translate(-10 -6)"/>
+  <!-- silueta -->
+  <path d="M400 214 C 462 212, 504 252, 512 318 C 518 366, 514 402, 504 438 C 494 476, 476 506, 458 522 C 456 548, 462 576, 480 594 C 556 614, 650 650, 690 740 C 712 800, 724 900, 726 1000 L 74 1000 C 76 900, 88 800, 110 740 C 150 650, 244 614, 320 594 C 338 576, 344 548, 342 522 C 324 506, 306 476, 296 438 C 286 402, 282 366, 288 318 C 296 252, 338 216, 400 214 Z" fill="url(#body)"/>
+  <!-- borde de luz dorado -->
+  <g mask="url(#rim)"><g mask="url(#rimV)">
+    <path d="M400 214 C 462 212, 504 252, 512 318 C 518 366, 514 402, 504 438 C 494 476, 476 506, 458 522 C 456 548, 462 576, 480 594 C 556 614, 650 650, 690 740 C 712 800, 724 900, 726 1000 L 74 1000 C 76 900, 88 800, 110 740 C 150 650, 244 614, 320 594 C 338 576, 344 548, 342 522 C 324 506, 306 476, 296 438 C 286 402, 282 366, 288 318 C 296 252, 338 216, 400 214 Z" fill="none" stroke="#ffd18a" stroke-width="9" filter="url(#blur3)"/>
+    <path d="M400 214 C 462 212, 504 252, 512 318 C 518 366, 514 402, 504 438 C 494 476, 476 506, 458 522 C 456 548, 462 576, 480 594 C 556 614, 650 650, 690 740 C 712 800, 724 900, 726 1000 L 74 1000 C 76 900, 88 800, 110 740 C 150 650, 244 614, 320 594 C 338 576, 344 548, 342 522 C 324 506, 306 476, 296 438 C 286 402, 282 366, 288 318 C 296 252, 338 216, 400 214 Z" fill="none" stroke="#ffe7bd" stroke-width="2"/>
+    <path d="M400 214 C 462 212, 504 252, 512 318 C 518 366, 514 402, 504 438 C 494 476, 476 506, 458 522 C 456 548, 462 576, 480 594 C 556 614, 650 650, 690 740 C 712 800, 724 900, 726 1000 L 74 1000 C 76 900, 88 800, 110 740 C 150 650, 244 614, 320 594 C 338 576, 344 548, 342 522 C 324 506, 306 476, 296 438 C 286 402, 282 366, 288 318 C 296 252, 338 216, 400 214 Z" fill="none" stroke="#f0b765" stroke-width="40" opacity="0.45" filter="url(#blur10)"/>
+  </g></g>
+  <rect width="800" height="1000" filter="url(#grain)"/>
+</svg>

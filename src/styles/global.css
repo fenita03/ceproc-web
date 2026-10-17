@@ -1,0 +1,348 @@
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+:root {
+  /* Tintas del logo (reconstrucción vectorial de la carta institucional) */
+  --navy: #0b2545;
+  --green: #1f6b3e;
+  --gold: #c49a45;
+
+  /* Noche: superficies oscuras derivadas del azul institucional */
+  --night: #06111f;
+  --night-2: #0a1a2f;
+  --night-3: #10243f;
+  --on-night: #e9eef6;
+  --on-night-2: #a9b6c8;
+  --on-night-3: #7d8ba0;
+  --line-night: rgba(196, 214, 240, 0.1);
+  --line-night-2: rgba(196, 214, 240, 0.18);
+
+  /* Papel: superficies editoriales claras */
+  --paper: #f5f3ee;
+  --paper-2: #ebe7de;
+  --ink: var(--navy);
+  --ink-2: #35435a;
+  --ink-3: #56647a;
+  --line-paper: rgba(11, 37, 69, 0.12);
+  --line-paper-2: rgba(11, 37, 69, 0.22);
+
+  /* Acentos con contraste AA en cada fondo */
+  --gold-on-night: #d6ae5c; /* 8,9:1 sobre --night */
+  --gold-on-paper: #7f5f1c; /* 5,6:1 sobre --paper */
+  --green-on-night: #6fbf8e; /* 8,3:1 sobre --night */
+  --green-on-paper: var(--green); /* 6,2:1 sobre --paper */
+
+  /* Una familia, dos voces (estilo de referencia): Geist para todo el texto, Geist Mono para rótulos. */
+  --font-display: "Geist Variable", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --font-body: "Geist Variable", "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --step-headline: clamp(2.25rem, 1.3rem + 3.6vw, 4rem);
+  --step-title: clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem);
+  --step-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+
+  --gutter: clamp(1rem, 4vw, 4.5rem);
+  --max: 100rem;
+  --section-y: clamp(5.5rem, 11vw, 9.5rem);
+  --header-h: 4.5rem;
+  --radius: 10px;
+  --radius-sm: 4px;
+  --radius-lg: 20px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: var(--header-h);
+  scrollbar-color: #2a3c58 var(--night);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.smooth {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--on-night);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+p,
+li,
+dd {
+  text-wrap: pretty;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--night);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-on-night);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.on-paper :focus-visible {
+  outline-color: var(--gold-on-paper);
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--max) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--gold);
+  color: var(--night);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip:focus {
+  top: 12px;
+}
+
+/* Rótulo de instrumento: Geist Mono, mayúsculas, 12 px. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-on-night);
+}
+
+.on-paper .eyebrow::before,
+.on-paper-2 .eyebrow::before {
+  background: var(--gold-on-paper);
+}
+
+/* Superficies */
+.on-paper {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.on-paper-2 {
+  background: var(--paper-2);
+  color: var(--ink);
+}
+
+/* Aparición al entrar en pantalla: visible por defecto, oculta solo con JS. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+
+.js [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    transform: none;
+    transition: opacity 240ms linear;
+  }
+}
+
+/* Botones: planos, radio 4 px, sin sombras; transición corta y mecánica. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  border: 0;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 180ms var(--ease-std),
+    color 180ms var(--ease-std),
+    box-shadow 180ms var(--ease-std),
+    transform 140ms var(--ease-std);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn svg {
+  transition: transform 180ms var(--ease-std);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--night);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--on-night);
+  box-shadow: inset 0 0 0 1px var(--line-night-2);
+}
+
+.on-paper .btn-ghost,
+.on-paper-2 .btn-ghost {
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--line-paper-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-gold:hover {
+    background: #d6ae5c;
+  }
+  .btn-ghost:hover {
+    box-shadow: inset 0 0 0 1px var(--gold-on-night);
+  }
+  .on-paper .btn-ghost:hover,
+  .on-paper-2 .btn-ghost:hover {
+    box-shadow: inset 0 0 0 1px var(--gold-on-paper);
+  }
+  .btn:hover svg {
+    transform: translateX(3px);
+  }
+}
+
+/* Ajustes de lectura comunes */
+.lead {
+  font-size: var(--step-lead);
+  line-height: 1.55;
+}
+
+/* Desplegable con forma de botón: guarda el detalle extenso sin quitarlo de la página. */
+.disclosure > summary {
+  list-style: none;
+  width: fit-content;
+}
+
+.disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.disclosure > summary .disclosure-icon {
+  transition: transform 200ms var(--ease-out);
+}
+
+.disclosure[open] > summary .disclosure-icon {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disclosure > summary .disclosure-icon {
+    transition: none;
+  }
+}

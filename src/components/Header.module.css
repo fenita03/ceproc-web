@@ -1,0 +1,205 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  color: var(--on-night);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 260ms var(--ease-out),
+    border-color 260ms var(--ease-out);
+}
+
+/* Sobre la portada: respaldo corto para garantizar contraste sin tapar la escena. */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: calc(var(--header-h) + 40px);
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(6, 17, 31, 0.85) 0%, rgba(6, 17, 31, 0.6) 55%, rgba(6, 17, 31, 0) 100%);
+  transition: opacity 260ms var(--ease-out);
+}
+
+.solid {
+  background: var(--night);
+  border-bottom-color: var(--line-night);
+}
+
+.solid::before {
+  opacity: 0;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: var(--header-h);
+}
+
+.brand {
+  margin-right: auto;
+  padding: 6px 0;
+  display: block;
+}
+
+.brand img {
+  height: 46px;
+  width: auto;
+}
+
+.nav ul {
+  display: flex;
+  gap: 4px;
+}
+
+.nav a {
+  position: relative;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--on-night-2);
+  text-decoration: none;
+  transition: color 200ms var(--ease-out);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 3px;
+  height: 1px;
+  background: var(--gold-on-night);
+  transform: scaleX(0);
+  transition: transform 260ms var(--ease-out);
+}
+
+.nav a[aria-current="location"] {
+  color: var(--white, #fff);
+}
+
+.nav a[aria-current="location"]::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav a:hover {
+    color: #fff;
+  }
+}
+
+.cta {
+  min-height: 40px;
+  padding: 0 18px;
+  font-size: 0.875rem;
+}
+
+.cta[aria-current="location"] {
+  box-shadow: inset 0 0 0 1px var(--gold-on-night);
+}
+
+.toggle {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* Hamburguesa que rota a cruz: las líneas nunca desaparecen. */
+.toggle span {
+  position: absolute;
+  left: 11px;
+  width: 22px;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform 260ms var(--ease-out);
+}
+
+.toggle span:first-child {
+  transform: translateY(-4px);
+}
+
+.toggle span:last-child {
+  transform: translateY(4px);
+}
+
+.toggle[data-open="true"] span:first-child {
+  transform: rotate(45deg);
+}
+
+.toggle[data-open="true"] span:last-child {
+  transform: rotate(-45deg);
+}
+
+.panel {
+  height: calc(100dvh - var(--header-h));
+  overflow-y: auto;
+  background: var(--night);
+  border-top: 1px solid var(--line-night);
+}
+
+.panel ul {
+  padding-block: 12px 40px;
+}
+
+.panel li {
+  border-bottom: 1px solid var(--line-night);
+  animation: item 300ms var(--ease-out) both;
+  animation-delay: calc(40ms + var(--i) * 35ms);
+}
+
+@keyframes item {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.panel a {
+  display: block;
+  padding: 18px 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.panel a[aria-current="location"] {
+  color: var(--gold-on-night);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel li {
+    animation: none;
+  }
+  .toggle span {
+    transition: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+  .toggle {
+    display: block;
+  }
+  .brand img {
+    height: 40px;
+  }
+}
+
+@media (min-width: 1001px) {
+  .panel {
+    display: none;
+  }
+}

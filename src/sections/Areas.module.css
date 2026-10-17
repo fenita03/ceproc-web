@@ -1,0 +1,666 @@
+.section {
+  padding-block: var(--section-y);
+  background: var(--night);
+  color: var(--on-night);
+  border-top: 1px solid var(--line-night);
+  overflow: clip;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(24px, 5vw, 80px);
+  align-items: end;
+}
+
+.kicker {
+  color: var(--on-night-2);
+}
+
+.title {
+  margin-top: 18px;
+  font-size: var(--step-headline);
+  color: #fff;
+}
+
+.intro {
+  color: var(--on-night-2);
+  font-size: 1.0625rem;
+  max-width: 46ch;
+}
+
+/* --- Pestañas de área (píldoras) --- */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: clamp(32px, 4vw, 56px);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line-night-2);
+  color: var(--on-night-2);
+  font-size: 0.9688rem;
+  cursor: pointer;
+  transition:
+    color 180ms var(--ease-std),
+    background-color 180ms var(--ease-std),
+    box-shadow 180ms var(--ease-std);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--on-night-3);
+  transition: background-color 180ms var(--ease-std);
+}
+
+.tab[aria-selected="true"] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(214, 174, 92, 0.6);
+}
+
+.tab[aria-selected="true"] .dot {
+  background: var(--gold-on-night);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tab:hover {
+    color: #fff;
+  }
+}
+
+/* --- Ficha (izquierda) + vitrina 3D (derecha) --- */
+.stage {
+  margin-top: clamp(32px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 4vw, 72px);
+  align-items: start;
+}
+
+.info {
+  animation: swap 320ms var(--ease-std);
+}
+
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.areaMeta {
+  color: var(--on-night-2);
+}
+
+.areaTitle {
+  margin-top: 16px;
+  font-size: clamp(2.25rem, 1.5rem + 2.4vw, 3.75rem);
+  line-height: 1;
+  color: #fff;
+}
+
+.areaLead {
+  margin-top: 16px;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.4375rem);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--on-night);
+}
+
+.quote {
+  margin-top: 28px;
+  padding: 4px 0 4px 18px;
+  border-left: 2px solid var(--gold-on-night);
+}
+
+.quoteLabel {
+  font-size: 0.8125rem;
+  color: var(--on-night-3);
+}
+
+.quote p + p {
+  margin-top: 6px;
+  color: var(--on-night);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.listLabel {
+  margin-top: 32px;
+  font-size: 0.875rem;
+  color: var(--on-night-3);
+}
+
+.wlist {
+  margin-top: 10px;
+  display: grid;
+  gap: 2px;
+}
+
+.witem {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  padding: 13px 16px;
+  border: 0;
+  border-left: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--on-night-2);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 180ms var(--ease-std),
+    color 180ms var(--ease-std),
+    border-color 180ms var(--ease-std);
+}
+
+.wname {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.witem[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.04);
+  border-left-color: var(--gold-on-night);
+  color: #fff;
+}
+
+.wgoal {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--on-night-2);
+  animation: swap 260ms var(--ease-std);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .witem:hover:not([aria-pressed="true"]) {
+    color: #fff;
+  }
+}
+
+.more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+/* Vitrina: tres tarjetas en perspectiva; la central al frente. */
+.showcase {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  min-width: 0;
+}
+
+.carousel {
+  position: relative;
+  height: clamp(440px, 32vw, 620px);
+  perspective: 1800px;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.card {
+  --w: min(62%, 460px);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: var(--w);
+  height: 100%;
+  margin-left: calc(var(--w) / -2);
+  transform-style: preserve-3d;
+  transition:
+    transform 640ms var(--ease-out),
+    opacity 480ms var(--ease-out),
+    filter 480ms var(--ease-out);
+  cursor: pointer;
+}
+
+/* Marco tipo dispositivo: bisel oscuro con aro claro de 1 px. */
+.screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 28px;
+  background: #0d1626;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 40px 80px -40px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.card[data-off="0"] {
+  transform: translateX(0) translateZ(0) rotateY(0) scale(1);
+  z-index: 3;
+  cursor: default;
+}
+
+.card[data-off="-1"] {
+  transform: translateX(-62%) translateZ(-160px) rotateY(24deg) scale(0.84);
+  opacity: 0.62;
+  filter: brightness(0.7);
+  z-index: 2;
+}
+
+.card[data-off="1"] {
+  transform: translateX(62%) translateZ(-160px) rotateY(-24deg) scale(0.84);
+  opacity: 0.62;
+  filter: brightness(0.7);
+  z-index: 2;
+}
+
+.card[data-off="-2"],
+.card[data-off="2"] {
+  transform: translateZ(-400px) scale(0.6);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cardMedia {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  flex: none;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--night-2);
+}
+
+.cardMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Avance automático: el giro de la vitrina es más largo y se mueve con ease-in-out (desplazamiento
+   en pantalla), para que las tarjetas pasen con calma. Un clic sigue respondiendo con el giro corto. */
+.carousel[data-glide] .card {
+  transition:
+    transform 1100ms var(--ease-in-out),
+    opacity 900ms var(--ease-in-out),
+    filter 900ms var(--ease-in-out);
+}
+
+/* Camión: imagen apaisada (el equipo entra entero) y un acercamiento lento mientras está al frente. */
+.card[data-truck] .cardMedia {
+  aspect-ratio: 16 / 10;
+}
+
+.card[data-truck] .cardMedia img {
+  transform: scale(1);
+  transition: transform 900ms var(--ease-in-out);
+}
+
+.card[data-truck][data-off="0"] .cardMedia img {
+  transform: scale(1.06);
+  transition: transform 6s linear;
+}
+
+.badge {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(6, 17, 31, 0.72);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--on-night);
+}
+
+.cardBody {
+  flex: 1;
+  padding: 20px 14px 14px;
+  overflow: hidden;
+}
+
+.cardNum {
+  color: var(--gold-on-night);
+}
+
+.cardName {
+  margin-top: 12px;
+  font-size: clamp(1.25rem, 1rem + 0.7vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.cardGoal {
+  margin-top: 10px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--on-night-2);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line-night-2);
+  color: #fff;
+  cursor: pointer;
+  transition: box-shadow 180ms var(--ease-std);
+}
+
+.arrow:active {
+  transform: scale(0.95);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .arrow:hover {
+    box-shadow: inset 0 0 0 1px var(--gold-on-night);
+  }
+}
+
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+}
+
+.dotBtn {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.dotBtn::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 11px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--line-night-2);
+  transition: background-color 180ms var(--ease-std);
+}
+
+.dotBtn[aria-current]::after {
+  background: var(--gold-on-night);
+}
+
+.caption {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--on-night-2);
+}
+
+/* Catálogo */
+.catalogue {
+  margin-top: clamp(64px, 9vw, 112px);
+}
+
+.catTitle {
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.accordion {
+  border-top: 1px solid var(--line-night-2);
+}
+
+.item {
+  border-bottom: 1px solid var(--line-night);
+}
+
+.item summary {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) 28px;
+  align-items: center;
+  gap: 14px;
+  padding-block: 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.item summary::-webkit-details-marker {
+  display: none;
+}
+
+.itemNum {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gold-on-night);
+  font-variant-numeric: tabular-nums;
+}
+
+.itemTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.3125rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.itemMeta {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--on-night-3);
+}
+
+.plus {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line-night-2);
+}
+
+.plus::before,
+.plus::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 13.5px;
+  height: 1px;
+  background: var(--on-night);
+  transition: transform 260ms var(--ease-out);
+}
+
+.plus::after {
+  transform: rotate(90deg);
+}
+
+.item[open] .plus::after {
+  transform: rotate(0deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .item summary:hover .itemTitle {
+    color: var(--gold-on-night);
+  }
+}
+
+.itemBody {
+  padding: 4px 0 28px calc(2.5rem + 14px);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table thead th {
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--on-night-3);
+  padding: 0 16px 10px 0;
+  border-bottom: 1px solid var(--line-night-2);
+}
+
+.table tbody th,
+.table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px 16px 12px 0;
+  border-bottom: 1px solid var(--line-night);
+}
+
+.table tbody th {
+  width: 34%;
+  font-weight: 600;
+  color: #fff;
+}
+
+.table td {
+  color: var(--on-night-2);
+}
+
+.extra {
+  margin-top: 22px;
+}
+
+.extraTitle {
+  font-weight: 600;
+  color: var(--green-on-night);
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.extra li {
+  position: relative;
+  padding: 6px 0 6px 20px;
+  color: var(--on-night-2);
+  font-size: 0.9375rem;
+}
+
+.extra li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05em;
+  width: 10px;
+  height: 1px;
+  background: var(--green-on-night);
+}
+
+.note {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(214, 174, 92, 0.07);
+  box-shadow: inset 0 0 0 1px rgba(214, 174, 92, 0.25);
+  font-size: 0.875rem;
+  color: var(--on-night-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .carousel[data-glide] .card,
+  .info,
+  .wgoal {
+    transition: none;
+    animation: none;
+  }
+  .card[data-truck] .cardMedia img,
+  .card[data-truck][data-off="0"] .cardMedia img {
+    transform: none;
+    transition: none;
+  }
+  .plus::before,
+  .plus::after {
+    transition: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .tab {
+    flex: none;
+  }
+  .stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .showcase {
+    position: static;
+    order: -1;
+  }
+  .carousel {
+    height: clamp(460px, 125vw, 640px);
+  }
+  .card {
+    --w: min(80%, 420px);
+  }
+}
+
+@media (max-width: 760px) {
+  .itemBody {
+    padding-left: 0;
+  }
+  .table thead {
+    display: none;
+  }
+  .table tr {
+    display: grid;
+    gap: 4px;
+    padding-block: 12px;
+    border-bottom: 1px solid var(--line-night);
+  }
+  .table tbody th,
+  .table td {
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+}

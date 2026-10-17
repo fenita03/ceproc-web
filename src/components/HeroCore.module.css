@@ -1,0 +1,367 @@
+.core {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+/* Escenario orbital: apaisado, del tamaño que permite la altura de la pantalla. */
+.orbit {
+  position: relative;
+  width: min(100%, var(--ring-max, 720px) * 1.55);
+  aspect-ratio: 1.55;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+}
+
+.core[data-mode="3d"] .canvas {
+  opacity: 1;
+}
+
+/* Versión plana: visible mientras carga el 3D y como alternativa sin WebGL. */
+.flat {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transition: opacity 500ms var(--ease-out);
+}
+
+.core[data-mode="3d"] .flat {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flatOrbitLine,
+.flatOrbitDash {
+  fill: none;
+  stroke: rgba(169, 182, 200, 0.28);
+  stroke-width: 0.004;
+}
+
+.flatOrbitDash {
+  stroke-dasharray: 0.018 0.022;
+}
+
+.flatNode {
+  fill: #dfe6f0;
+}
+
+.flatNodeOn {
+  fill: var(--gold-on-night);
+}
+
+.flatLink {
+  stroke: var(--gold-on-night);
+  stroke-width: 0.006;
+}
+
+/* Logo central: plano y chico (≈ el ancho del radio libre del núcleo). */
+.centerLogo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(100% * 0.5 / 3.1);
+  min-width: 96px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: logoIn 700ms var(--ease-out) 200ms both;
+}
+
+@keyframes logoIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+}
+
+/* Rótulos de las áreas: botones reales anclados a cada nodo (foco, teclado, lector de pantalla). */
+.labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--on-night-2);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 260ms var(--ease-out);
+}
+
+.label[data-behind="true"] {
+  opacity: 0.22;
+}
+
+.labelText {
+  position: absolute;
+  top: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  width: max-content;
+  max-width: 13rem;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-shadow: 0 1px 10px rgba(6, 17, 31, 0.9);
+  transition:
+    color 180ms var(--ease-std),
+    background-color 180ms var(--ease-std);
+}
+
+.label[data-side="right"] .labelText,
+.label:not([data-side]) .labelText {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.label[data-side="left"] .labelText {
+  right: 10px;
+  flex-direction: row-reverse;
+  text-align: right;
+  transform: translateY(-50%);
+}
+
+.label[data-side="above-end"] .labelText {
+  right: -10px;
+  bottom: 10px;
+  top: auto;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.label[data-side="above-start"] .labelText {
+  left: -10px;
+  bottom: 10px;
+  top: auto;
+}
+
+.label[data-on] {
+  color: #fff;
+  opacity: 1;
+}
+
+.label[data-on] .labelText {
+  background: rgba(6, 17, 31, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(214, 174, 92, 0.5);
+}
+
+.label:focus-visible {
+  outline: none;
+}
+
+.label:focus-visible .labelText {
+  outline: 2px solid var(--gold-on-night);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .label:hover {
+    color: #fff;
+  }
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--gold-on-night);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ficha del área: título, descripción y talleres reales. */
+.panel {
+  width: 100%;
+  /* Alto fijo: cambiar de área nunca mueve la composición. */
+  height: var(--panel-h, 11.75rem);
+  overflow: hidden;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-night-2);
+}
+
+.panelIn {
+  animation: swap 220ms var(--ease-std);
+}
+
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.meta {
+  color: var(--on-night-2);
+}
+
+.title {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.1875rem, 1rem + 0.5vw, 1.4375rem);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.summary {
+  margin-top: 6px;
+  max-width: 60ch;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--on-night-2);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--summary-lines, 3);
+  overflow: hidden;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding-block: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gold-on-night);
+  text-decoration: none;
+}
+
+.more svg {
+  transition: transform 180ms var(--ease-std);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .more:hover svg {
+    transform: translateX(3px);
+  }
+}
+
+/* Celular: la foto del área toma la ficha (más liviano que cambiar el fondo completo). */
+.photo {
+  position: relative;
+  margin-bottom: 14px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--night-2);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(6, 17, 31, 0.72);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  color: var(--on-night);
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-block: 2px;
+  scroll-snap-type: x proximity;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: rgba(10, 26, 47, 0.8);
+  box-shadow: inset 0 0 0 1px var(--line-night-2);
+  color: var(--on-night);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: background-color 180ms var(--ease-std);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.chip[aria-pressed="true"] .num {
+  color: var(--gold-on-paper);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--gold-on-night);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1200px) and (min-width: 861px) {
+  .labelText {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .label .name {
+    display: none;
+  }
+  .labelText {
+    padding: 4px 6px;
+  }
+  .panel {
+    height: auto;
+    min-height: 10.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panelIn,
+  .centerLogo {
+    animation: none;
+  }
+  .canvas,
+  .flat,
+  .label {
+    transition: none;
+  }
+}
