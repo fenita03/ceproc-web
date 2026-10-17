@@ -232,6 +232,9 @@
 .meta {
   color: var(--on-night-2);
   gap: 10px;
+  /* Metadato largo: caja mixta (las mayúsculas quedan para rótulos cortos). */
+  text-transform: none;
+  letter-spacing: 0.01em;
 }
 
 .metaNum {

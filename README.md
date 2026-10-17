@@ -1,7 +1,8 @@
 # CEPROC — sitio institucional
 
 Sitio de presentación del **Centro Productivo de Capacitación en Oficios Regionales y Minería** (Rawson, San Juan).
-Todo el contenido proviene del documento del proyecto y vive en un único archivo: `src/content/ceproc.ts`.
+Todo el contenido proviene del documento del proyecto y vive en `src/content/ceproc.ts`; los datos de contacto, en
+`src/content/contact.ts`. El sistema visual («Estratos»: tipografía, superficies y movimiento) está en `DESIGN.md`.
 
 ## Uso
 
@@ -19,21 +20,25 @@ npm test           # pruebas Playwright (escritorio 1440×900 y Pixel 7)
 
 | Ruta | Contenido |
 |---|---|
-| `src/content/ceproc.ts` | Textos, áreas, 56 talleres, contacto. Única fuente de verdad. |
-| `src/content/photos.*` | Fotos ilustrativas (Wikimedia Commons) y sus créditos. |
+| `src/content/ceproc.ts` | Textos, áreas y 56 talleres. Única fuente de verdad del contenido. |
+| `src/content/contact.ts` | Teléfono, WhatsApp (`wa.me/5492645563755`), Instagram (`@ceproc_oficial`), correo y mensaje inicial. Único lugar donde cambiarlos. |
+| `src/content/photos.*` | Fotos de áreas y portada (Pexels, CC0, dominio público). Fuentes y licencias en `docs/image-sources.md` (interno, no se publica). |
+| `src/styles/global.css` | Tokens: colores, tipografía (Manrope, DM Sans, IBM Plex Mono), escala, movimiento, botones y apariciones (`data-reveal`). |
+| `src/brand/estratos.svg` | Líneas de estratos (recurso gráfico propio, `scripts/brand/estratos.py`). |
 | `src/brand/` | Logo reconstruido en vector (SVG) y trazados para el 3D. |
 | `src/components/HeroCore.tsx` | Núcleo orbital de la portada: las siete áreas en órbita alrededor del logo (cursor, clic, teclado, toque); la foto del área cambia el fondo. |
 | `src/components/three/` | Escena 3D del núcleo (`orbitCore.ts`), disposición compartida con la versión plana (`orbitLayout.ts`) y logo extruido en un Web Worker. |
 | `src/content/heroAreas.ts` | Fuente única de las siete áreas del núcleo (textos y cantidades de `ceproc.ts`, fotos de `photos.json`). |
-| `src/components/AreaHub.tsx` | Núcleo interactivo de áreas (cursor, teclado, toque). |
-| `src/sections/` | Secciones en orden: Portada, Capacitaciones (áreas), Seguridad, Quiénes somos, El proyecto, Articulación, Beneficios, Contacto. |
-| `src/components/TrainingAccess.tsx` | Acceso flotante «Capacitate con nosotros» y carga diferida del asistente. |
+| `src/sections/` | Secciones en orden: Portada, Capacitaciones (áreas), Seguridad, La institución, El proyecto, Articulación, Beneficios, Contacto. |
+| `src/components/TrainingAccess.tsx` | Acceso flotante en dos partes («Capacitate» abre el asistente; el ícono abre WhatsApp) y carga diferida del asistente. |
 | `src/components/TrainingWizard.tsx` | Asistente paso a paso adaptado de «Contanos tu proyecto» de NOVEX (`novex-web/src/pages/ProjectWizard.tsx`). |
 | `src/content/wizard.ts` | Preguntas, validación, saneamiento, resumen y mensaje de WhatsApp (adaptado de `novex-web/src/data/wizard.ts`). |
 | `api/cv.ts` | Función de Vercel: valida el CV, lo guarda privado en Vercel Blob y entrega un enlace firmado que vence. |
 | `scripts/brand/` | Proceso de vectorización del logo desde el escaneo. |
-| `scripts/fotos.py` | Descarga y conversión de las fotos a WebP. |
+| `scripts/fotos.py` | Descarga y conversión de las fotos a WebP; rechaza licencias que exigen atribución. |
 | `scripts/perf.mjs` | Medición de fps y tareas largas con GPU. |
+| `scripts/shots.mjs`, `scripts/motion-frames.mjs` | Capturas por sección (escritorio, Pixel 7 y, con `TABLET=1`, tablet) y cuadros de la entrada y del cambio de área. |
+| `scripts/overflow.mjs`, `scripts/fallback-metrics.mjs` | Detección de desborde horizontal y cálculo de métricas de las fuentes de respaldo. |
 | `tests/ceproc.spec.ts` | Pruebas de extremo a extremo del sitio. |
 | `tests/wizard.spec.ts` | Pruebas del asistente, del acceso flotante, del CV, del mensaje de WhatsApp y de `api/cv`. |
 
@@ -44,8 +49,8 @@ experiencia y horarios, datos, CV, revisión), pasos opcionales con «Omitir», 
 Se abre desde el acceso flotante, el encabezado, la portada, «Me interesa este taller» y Contacto.
 
 
-- Destino: el teléfono oficial `contact.phone` (+54 9 264 523-9410), confirmado como WhatsApp. Se puede cambiar con
-  `VITE_WHATSAPP_NUMBER` (ver `.env.example`).
+- Destino: el WhatsApp oficial de `src/content/contact.ts` (+54 9 264 556-3755 → `https://wa.me/5492645563755`).
+  Ya no se puede sobrescribir por variable de entorno: todos los accesos usan el mismo número.
 - WhatsApp no permite adjuntar archivos desde un enlace `wa.me`, así que el CV va por uno de dos caminos:
   - **Con almacenamiento configurado:** el navegador sube el archivo a `/api/cv`, que comprueba que sea un PDF o DOCX real
     (≤ 4 MB, el límite de cuerpo de las funciones de Vercel es 4,5 MB), lo guarda **privado** en Vercel Blob y devuelve
@@ -69,16 +74,17 @@ Vercel. La política de conservación está en `docs/politica-de-privacidad-PROP
 
 ## Fotografías
 
-`python -I scripts/fotos.py [clave ...]` descarga de Wikimedia Commons las ocho fotos (siete áreas y el paisaje de San Juan),
-genera WebP de 640/1080/1600 px (el paisaje, con gradación de color, hasta 3200 px) y escribe autor, licencia y fuente en
-`src/content/photos.json`. Los créditos se publican al pie del sitio. Son imágenes ilustrativas.
+`python -I scripts/fotos.py [clave ...]` descarga las ocho fotos de áreas y portada (Pexels o Wikimedia Commons
+CC0/dominio público), genera WebP de 640/1080/1600 px (la portada, con gradación de color, hasta 3200 px) y escribe la
+fuente en `src/content/photos.json`. El sitio **no muestra créditos**: por eso solo se aceptan licencias sin atribución
+obligatoria. En octubre de 2026 se reemplazaron cinco fotos CC BY/BY-SA antes de quitar los créditos del pie; el
+detalle está en `docs/image-sources.md`.
 
 ## Retratos de «Dirección del proyecto»
 
-`public/img/equipo/directora.webp` y `vicedirector.webp` son retratos ilustrativos temporales en contraluz
-(generados con `node scripts/equipo/retratos.mjs`; no representan a las personas). Para publicar las fotos reales:
-reemplazar esos archivos con el mismo nombre (proporción 4:5) y poner `photoIsIllustrative: false` en `team`
-(`src/content/ceproc.ts`).
+`public/img/equipo/directora.webp` y `vicedirector.webp` son siluetas temporales en contraluz (generadas con
+`node scripts/equipo/retratos.mjs`; no representan a las personas). Para publicar las fotos reales: reemplazar esos
+archivos con el mismo nombre (proporción 4:5) y poner `photoIsPlaceholder: false` en `team` (`src/content/ceproc.ts`).
 
 ## Logo del núcleo
 
@@ -91,4 +97,10 @@ alimenta el relieve 3D de la esfera.
 - Logo y nombre oficiales (el documento muestra dos versiones).
 - Departamento: el sitio indica Rawson.
 - Política de privacidad: revisar el borrador de `docs/` y definir cuánto tiempo se conservan los CV.
-- Fotos reales de talleres para reemplazar las ilustrativas.
+- Fotos reales de talleres para reemplazar las de referencia.
+- Procedencia de las vistas del camión minero (`public/img/camion/`): el repositorio no la documenta.
+
+## Respaldo previo al rediseño premium
+
+El estado anterior al rediseño (17/10/2026) quedó guardado en el commit `9bc291a`, con la etiqueta
+`respaldo-pre-rediseno-premium` y la rama `respaldo/pre-rediseno-premium`. Para verlo: `git checkout respaldo-pre-rediseno-premium`.

@@ -13,6 +13,7 @@ const problems = [];
 for (const [name, opts] of [
   ["d", { viewport: { width: 1440, height: 900 } }],
   ["m", { ...devices["Pixel 7"] }],
+  ...(process.env.TABLET ? [["t", { viewport: { width: 820, height: 1180 }, hasTouch: true }]] : []),
 ]) {
   const ctx = await browser.newContext(opts);
   const page = await ctx.newPage();

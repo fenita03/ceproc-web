@@ -6,15 +6,21 @@ colors:
   green: "#1f6b3e"
   gold: "#c49a45"
   night: "#06111f"
+  night-0: "#040c17"
   night-2: "#0a1a2f"
   night-3: "#10243f"
   on-night: "#e9eef6"
   on-night-2: "#a9b6c8"
-  on-night-3: "#7d8ba0"
+  on-night-3: "#8592a6"
   line-night: "rgba(196, 214, 240, 0.1)"
   line-night-2: "rgba(196, 214, 240, 0.18)"
+  forest: "#0c2618"
+  forest-2: "#12321f"
+  on-forest-2: "#b3c7b9"
+  line-forest: "rgba(190, 230, 205, 0.14)"
   paper: "#f5f3ee"
   paper-2: "#ebe7de"
+  paper-3: "#e1dccf"
   ink-2: "#35435a"
   ink-3: "#56647a"
   line-paper: "rgba(11, 37, 69, 0.12)"
@@ -24,48 +30,64 @@ colors:
   green-on-night: "#6fbf8e"
 typography:
   display:
-    fontFamily: "Montserrat Variable, Montserrat, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.5rem, 0.9rem + 4.6vw, 5.25rem)"
-    fontWeight: 700
+    fontFamily: "Manrope Variable, Manrope Fallback, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.75rem, 1.1rem + 5.6vw, 6.25rem)"
+    fontWeight: 800
     lineHeight: 0.98
-    letterSpacing: "-0.04em"
+    letterSpacing: "-0.045em"
   headline:
-    fontFamily: "Montserrat Variable, Montserrat, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 1.25rem + 3vw, 3.5rem)"
+    fontFamily: "Manrope Variable, Manrope Fallback, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.25rem, 1.3rem + 3.5vw, 4.5rem)"
+    fontWeight: 800
+    lineHeight: 0.98
+    letterSpacing: "-0.042em"
+  title:
+    fontFamily: "Manrope Variable, Manrope Fallback, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.625rem, 1.2rem + 1.6vw, 2.625rem)"
     fontWeight: 700
     lineHeight: 1.04
-    letterSpacing: "-0.03em"
-  title:
-    fontFamily: "Montserrat Variable, Montserrat, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem)"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "-0.02em"
+    letterSpacing: "-0.035em"
+  subtitle:
+    fontFamily: "Manrope Variable, Manrope Fallback, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.25rem, 1.08rem + 0.6vw, 1.625rem)"
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: "-0.022em"
   lead:
-    fontFamily: "Geist Variable, Geist, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "clamp(1.0625rem, 1rem + 0.3vw, 1.25rem)"
+    fontFamily: "DM Sans Variable, DM Sans Fallback, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.0625rem, 0.98rem + 0.4vw, 1.3125rem)"
     fontWeight: 400
     lineHeight: 1.55
   body:
-    fontFamily: "Geist Variable, Geist, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "1rem"
+    fontFamily: "DM Sans Variable, DM Sans Fallback, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.0625rem"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.65
   label:
-    fontFamily: "Geist Variable, Geist, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "0.8125rem"
-    fontWeight: 600
-    lineHeight: 1.4
+    fontFamily: "IBM Plex Mono, ui-monospace, Consolas, monospace"
+    fontSize: "0.75rem"
+    fontWeight: 500
+    lineHeight: 1.3
+    letterSpacing: "0.06em"
     fontFeature: "\"tnum\""
 rounded:
-  sm: "8px"
-  md: "14px"
+  sm: "6px"
+  md: "12px"
+  lg: "20px"
   pill: "999px"
 spacing:
-  gutter: "clamp(1rem, 4vw, 2.5rem)"
-  max: "76rem"
-  section-y: "clamp(5.5rem, 11vw, 9.5rem)"
+  gutter: "clamp(1rem, 4vw, 4.5rem)"
+  max: "90rem"
+  section-y: "clamp(5rem, 10vw, 9rem)"
   header-h: "4.5rem"
+motion:
+  ease-out: "cubic-bezier(0.23, 1, 0.32, 1)"
+  ease-out-expo: "cubic-bezier(0.16, 1, 0.3, 1)"
+  ease-in-out: "cubic-bezier(0.65, 0, 0.35, 1)"
+  micro: "160ms"
+  state: "240ms"
+  enter: "640ms"
+  reveal: "900ms"
 components:
   button-gold:
     backgroundColor: "{colors.gold}"
@@ -74,33 +96,29 @@ components:
     padding: "0 22px"
     height: "48px"
   button-gold-hover:
-    backgroundColor: "#d3ab5b"
+    backgroundColor: "#ddb868"
     textColor: "{colors.night}"
   button-ghost:
-    backgroundColor: "rgba(255, 255, 255, 0.04)"
+    backgroundColor: "transparent"
     textColor: "{colors.on-night}"
     rounded: "{rounded.pill}"
     padding: "0 22px"
     height: "48px"
   button-ghost-hover:
-    backgroundColor: "rgba(255, 255, 255, 0.08)"
+    backgroundColor: "rgba(233, 238, 246, 0.08)"
   card-night:
     backgroundColor: "{colors.night-2}"
-    rounded: "{rounded.md}"
-    padding: "clamp(18px, 2.4vw, 28px)"
-  chip-area:
-    backgroundColor: "rgba(255, 255, 255, 0.04)"
-    textColor: "{colors.on-night-2}"
+    rounded: "18px"
+    padding: "8px"
+  fab:
+    backgroundColor: "rgba(6, 17, 31, 0.94)"
+    textColor: "#ffffff"
     rounded: "{rounded.pill}"
-    padding: "0 16px"
     height: "44px"
-  chip-area-selected:
-    backgroundColor: "{colors.gold-on-night}"
-    textColor: "{colors.night}"
   nav-link:
     textColor: "{colors.on-night-2}"
     rounded: "6px"
-    padding: "8px 12px"
+    padding: "10px 12px"
   nav-link-current:
     textColor: "#ffffff"
 ---
@@ -109,147 +127,184 @@ components:
 
 ## Overview
 
-**Creative North Star: "El Núcleo"**
+**Creative North Star: «Estratos»**
 
-El logo real de CEPROC es el centro de gravedad del sistema: aparece extruido en 3D sobre la esfera del núcleo orbital de la portada, plano en el centro del núcleo de Áreas y como lockup en cabecera y pie. Todo lo demás se organiza a su alrededor con hilos de 1 px: órbitas, conexiones, rieles y separadores. La paleta no es elegida, es heredada: las tres tintas del logo (azul, verde, dorado) generan una noche azul para las superficies oscuras y un papel cálido para la lectura editorial.
+San Juan se lee en sus capas de roca: el Cerro Alcázar de Calingasta, las sierras de la precordillera, la mina.
+CEPROC forma por capas: oficio, seguridad, certificación, trabajo. El sistema traduce esa idea en tres recursos
+propios: la **fotografía del territorio** a gran formato (el afloramiento de Calingasta abre la portada), las
+**líneas de estratos** (`src/brand/estratos.svg`, trazos de 1 px en `currentColor`) como textura discreta al pie de la
+portada, en la banda de misión y visión, en Beneficios y en el pie, y los **hilos técnicos** de 1 px que ordenan
+índices, rieles y divisores como en un plano.
 
-El sitio alterna dos superficies. La noche (Portada, Proyecto, Áreas, Contacto) lleva la interacción y la profundidad; el papel (Quiénes somos, Articulación, Beneficios, Seguridad, pie) lleva la lectura larga, con listas separadas por hilos y sin tarjetas. El dorado es el color del estado activo y de la acción principal; el verde marca lo propio de la formación (roles, metadatos de área, viñetas de lista).
+El logo real sigue siendo el centro: plano en la cabecera y el pie, y como núcleo de la órbita 3D de las siete áreas
+en la portada. La paleta sale de sus tres tintas (azul, verde, dorado) y genera cuatro superficies que se alternan
+para que ninguna sección se parezca a la anterior.
 
-La densidad es institucional y sobria: titulares de Montserrat ajustados, lectura en Geist con medidas de 44–70ch, y movimiento que explica (el indicador que sigue al cursor, el riel que se llena con el scroll) en lugar de decorar.
+Lo que el sistema rechaza: plantillas de IA con gradientes morados, grillas de tarjetas idénticas, vidrio
+translúcido sin función, neón, sombras duras y cualquier cifra que no salga del documento oficial.
 
 **Key Characteristics:**
-- Dos superficies: noche azul (#06111f) y papel cálido (#f5f3ee), alternadas por sección.
-- Dorado como único color de estado activo; verde como color de formación.
-- Hilos de 1 px para órbitas, conexiones, rieles y divisores; bordes como `inset` box-shadow.
-- Radios de 8 y 14 px en superficies; píldora en botones y chips.
-- Numeración de dos dígitos solo en elementos secuenciales (circuito, áreas, objetivos).
-- Movimiento por `transform` y `opacity`, con alternativa para `prefers-reduced-motion`.
+- Cuatro superficies: noche (#06111f), azul institucional (#0b2545, banda de misión y visión), monte (#0c2618,
+  Beneficios) y papel cálido (#f5f3ee / #ebe7de).
+- Manrope 800 en titulares con tracking cerrado; DM Sans para leer; IBM Plex Mono para rótulos técnicos y datos.
+- Índice de sección (`01 · Capacitaciones` … `07 · Contacto`): número de orden real del recorrido, sobre un hilo dorado.
+- Dorado solo para estado activo y acción principal; verde para lo propio de la formación.
+- Movimiento por `transform` y `opacity` (más `clip-path` en tres cortinas de fotos), siempre con alternativa
+  reducida.
 
 ## Colors
 
-Una paleta derivada íntegramente del logo: tres tintas institucionales, dos familias de superficie y variantes de acento ajustadas para contraste AA en cada fondo.
-
 ### Primary
-- **Dorado del Arco** (gold): relleno del botón principal, anillo del núcleo, color de selección de texto y fondo del enlace de salto. Sobre texto solo se usa en sus variantes de contraste.
-- **Dorado Noche** (gold-on-night): todo estado activo sobre noche: línea de conexión activa, nodo e indicador del núcleo, nodo encendido y relleno del riel del circuito, subrayado de navegación, anillo de foco, segunda línea del titular, números de secuencia. Contraste 8,9:1 sobre noche.
-- **Dorado Papel** (gold-on-paper): anillo de foco sobre papel. Contraste 5,6:1.
+- **Dorado del Arco** (gold): relleno del botón principal, color de selección de texto, hover de los íconos de contacto.
+- **Dorado Noche** (gold-on-night): todo estado activo sobre superficies oscuras: indicador deslizante de la
+  navegación y de las pestañas de áreas, riel del índice de El proyecto, números de área, filamento del núcleo, anillo
+  de foco. 8,9:1 sobre noche.
+- **Dorado Papel** (gold-on-paper): números y viñetas sobre papel, anillo de foco sobre papel. 5,6:1.
 
 ### Secondary
-- **Verde Formación** (green / green-on-paper): enunciados y roles sobre papel, viñetas de 10 × 1 px en listas de papel. Contraste 6,2:1.
-- **Verde Noche** (green-on-night): metadatos de área, títulos de bloques complementarios y viñetas de listas sobre noche. Contraste 8,3:1.
-- El verde y el dorado del logo también tiñen los halos radiales de fondo de las secciones nocturnas (opacidad 0,10–0,16).
+- **Verde Formación** (green / green-on-paper): roles, metadatos de vínculo y viñetas sobre papel. 6,2:1.
+- **Verde Noche** (green-on-night): cifras y filete de Beneficios, luz de borde del núcleo 3D. 8,3:1.
+- **Monte** (forest, forest-2, on-forest-2): superficie exclusiva de Beneficios.
 
 ### Neutral
-- **Azul Institucional** (navy): tinta principal sobre papel (`--ink`), filete de 2 px que abre listas de papel.
-- **Noche** (night): fondo base del sitio y de las secciones oscuras; cabecera sólida.
-- **Noche 2 / Noche 3** (night-2, night-3): paneles y tarjetas sobre noche; fondo de medios y relleno de nodos inactivos.
-- **Texto Noche 1–3** (on-night, on-night-2, on-night-3): cuerpo, texto secundario y metadatos/números inactivos. Los titulares sobre noche van en blanco puro.
-- **Papel / Papel 2** (paper, paper-2): superficies editoriales claras; papel 2 distingue la sección de Articulación.
-- **Tinta 2 / Tinta 3** (ink-2, ink-3): cuerpo y subtítulos sobre papel.
-- **Hilos** (line-night, line-night-2, line-paper, line-paper-2): divisores, bordes internos y órbitas; la variante 2 marca límites de bloque, la 1 separa filas.
+- **Azul Institucional** (navy): tinta sobre papel y fondo de la banda de misión y visión.
+- **Noche / Noche 0 / 2 / 3**: fondo base, cabecera, paneles del núcleo, láminas del carrusel.
+- **Texto Noche 1–3**, **Tinta 2–3**: cuerpo, secundarios y metadatos.
+- **Papel / Papel 2 / Papel 3**: superficies claras; papel 3 es el fondo de carga de las fotos.
+- **Hilos** (line-night, line-paper, line-forest y sus variantes 2): divisores y bordes internos.
 
 ### Named Rules
-**La Regla del Logo como Fuente.** Ningún tono nuevo entra al sistema si no deriva de las tres tintas del logo; las superficies son el azul llevado a noche o el blanco llevado a papel.
+**La Regla del Logo como Fuente.** Ningún tono entra al sistema si no deriva de las tres tintas del logo.
 
-**La Regla del Dorado Activo.** El dorado significa "esto está activo o es la acción principal". No se usa como decoración neutra.
+**La Regla del Dorado Activo.** El dorado significa «esto está activo o es la acción principal»; no decora.
 
-**La Regla del Acento con Contraste.** Sobre texto y hilos finos se usa siempre la variante `-on-night` o `-on-paper`, nunca la tinta cruda del logo.
+**La Regla del Acento con Contraste.** Sobre texto e hilos finos se usan las variantes `-on-night` / `-on-paper`.
+
+**La Regla de la Alternancia.** Dos secciones seguidas nunca comparten superficie y composición: portada (noche +
+foto) → Capacitaciones (noche, índice) → Seguridad (foto a sangre + papel 2) → La institución (papel + banda azul) →
+El proyecto (noche 2, índice lateral) → Articulación (papel 2, dos columnas) → Beneficios (monte) → Contacto (noche)
+→ pie (papel).
 
 ## Typography
 
-**Display Font:** Montserrat Variable (con Montserrat, ui-sans-serif, system-ui)
-**Body Font:** Geist Variable (con Geist, ui-sans-serif, system-ui, Segoe UI)
+**Display:** Manrope Variable (200–800). **Texto:** DM Sans Variable con eje óptico. **Técnica:** IBM Plex Mono 400/500.
 
-**Character:** Montserrat es la familia del logotipo y lleva la voz institucional en titulares compactos y negativos de tracking; Geist da una lectura neutra y técnica a cuerpo, etiquetas y datos.
+**Por qué:** Manrope tiene aperturas amplias y una «a» de dos pisos que sostiene titulares de 800 sin perder
+legibilidad (las tildes del español no chocan con el interlineado de 0,98); DM Sans tiene eje de tamaño óptico, lo
+que afina el cuerpo de 15–17 px y abre la bajada; IBM Plex Mono aporta la voz industrial de los rótulos (familia nacida
+en una empresa de ingeniería). Las tres separan a CEPROC de NOVEX, que usa Geist.
+
+**Carga:** archivos locales (Fontsource), subconjunto latino precargado (`vite.config.ts` agrega `<link rel=preload>` a
+las dos fuentes del primer render) y respaldos con métricas medidas (`size-adjust`, `ascent-override`,
+`descent-override` en `global.css`, calculadas con `scripts/fallback-metrics.mjs`) para que el texto no salte.
 
 ### Hierarchy
-- **Display** (700, `clamp(2.5rem, 0.9rem + 4.6vw, 5.25rem)`, 0,98): titular de portada en dos líneas, la segunda en dorado noche. El lema de Contacto usa la misma voz (`clamp(2.25rem, 1.2rem + 4.4vw, 5.25rem)`, 1,04, máx. 14ch).
-- **Headline** (700, `--step-headline`, 1,04, −0,03em): títulos de sección.
-- **Title** (600, `--step-title`, 1,2, −0,02em): enunciados de sección (máx. 20ch); subtítulos de bloque entre 1,5 y 2,25rem.
-- **Lead** (400, `--step-lead`, 1,55): bajada de portada y aperturas (máx. 44–46ch).
-- **Body** (400, 1rem / 1,0625rem en textos de sección, 1,6): lectura; medidas de 44–70ch. Listas y tablas en 0,9375rem.
-- **Label** (600, 0,75–0,8125rem, cifras tabulares): números de secuencia, metadatos, rótulos de dato. Sin mayúsculas forzadas ni tracking abierto.
+- **Display** (800, `--fs-display`, 0,98, −0,045em): titular de portada en dos líneas, la segunda en dorado noche.
+  Limitado a `12,4cqi` del bloque de texto para que nunca se corte.
+- **Headline** (800, `--fs-h1`, 0,98, −0,042em): títulos de sección y lema de Contacto.
+- **Title** (700–800, `--fs-h2`): títulos de bloque (catálogo, circuito, columnas de Articulación, Contacto).
+- **Subtitle** (700, `--fs-h3`): áreas, personas, beneficios, valores.
+- **Lead** (400, `--fs-lead`, 1,55): bajadas y primer párrafo de cada relato; 44–50ch.
+- **Body** (400, 1,0625rem, 1,65): lectura; listas a 0,9375rem.
+- **Label** (IBM Plex Mono 500, 0,75rem, +0,06em, mayúsculas): índices, rótulos de dato, metadatos. Solo frases de una
+  a cuatro palabras; nunca párrafos en mayúsculas.
+- **Cifras** (Manrope 700–800, `tabular-nums lining-nums`): 07 áreas, 56 talleres, 05 etapas, cantidades de beneficios.
 
 ### Named Rules
-**La Regla del Titular Compacto.** h1–h3 en Montserrat 700, interlineado 1,04, tracking −0,03em y `text-wrap: balance`; la portada aprieta a −0,04em.
+**La Regla de la Secuencia Numerada.** Los números de dos dígitos aparecen solo donde hay orden real: el recorrido de
+secciones (índice), las siete áreas, los talleres de un área, las cinco etapas, los pasos de lectura de El proyecto y
+los objetivos específicos. Las competencias, valores y beneficios llevan viñetas, no números.
 
-**La Regla de la Secuencia Numerada.** El número de dos dígitos (`01`, `02`…) en cifras tabulares aparece solo donde hay orden real: pasos del circuito, las siete áreas (núcleo, chips y catálogo) y los objetivos específicos. Nunca como rótulo decorativo de sección.
+**La Regla de los Datos Reales.** Toda cifra sale del documento oficial (las cantidades de Beneficios son el número de
+ítems que lista el documento).
 
 ## Layout
 
-Contenedor centrado de `--max` (76rem) con márgenes `--gutter`; secciones con `--section-y` de padding vertical. Las cabeceras de sección usan rejillas asimétricas 7/5 o 6/5 (título a la izquierda, bajada alineada abajo a la derecha); los bloques internos 5/7. Portada: rejilla 7/5 con copia a la izquierda y medallión (máx. 640 px) a la derecha, altura `max(100svh, 680px)`.
+Contenedor de `--max` (90rem) con márgenes `--gutter`. Cabeceras de sección: índice + titular amplio (14–17ch) y bajada
+alineada abajo cuando hay espacio. Composiciones propias por sección: portada 6/6 con el núcleo a la derecha;
+Capacitaciones con índice de siete columnas, ficha 5 + vitrina 7; Seguridad a dos mitades con la foto a sangre
+(46/54); La institución con relato 5/7 y recorrido fotográfico escalonado; El proyecto con índice fijo 3 + contenido 9;
+Articulación en dos columnas separadas por hilo vertical y carta de cierre; Contacto 5/7 con accesos grandes.
 
-Separaciones internas en `clamp()`: 56–120 px entre bloques mayores, 24–96 px de gap entre columnas. Cortes responsive observados: 1000 px (navegación a panel móvil; Áreas a una columna), 960 px (portada apila con el medallión arriba, máx. 420 px), 860 px (circuito pasa a vertical, Contacto a una columna), 760 px (rótulos del núcleo se reemplazan por una fila táctil de chips con scroll-snap), 620/520/480 px (listas y valores a una columna).
+Cortes responsive: 1100 px (núcleo bajo el texto), 1000 px (menú móvil, índice de áreas con desplazamiento lateral,
+El proyecto sin índice), 960 px (relatos y Seguridad a una columna), 860 px (portada compacta), 640/620/520 px (listas
+a una columna, flotante con rótulo corto).
 
 ## Elevation & Depth
 
-Sistema plano con capas tonales: la profundidad sobre noche viene de escalones de superficie (night → night-2 → night-3), halos radiales de verde y dorado detrás del contenido y una retícula de puntos tenue (28 px) en la portada. Los bordes se dibujan como `inset` box-shadow de 1 px. Las únicas sombras proyectadas son difusas y pertenecen a la acción principal y al medallión.
+Profundidad por fotografía, superficies y velos, no por sombras. Velo de la portada en dos gradientes (lectura a la
+izquierda, roca viva a la derecha, fundido a noche abajo); luz cálida dorada y luz verde de borde en el núcleo 3D;
+estratos al 8–12 % de opacidad. Sombras: solo difusas en las láminas del carrusel y el acceso flotante.
 
-### Shadow Vocabulary
-- **Brillo dorado** (`0 0 0 1px rgba(255,255,255,0.18) inset, 0 10px 26px -12px rgba(196,154,69,0.55)`): botón dorado.
-- **Borde interno** (`inset 0 0 0 1px var(--line-night-2)`): tarjetas, paneles, botón ghost, chips, iconos de contacto.
-- **Halo activo** (`0 0 0 6px rgba(214,174,92,0.14)`): nodo encendido del circuito.
+## Motion
 
-### Named Rules
-**La Regla del Hilo.** Los límites se trazan con hilos de 1 px (`vector-effect: non-scaling-stroke` en SVG), no con sombras.
+Sistema con cuatro duraciones (`--dur-micro` 160 ms, `--dur-state` 240 ms, `--dur-enter` 640 ms, `--dur-reveal`
+900 ms) y tres curvas (`--ease-out` para entradas y estados, `--ease-out-expo` para desplazamientos largos e
+indicadores, `--ease-in-out` solo para el avance automático del carrusel). Nunca `ease-in` para entrar ni
+`transition: all`.
 
-## Shapes
-
-Radios suaves y pocos: 14 px (`--radius`) en tarjetas y panel de área, 8 px (`--radius-sm`) en notas y rótulos, 6 px en enlaces de navegación, píldora (999 px) en botones, chips, etiquetas de taller y créditos. El círculo es la forma recurrente: medallión, núcleo, nodos, botón de scroll, iconos de contacto y botón de acordeón. Las viñetas de lista son trazos horizontales de 10 × 1 px; las listas de papel abren con un filete de 2 px en azul institucional.
+- **Entrada de la portada (≈1,2 s, sin bloquear la interacción):** la cabecera baja 12 px; el rótulo; cada línea del
+  titular sube desde su propia máscara (900 ms, 110 ms entre líneas); bajada y botones; el núcleo se enciende con
+  escala 0,96 → 1; el hilo de las cifras se dibuja (`scaleX`) y las cifras entran en cascada; la foto de fondo se asienta
+  (1,08 → 1, 1,8 s).
+- **Apariciones al desplazarse** (`data-reveal`): `up` (18 px + opacidad), `fade`, `rule` (hilos que se dibujan),
+  `photo` (cortina con `clip-path` y la foto que se asienta) y `stagger` (hijos en cascada de 55 ms).
+- **Fotografías:** fundido de 520 ms entre la foto de fondo y la de cada área; cortina en el recorrido de La
+  institución y en Seguridad; parallax leve (`translate3d`) en portada y recorrido.
+- **Navegación:** un único hilo dorado se desliza (`translateX` + `scaleX`) hasta la sección actual; lo mismo en las
+  pestañas de áreas; la cabecera se guarda al bajar y vuelve al subir o al recibir foco.
+- **Microinteracciones:** botones con relleno que sube desde abajo (pseudoelemento con `transform`) y flecha que avanza
+  3 px; presionar escala 0,97; rótulos del núcleo que se separan 3 px de su nodo; íconos de contacto que se rellenan
+  en dorado y flecha diagonal que avanza.
+- **Por qué `clip-path`:** las tres cortinas de fotos corren una sola vez por elemento y Chrome/Safari las componen sin
+  recalcular el diseño; medido sin caídas (`scripts/perf.mjs`).
+- **Movimiento reducido:** todo pasa a fundidos de 160–240 ms lineales o a estado final inmediato; el carrusel no avanza
+  solo; la cabecera no se oculta; el núcleo salta sin interpolar.
 
 ## Components
 
 ### Buttons
-- **Shape:** píldora (999 px), alto mínimo 48 px, padding horizontal 22 px, Geist 600 a 0,9375rem.
-- **Primary (dorado):** fondo dorado del arco, texto noche, brillo dorado.
-- **Ghost:** fondo blanco al 4 %, texto on-night, borde interno de 1 px.
-- **Hover / Focus:** solo con puntero fino; dorado aclara a #d3ab5b; ghost sube a 8 % y su borde pasa a dorado al 60 %; la flecha se desplaza 3 px. Al presionar, `scale(0.97)`. Foco: contorno dorado de 2 px con offset 3 px.
-- **Variante de cabecera:** ghost de 40 px de alto y 0,875rem; con la sección de Contacto activa gana borde dorado.
+Píldora de 48 px, DM Sans 600 a 0,97rem, ícono a la izquierda o flecha a la derecha. Dorado (acción principal) y
+fantasma con hilo interno. Hover solo con puntero fino. Foco: contorno dorado de 2 px con separación de 3 px.
 
-### Chips
-- **Fila táctil de áreas (≤760 px):** píldoras de 44 px con número y nombre, fondo 4 % y borde interno; seleccionada en dorado noche con texto noche.
-- **Etiquetas de taller:** píldoras de 0,8125rem en el panel de área, no interactivas.
+### Acceso flotante
+Pastilla de noche de 44 px partida en dos: «Capacitate con nosotros» (abre el asistente; «Capacitate» en celular) y
+un ícono de WhatsApp que abre el chat oficial. Respeta `safe-area-inset`. Se aparta sobre la portada y mientras
+Contacto está en pantalla (ya muestra los mismos accesos) y mientras el asistente está abierto.
 
-### Cards / Containers
-- **Corner Style:** 14 px.
-- **Background:** night-2 sobre noche.
-- **Shadow Strategy:** borde interno de 1 px (ver Elevation & Depth).
-- **Internal Padding:** `clamp(18px, 2.4vw, 28px)` a `clamp(20px, 2.4vw, 30px)`.
-- **Notas:** radio 8 px, fondo blanco al 3 % o dorado al 7 % con borde dorado al 25 %.
-- Sobre papel no hay tarjetas: el contenido se organiza en listas y filas separadas por hilos.
+### Núcleo orbital de la portada (componente firma)
+Logo plano de CEPROC en el centro, tres órbitas inclinadas y las siete áreas como nodos con rótulos HTML (botones
+reales). Cursor con imán e histéresis, clic/Enter fija, Escape suelta, flechas recorren, toque con la fila de chips en
+celular. La foto del área reemplaza el fondo (escritorio) o aparece en la ficha (celular). Iluminación: luz cálida
+dorada y luz verde de borde. Rendimiento: carga diferida, pausa fuera de pantalla, resolución adaptativa y versión SVG
+sin WebGL.
 
-### Navigation
-- **Cabecera fija** de 4,5rem con lockup de 46 px. Sobre la portada, un degradado corto de noche garantiza contraste; al desplazarse pasa a noche sólida con hilo inferior.
-- **Enlaces:** Geist 500 a 0,875rem en on-night-2; actual en blanco con subrayado dorado de 1 px que crece con `scaleX`.
-- **Móvil (≤1000 px):** hamburguesa de dos líneas que rota a cruz; panel a pantalla completa con enlaces en Montserrat 600 a 1,5rem, entrada escalonada (`translateY` + opacidad, 35 ms por ítem); el actual en dorado.
+### Índice de áreas
+Siete columnas separadas por hilos con número mono y nombre; el hilo dorado superior se desliza a la activa. En
+pantallas angostas, desplazamiento lateral con imán.
 
-### Núcleo de Áreas (componente firma)
-SVG de 1000 × 860 con el lockup real de CEPROC sobre un disco papel y anillo dorado de 2 px al centro, dos órbitas elípticas de 1 px (la interior punteada) y siete nodos distribuidos desde arriba. Cada nodo se une al núcleo con un hilo; la conexión activa se traza en dorado noche (1,6 px). Un indicador dorado (anillo + punto) sigue al cursor real con un resorte amortiguado (k 0,16, amortiguación 0,62, sin rebote, interrumpible), se imanta al área más cercana dentro de un radio de 150 y vuelve al área seleccionada al salir; con movimiento reducido salta sin interpolar. Los rótulos son botones reales con número tabular y nombre; el activo se ilumina en blanco con fondo night-2 al 75 %. Clic, teclado y toque seleccionan; en táctil la selección es solo por toque. Junto al núcleo, un panel muestra imagen ilustrativa con crédito, metadatos en verde noche y el conteo de talleres en dorado.
+### Contacto
+WhatsApp e Instagram como filas grandes (ícono circular de 56 px, dato en Manrope 700, flecha diagonal); teléfono,
+correo y ubicación en tres columnas compactas. Todos los datos salen de `src/content/contact.ts`.
 
-### Núcleo orbital de la portada
-Esfera azul noche de acabado lacado (clearcoat) con el logo real de CEPROC en relieve en su versión invertida (azul → blanco papel, como en la cabecera), iluminada con luz de borde dorada y relleno verde: los colores del logo. Alrededor, tres órbitas inclinadas de 1 px (la central punteada) que giran juntas y lentamente; las siete áreas son nodos en siete ángulos iguales (los rótulos no se superponen). Rótulos HTML anclados a cada nodo, hacia afuera del núcleo; en los bordes del escenario, encima del nodo. Al acercar el cursor (imán de 16 % del ancho con histéresis 0,72; sobre un rótulo manda el rótulo) el nodo se agranda con halo dorado, aparece un filamento dorado desde la esfera, las órbitas casi se detienen y la foto del área reemplaza el paisaje de fondo (fundido 360 ms); la ficha muestra número, sección, título, descripción y talleres reales. Clic/Enter fija, Escape suelta. En celular: números junto a los nodos, fila táctil de nombres y la foto del área dentro de la ficha. Sin WebGL: la misma disposición en SVG (proyección de las mismas órbitas) con el logo invertido.
-
-### Circuito (Pathway)
-Cinco pasos en rejilla horizontal sobre un riel de 1 px que se llena en dorado con `scaleX` según el progreso; cada nodo (15 px) se enciende con halo al alcanzarse. Bajo 860 px el riel pasa a vertical (`scaleY`).
-
-### Catálogo de talleres
-Acordeón nativo (`details`) con número dorado, título en Montserrat 600 y botón circular de 28 px cuyo signo más rota a menos. Dentro, tablas que en móvil se reorganizan en filas apiladas.
+### Pie
+Lockup, nombre completo y lema técnico; columnas Secciones, Contacto y Redes oficiales; nota de etapa de presentación,
+© y «Volver arriba». Sin créditos fotográficos (ver `docs/image-sources.md`).
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** derivar cualquier color nuevo de navy, green o gold, y usar `gold-on-night` / `gold-on-paper` / `green-on-night` sobre texto e hilos finos.
-- **Do** alternar noche para interacción y papel para lectura, usando las clases de superficie `on-paper` y `on-paper-2`.
-- **Do** dibujar órbitas, conexiones, rieles y divisores con hilos de 1 px y bordes como `inset` box-shadow.
-- **Do** mover solo con `transform` y `opacity` y curvas `--ease-out` (cubic-bezier(0.23, 1, 0.32, 1)); dar a cada animación una alternativa bajo `prefers-reduced-motion: reduce` (fundido lineal o sin movimiento).
-- **Do** limitar los efectos de hover a `(hover: hover) and (pointer: fine)` y garantizar selección táctil equivalente.
-- **Do** mantener el contenido visible sin JS: las apariciones al entrar en pantalla solo ocultan cuando existe la clase `js`.
-- **Do** usar el logo real (lockup o isotipo) como núcleo; nunca un sustituto.
+- **Do** derivar todo color de navy, green o gold y usar las variantes de contraste sobre texto e hilos.
+- **Do** respetar la alternancia de superficies y dar a cada sección su propia composición.
+- **Do** usar el índice de sección y los rótulos IBM Plex Mono para orientar, con frases cortas.
+- **Do** animar solo `transform` y `opacity` (y `clip-path` en cortinas puntuales), con alternativa reducida.
+- **Do** tomar teléfono, WhatsApp e Instagram de `src/content/contact.ts`.
+- **Do** usar solo fotos con licencias sin atribución obligatoria y registrarlas en `docs/image-sources.md`.
 
 ### Don't:
-- **Don't** poner rótulos tipo kicker o eyebrow sobre los títulos de sección.
-- **Don't** numerar lo que no es una secuencia: los números de dos dígitos quedan para el circuito, las áreas y los objetivos específicos.
-- **Don't** inventar cifras, contadores o métricas: los datos visibles salen del documento oficial (7 áreas, 56 talleres, Rawson).
+- **Don't** mostrar leyendas de «imagen ilustrativa» ni créditos fotográficos en la interfaz.
+- **Don't** inventar cifras, convenios, sedes o promesas de empleo.
+- **Don't** numerar lo que no es una secuencia.
+- **Don't** convertir el papel en grillas de tarjetas idénticas; sobre papel se lee en filas con hilos.
 - **Don't** usar el logo negro y dorado de la portada del PDF.
-- **Don't** convertir el papel en una grilla de tarjetas; sobre papel se lee en listas y filas con hilos.
-- **Don't** usar sombras duras desplazadas ni bordes gruesos fuera del filete de 2 px de las listas de papel.
+- **Don't** usar sombras duras, neón, vidrio decorativo o gradientes de colores ajenos al logo.
