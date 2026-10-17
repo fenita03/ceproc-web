@@ -27,16 +27,22 @@ npm test           # pruebas Playwright (escritorio 1440×900 y Pixel 7)
 | `src/content/heroAreas.ts` | Fuente única de las siete áreas del núcleo (textos y cantidades de `ceproc.ts`, fotos de `photos.json`). |
 | `src/components/AreaHub.tsx` | Núcleo interactivo de áreas (cursor, teclado, toque). |
 | `src/sections/` | Secciones en orden: Portada, Capacitaciones (áreas), Seguridad, Quiénes somos, El proyecto, Articulación, Beneficios, Contacto. |
-| `src/components/Enroll.tsx` | «Capacitate con nosotros»: acceso flotante y formulario de tres pasos que arma el mensaje de WhatsApp. |
-| `src/content/enroll.ts` | Número de WhatsApp, opciones del formulario, límites del CV y armado del mensaje (fuente única). |
+| `src/components/TrainingAccess.tsx` | Acceso flotante «Capacitate con nosotros» y carga diferida del asistente. |
+| `src/components/TrainingWizard.tsx` | Asistente paso a paso adaptado de «Contanos tu proyecto» de NOVEX (`novex-web/src/pages/ProjectWizard.tsx`). |
+| `src/content/wizard.ts` | Preguntas, validación, saneamiento, resumen y mensaje de WhatsApp (adaptado de `novex-web/src/data/wizard.ts`). |
 | `api/cv.ts` | Función de Vercel: valida el CV, lo guarda privado en Vercel Blob y entrega un enlace firmado que vence. |
 | `scripts/brand/` | Proceso de vectorización del logo desde el escaneo. |
 | `scripts/fotos.py` | Descarga y conversión de las fotos a WebP. |
 | `scripts/perf.mjs` | Medición de fps y tareas largas con GPU. |
 | `tests/ceproc.spec.ts` | Pruebas de extremo a extremo del sitio. |
-| `tests/enroll.spec.ts` | Pruebas del formulario, del mensaje de WhatsApp y de la función `api/cv`. |
+| `tests/wizard.spec.ts` | Pruebas del asistente, del acceso flotante, del CV, del mensaje de WhatsApp y de `api/cv`. |
 
-## «Capacitate con nosotros» (formulario y WhatsApp)
+## «Capacitate con nosotros» (asistente y WhatsApp)
+
+Misma experiencia que «Hablemos de tu proyecto» de NOVEX: una pregunta por paso (área, talleres, objetivo,
+experiencia y horarios, datos, CV, revisión), pasos opcionales con «Omitir», revisión con «Editar» y envío por WhatsApp.
+Se abre desde el acceso flotante, el encabezado, la portada, «Me interesa este taller» y Contacto.
+
 
 - Destino: el teléfono oficial `contact.phone` (+54 9 264 523-9410), confirmado como WhatsApp. Se puede cambiar con
   `VITE_WHATSAPP_NUMBER` (ver `.env.example`).
@@ -48,7 +54,10 @@ npm test           # pruebas Playwright (escritorio 1440×900 y Pixel 7)
     botón «Compartir el CV».
 - El sitio nunca dice que algo se envió: abre WhatsApp con el mensaje y aclara que falta tocar «Enviar».
 
-### Activar la subida de CV en Vercel
+### Subida de CV en Vercel (activa)
+
+Blob Store privado `ceproc-cv` (región gru1, São Paulo) conectado al proyecto, y `CV_LINK_SECRET` cargado en producción
+(16/10/2026). Para rehacerlo en otro proyecto:
 
 1. En el proyecto de Vercel: **Storage → Create Database → Blob** y conectarlo al proyecto (crea `BLOB_READ_WRITE_TOKEN`).
 2. **Settings → Environment Variables:** agregar `CV_LINK_SECRET` con 32 caracteres aleatorios o más (`openssl rand -hex 32`).

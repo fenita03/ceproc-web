@@ -28,3 +28,6 @@ dist-ssr
 # Pruebas
 test-results
 playwright-report
+
+.vercel
+.env*

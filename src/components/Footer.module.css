@@ -1,5 +1,6 @@
 .footer {
-  padding-block: clamp(48px, 6vw, 72px) 36px;
+  /* El último renglón queda por encima del acceso flotante. */
+  padding-block: clamp(48px, 6vw, 72px) calc(36px + 64px);
   border-top: 1px solid var(--line-paper);
 }
 

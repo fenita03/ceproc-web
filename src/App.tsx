@@ -10,7 +10,7 @@ import { Safety } from "./sections/Safety";
 import { Articulation } from "./sections/Articulation";
 import { Benefits } from "./sections/Benefits";
 import { Contact } from "./sections/Contact";
-import { EnrollLauncher } from "./components/EnrollLauncher";
+import { TrainingAccess } from "./components/TrainingAccess";
 
 /**
  * Orden: portada → capacitaciones (áreas, talleres y seguridad) → la institución (quiénes somos,
@@ -40,7 +40,7 @@ export function App() {
         <Contact />
       </main>
       <Footer />
-      <EnrollLauncher />
+      <TrainingAccess />
     </>
   );
 }

@@ -5,7 +5,7 @@ import { Phone } from "@phosphor-icons/react/dist/csr/Phone";
 import { WhatsappLogo } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
 import { useEffect, useRef } from "react";
 import { contact, institution } from "../content/ceproc";
-import { generalInquiryUrl } from "../content/enroll";
+import { generalInquiryUrl } from "../content/wizard";
 import { openEnroll } from "../hooks/enroll";
 import { useReducedMotion } from "../hooks/media";
 import styles from "./Contact.module.css";

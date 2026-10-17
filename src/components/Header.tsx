@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import lockupReverse from "../brand/ceproc-lockup-reverse.svg";
+import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
 import { nav } from "../content/ceproc";
+import { openEnroll } from "../hooks/enroll";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -72,7 +74,7 @@ export function Header() {
         </a>
         <nav aria-label="Secciones" className={styles.nav}>
           <ul>
-            {nav.slice(0, -1).map((n) => (
+            {nav.map((n) => (
               <li key={n.href}>
                 <a href={n.href} aria-current={current === n.href.slice(1) ? "location" : undefined}>
                   {n.label}
@@ -81,9 +83,10 @@ export function Header() {
             ))}
           </ul>
         </nav>
-        <a href="#contacto" className={`btn btn-ghost ${styles.cta}`} aria-current={current === "contacto" ? "location" : undefined}>
-          Contacto
-        </a>
+        <button type="button" className={`btn btn-gold ${styles.cta}`} onClick={() => openEnroll()}>
+          Capacitate con nosotros
+          <ArrowRight size={16} aria-hidden="true" />
+        </button>
         <button
           ref={toggleRef}
           type="button"
