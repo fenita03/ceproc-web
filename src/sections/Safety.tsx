@@ -2,6 +2,7 @@ import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
 import { areas, safety } from "../content/ceproc";
 import { photo } from "../content/photos";
 import { showArea } from "../hooks/enroll";
+import { ReadMore } from "../components/ReadMore";
 import styles from "./Safety.module.css";
 
 const pic = photo("seguridad");
@@ -34,7 +35,7 @@ export function Safety() {
           </h2>
           <p className={styles.lead} data-reveal style={{ "--d": "120ms" } as React.CSSProperties}>
             En las áreas mineras se priorizan la seguridad, el mantenimiento responsable, la prevención de riesgos y el
-            respeto por los procedimientos del sector. {safety.employability}
+            respeto por los procedimientos del sector.
           </p>
         </div>
 
@@ -43,11 +44,19 @@ export function Safety() {
             <h3 id="transversales-title" className={styles.subtitle}>
               Competencias transversales
             </h3>
-            <ul className={styles.bullets} data-reveal="stagger">
-              {safety.transversal.map((t) => (
+            <ul className={styles.bullets}>
+              {safety.transversal.slice(0, 2).map((t) => (
                 <li key={t}>{t}</li>
               ))}
             </ul>
+            <ReadMore label={`Ver las ${safety.transversal.length} competencias`}>
+              <ul className={styles.bullets}>
+                {safety.transversal.slice(2).map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+              <p className={styles.tracksText}>{safety.employability}</p>
+            </ReadMore>
           </section>
           <section aria-labelledby="trayectos-title">
             <h3 id="trayectos-title" className={styles.subtitle}>

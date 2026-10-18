@@ -75,7 +75,7 @@ function Fab({ hidden }: { hidden: boolean }) {
   }, []);
   const off = hidden || onHero || onContact;
   return (
-    <div className={styles.fab} data-off={off || undefined} aria-hidden={off || undefined} role="group" aria-label="Accesos rápidos">
+    <div className={`theme-dark ${styles.fab}`} data-off={off || undefined} aria-hidden={off || undefined} role="group" aria-label="Accesos rápidos">
       <button type="button" className={styles.main} tabIndex={off ? -1 : 0} onPointerEnter={() => void load()} onClick={() => openEnroll()}>
         <GraduationCap size={18} aria-hidden="true" className={styles.mainIcon} />
         <span className={styles.long}>Capacitate con nosotros</span>

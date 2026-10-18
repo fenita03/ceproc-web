@@ -1,6 +1,9 @@
-import { Plus } from "@phosphor-icons/react/dist/csr/Plus";
+import { ReadMore, firstSentence } from "../components/ReadMore";
 import { benefits, companies, municipality } from "../content/ceproc";
 import styles from "./Articulation.module.css";
+
+const [muniLead, muniRest] = firstSentence(municipality.intro);
+const [compLead, compRest] = firstSentence(companies.intro);
 
 export function Articulation() {
   return (
@@ -27,15 +30,12 @@ export function Articulation() {
             <h3 id="municipio-title" className={styles.colTitle}>
               {municipality.title}
             </h3>
-            <p className={styles.text}>{municipality.intro}</p>
-            <blockquote className={styles.quote}>
-              <p>{municipality.reason}</p>
-            </blockquote>
-            <details className={`disclosure ${styles.more}`}>
-              <summary className="btn btn-ghost">
-                Qué se solicita y qué se compromete CEPROC
-                <Plus size={16} aria-hidden="true" className="disclosure-icon" />
-              </summary>
+            <p className={styles.text}>{muniLead}</p>
+            <ReadMore>
+              {muniRest && <p className={styles.text}>{muniRest}</p>}
+              <blockquote className={styles.quote}>
+                <p>{municipality.reason}</p>
+              </blockquote>
               <p className={styles.listTitle}>Se solicita específicamente</p>
               <ul className={styles.list}>
                 {municipality.requests.map((r) => (
@@ -48,7 +48,7 @@ export function Articulation() {
                   <li key={r}>{r}</li>
                 ))}
               </ul>
-            </details>
+            </ReadMore>
           </article>
 
           <article className={styles.col} aria-labelledby="empresas-title" data-reveal style={{ "--d": "80ms" } as React.CSSProperties}>
@@ -58,29 +58,32 @@ export function Articulation() {
             <h3 id="empresas-title" className={styles.colTitle}>
               {companies.title}
             </h3>
-            <p className={styles.text}>{companies.intro}</p>
-            <blockquote className={styles.quote}>
-              <p>{companies.commitment}</p>
-            </blockquote>
-            <p className={styles.listTitle}>Resultado buscado</p>
-            <p className={styles.text}>{companies.result}</p>
-            <details className={`disclosure ${styles.more}`}>
-              <summary className="btn btn-ghost">
-                Aportes que se propone solicitar
-                <Plus size={16} aria-hidden="true" className="disclosure-icon" />
-              </summary>
-              <ul className={`${styles.list} ${styles.listTop}`}>
+            <p className={styles.text}>{compLead}</p>
+            <ReadMore>
+              {compRest && <p className={styles.text}>{compRest}</p>}
+              <blockquote className={styles.quote}>
+                <p>{companies.commitment}</p>
+              </blockquote>
+              <p className={styles.listTitle}>Resultado buscado</p>
+              <p className={styles.text}>{companies.result}</p>
+              <p className={styles.listTitle}>Aportes que se propone solicitar</p>
+              <ul className={styles.list}>
                 {companies.contributions.map((r) => (
                   <li key={r}>{r}</li>
                 ))}
               </ul>
-            </details>
+            </ReadMore>
           </article>
         </div>
 
         <div className={styles.closing} data-reveal>
           <p className={styles.closingLabel}>Solicitud institucional</p>
-          <p className={styles.closingText}>{benefits.closing}</p>
+          <div>
+            <p className={styles.closingText}>CEPROC solicita al Intendente del Departamento Rawson la posibilidad de mantener una reunión institucional.</p>
+            <ReadMore label="Leer la solicitud completa">
+              <p className={styles.text}>{benefits.closing}</p>
+            </ReadMore>
+          </div>
         </div>
       </div>
     </section>

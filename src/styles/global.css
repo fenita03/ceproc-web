@@ -42,6 +42,7 @@
 
   /* Monte: verde institucional llevado a superficie (Beneficios) */
   --forest: #0c2618;
+  --mint: #eef4f0; /* verde institucional al 6 % sobre blanco */
   --forest-2: #12321f;
   --on-forest-2: #b3c7b9;
   --line-forest: rgba(190, 230, 205, 0.14);
@@ -61,6 +62,26 @@
   --gold-on-paper: #7f5f1c; /* 5,6:1 sobre --paper */
   --green-on-night: #6fbf8e; /* 8,3:1 sobre --night */
   --green-on-paper: var(--green); /* 6,2:1 sobre --paper */
+
+  /* Superficie principal: blanca, como el Instagram oficial (logo a color sobre blanco). */
+  --white: #ffffff;
+  --on-gold: #06111f; /* texto sobre dorado: siempre oscuro */
+  --gold-display: #a67c2e; /* dorado de titulares sobre blanco: 3,8:1 (texto grande) */
+
+  /* Tokens semánticos: claros por defecto; .theme-dark los vuelve oscuros (lámina del núcleo 3D, flotante). */
+  --surface: var(--white);
+  --surface-0: var(--paper);
+  --surface-2: var(--paper);
+  --surface-3: var(--paper-2);
+  --heading: var(--navy);
+  --text: #1b2c45;
+  --text-2: var(--ink-2);
+  --text-3: var(--ink-3); /* 6,0:1 sobre blanco */
+  --line: var(--line-paper);
+  --line-2: var(--line-paper-2);
+  --accent: #8a6524; /* dorado para texto chico e hilos: 5,3:1 sobre blanco */
+  --accent-green: var(--green);
+  --hover-fill: rgba(11, 37, 69, 0.05);
 
   /* Tres voces: Manrope titula, DM Sans lee, IBM Plex Mono rotula datos y etiquetas técnicas. */
   --font-display: "Manrope Variable", "Manrope Fallback", ui-sans-serif, system-ui, sans-serif;
@@ -101,6 +122,24 @@
   --dur-reveal: 900ms;
 }
 
+/* Superficie oscura puntual: reactiva la paleta de noche dentro del bloque. */
+.theme-dark {
+  --surface: var(--night);
+  --surface-0: var(--night-0);
+  --surface-2: var(--night-2);
+  --surface-3: var(--night-3);
+  --heading: #ffffff;
+  --text: var(--on-night);
+  --text-2: var(--on-night-2);
+  --text-3: var(--on-night-3);
+  --line: var(--line-night);
+  --line-2: var(--line-night-2);
+  --accent: var(--gold-on-night);
+  --accent-green: var(--green-on-night);
+  --hover-fill: rgba(233, 238, 246, 0.08);
+  color: var(--text);
+}
+
 *,
 *::before,
 *::after {
@@ -110,7 +149,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: var(--header-h);
-  scrollbar-color: #2a3c58 var(--night);
+  scrollbar-color: #b9c1cc var(--surface);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -121,8 +160,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--night);
-  color: var(--on-night);
+  background: var(--surface);
+  color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
   font-optical-sizing: auto;
@@ -209,11 +248,11 @@ summary {
 
 ::selection {
   background: var(--gold);
-  color: var(--night);
+  color: var(--on-gold);
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold-on-night);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -250,7 +289,7 @@ summary {
   padding: 10px 16px;
   border-radius: var(--radius-sm);
   background: var(--gold);
-  color: var(--night);
+  color: var(--on-gold);
   font-weight: 600;
   text-decoration: none;
 }
@@ -283,19 +322,19 @@ summary {
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--on-night-2);
+  color: var(--text-2);
 }
 
 .index::before {
   content: "";
   width: 28px;
   height: 1px;
-  background: var(--gold-on-night);
+  background: var(--accent);
 }
 
 .index > b {
   font-weight: 500;
-  color: var(--gold-on-night);
+  color: var(--accent);
 }
 
 .on-paper .index,
@@ -331,7 +370,7 @@ summary {
   right: 0;
   height: clamp(160px, 22vw, 340px);
   pointer-events: none;
-  color: var(--on-night);
+  color: var(--text);
   opacity: 0.09;
   z-index: 0;
 }
@@ -485,7 +524,7 @@ summary {
 
 .btn-gold {
   background: var(--gold);
-  color: var(--night);
+  color: var(--on-gold);
 }
 
 .btn-gold::before {
@@ -494,12 +533,12 @@ summary {
 
 .btn-ghost {
   background: transparent;
-  color: var(--on-night);
-  box-shadow: inset 0 0 0 1px var(--line-night-2);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--line-2);
 }
 
 .btn-ghost::before {
-  background: rgba(233, 238, 246, 0.08);
+  background: var(--hover-fill);
 }
 
 .on-paper .btn-ghost,
@@ -587,6 +626,70 @@ summary {
 .lead {
   font-size: var(--fs-lead);
   line-height: 1.55;
+}
+
+/* «Leer más»: enlace de texto con signo que rota; el contenido entra con un desplazamiento corto. */
+.readmore {
+  margin-top: 14px;
+}
+
+.readmore > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  list-style: none;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.readmore > summary::-webkit-details-marker {
+  display: none;
+}
+
+.readmore-close,
+.readmore[open] .readmore-open {
+  display: none;
+}
+
+.readmore[open] .readmore-close {
+  display: inline;
+}
+
+.readmore-icon {
+  transition: transform 260ms var(--ease-out);
+}
+
+.readmore[open] .readmore-icon {
+  transform: rotate(45deg);
+}
+
+.readmore-body {
+  display: grid;
+  gap: 16px;
+  padding-top: 6px;
+}
+
+.readmore[open] .readmore-body {
+  animation: disclose 420ms var(--ease-out) both;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .readmore > summary:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .readmore-icon {
+    transition: none;
+  }
+  .readmore[open] .readmore-body {
+    animation: none;
+  }
 }
 
 /* Desplegable con forma de botón: guarda el detalle extenso sin quitarlo de la página. */

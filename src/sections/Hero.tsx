@@ -21,7 +21,6 @@ export function Hero() {
   const onActive = useCallback((i: number | null) => setActive(i), []);
   return (
     <section id="inicio" className={styles.hero} aria-labelledby="hero-title" data-active={active ?? "none"}>
-      <Backdrop active={active} />
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.copy}>
           <p className={`eyebrow ${styles.in} ${styles.kicker}`} style={{ "--d": "120ms" } as React.CSSProperties}>
@@ -54,7 +53,9 @@ export function Hero() {
         </div>
 
         {/* Núcleo 3D: las siete áreas en órbita alrededor del logo de CEPROC. */}
-        <div className={`${styles.stageIn} ${styles.stage}`}>
+        {/* Lámina fotográfica oscura: el núcleo 3D conserva su luz y la foto de cada área. */}
+        <div className={`theme-dark ${styles.stageIn} ${styles.stage}`}>
+          <Backdrop active={active} />
           <p className={`eyebrow ${styles.coords}`} aria-hidden="true">
             31°34′ S · 68°32′ O
           </p>
@@ -148,7 +149,7 @@ function Backdrop({ active: activeIn }: { active: number | null }) {
       s.raf = 0;
       s.x += (s.tx - s.x) * 0.08;
       s.y += (s.ty - s.y) * 0.08;
-      el.style.transform = `translate3d(${s.x.toFixed(2)}px, ${(s.y + s.scroll * 0.28).toFixed(2)}px, 0)`;
+      el.style.transform = `translate3d(${s.x.toFixed(2)}px, ${(s.y + s.scroll * 0.1).toFixed(2)}px, 0)`;
       if (Math.abs(s.tx - s.x) > 0.05 || Math.abs(s.ty - s.y) > 0.05) s.raf = requestAnimationFrame(tick);
     };
     const kick = () => {

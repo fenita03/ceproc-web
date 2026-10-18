@@ -1,15 +1,15 @@
-/* Superficie «monte»: el verde institucional llevado a fondo; única sección con este tono. */
+/* Superficie «brote»: el verde institucional al 6 % sobre blanco; única sección con este tono. */
 .section {
   position: relative;
   overflow: hidden;
   padding-block: var(--section-y);
-  background: var(--forest);
-  color: var(--on-night);
+  background: var(--mint);
+  color: var(--text);
 }
 
 .strata {
   top: 0;
-  color: var(--green-on-night);
+  color: var(--accent-green);
   opacity: 0.12;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .head :global(.index) {
-  color: var(--on-forest-2);
+  color: var(--text-2);
 }
 
 .title {
@@ -32,7 +32,7 @@
   letter-spacing: -0.042em;
   line-height: 0.98;
   max-width: 17ch;
-  color: #fff;
+  color: var(--heading);
 }
 
 .cols {
@@ -52,7 +52,7 @@
   align-items: flex-end;
   gap: 18px;
   padding-bottom: 18px;
-  border-bottom: 2px solid var(--green-on-night);
+  border-bottom: 2px solid var(--accent-green);
 }
 
 .count {
@@ -61,7 +61,7 @@
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.05em;
-  color: var(--green-on-night);
+  color: var(--accent-green);
   font-variant-numeric: tabular-nums lining-nums;
 }
 
@@ -69,15 +69,15 @@
   font-size: var(--fs-h3);
   font-weight: 700;
   letter-spacing: -0.022em;
-  color: #fff;
+  color: var(--heading);
   padding-bottom: 4px;
 }
 
 .list li {
   position: relative;
   padding: 15px 0 15px 28px;
-  border-bottom: 1px solid var(--line-forest);
-  color: var(--on-forest-2);
+  border-bottom: 1px solid rgba(31, 107, 62, 0.16);
+  color: var(--text-2);
   font-size: var(--fs-body);
   line-height: 1.5;
 }
@@ -90,8 +90,8 @@
   top: 1.25em;
   width: 10px;
   height: 5px;
-  border-left: 1.5px solid var(--gold-on-night);
-  border-bottom: 1.5px solid var(--gold-on-night);
+  border-left: 1.5px solid var(--accent);
+  border-bottom: 1.5px solid var(--accent);
   transform: rotate(-45deg);
 }
 

@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { about, project } from "../content/ceproc";
 import { Plus } from "@phosphor-icons/react/dist/csr/Plus";
 import { Pathway } from "../components/Pathway";
+import { ReadMore, firstSentence } from "../components/ReadMore";
 import styles from "./Project.module.css";
+
+const [foundationLead, foundationRest] = firstSentence(project.foundation[0]);
 
 /** Bloques del recorrido de lectura (el índice lateral sigue al que está en pantalla). */
 const STEPS = [
@@ -64,11 +67,13 @@ export function Project() {
                 Fundamentación
               </h3>
               <div className={styles.text} data-reveal>
-                {project.foundation.map((p, i) => (
-                  <p key={p.slice(0, 24)} className={i === 0 ? styles.first : undefined}>
-                    {p}
-                  </p>
-                ))}
+                <p className={styles.first}>{foundationLead}</p>
+                <ReadMore className={styles.fold}>
+                  {foundationRest && <p>{foundationRest}</p>}
+                  {project.foundation.slice(1).map((p) => (
+                    <p key={p.slice(0, 24)}>{p}</p>
+                  ))}
+                </ReadMore>
               </div>
             </section>
 
@@ -89,11 +94,18 @@ export function Project() {
               <h3 id="destinatarios-title" className={styles.blockTitle}>
                 A quiénes está dirigido
               </h3>
-              <ul className={`${styles.list} ${styles.two}`} data-reveal="stagger">
-                {project.audience.map((m) => (
+              <ul className={`${styles.list} ${styles.two}`}>
+                {project.audience.slice(0, 2).map((m) => (
                   <li key={m}>{m}</li>
                 ))}
               </ul>
+              <ReadMore label={`Ver los ${project.audience.length} perfiles`}>
+                <ul className={`${styles.list} ${styles.two} ${styles.listCont}`}>
+                  {project.audience.slice(2).map((m) => (
+                    <li key={m}>{m}</li>
+                  ))}
+                </ul>
+              </ReadMore>
             </section>
 
             {/* Detalle del documento: disponible completo, pero plegado para no saturar la lectura. */}

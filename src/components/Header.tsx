@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import lockupReverse from "../brand/ceproc-lockup-reverse.svg";
+import lockup from "../brand/ceproc-lockup.svg";
 import { ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
 import { InstagramLogo } from "@phosphor-icons/react/dist/csr/InstagramLogo";
 import { WhatsappLogo } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
@@ -118,7 +118,7 @@ export function Header() {
     >
       <div className={`wrap ${styles.bar}`}>
         <a href="#inicio" className={styles.brand} aria-label="CEPROC, ir al inicio">
-          <img src={lockupReverse} alt="" width={140} height={60} />
+          <img src={lockup} alt="" width={140} height={60} />
         </a>
         <nav aria-label="Secciones" className={styles.nav}>
           <ul ref={navRef}>

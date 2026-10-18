@@ -144,8 +144,10 @@ Lo que el sistema rechaza: plantillas de IA con gradientes morados, grillas de t
 translúcido sin función, neón, sombras duras y cualquier cifra que no salga del documento oficial.
 
 **Key Characteristics:**
-- Cuatro superficies: noche (#06111f), azul institucional (#0b2545, banda de misión y visión), monte (#0c2618,
-  Beneficios) y papel cálido (#f5f3ee / #ebe7de).
+- Superficie principal **blanca**, como el Instagram oficial: logo a color (montaña + CEPROC) en la cabecera,
+  titulares en azul institucional con la segunda línea en dorado (#a67c2e), botones dorados.
+- Superficies alternas claras: blanco, papel (#f5f3ee) y brote (#eef4f0, Beneficios). La única superficie oscura es la
+  lámina fotográfica del núcleo 3D en la portada (y la pastilla del acceso flotante), con la clase `.theme-dark`.
 - Manrope 800 en titulares con tracking cerrado; DM Sans para leer; IBM Plex Mono para rótulos técnicos y datos.
 - Índice de sección (`01 · Capacitaciones` … `07 · Contacto`): número de orden real del recorrido, sobre un hilo dorado.
 - Dorado solo para estado activo y acción principal; verde para lo propio de la formación.
@@ -180,10 +182,17 @@ translúcido sin función, neón, sombras duras y cualquier cifra que no salga d
 
 **La Regla del Acento con Contraste.** Sobre texto e hilos finos se usan las variantes `-on-night` / `-on-paper`.
 
-**La Regla de la Alternancia.** Dos secciones seguidas nunca comparten superficie y composición: portada (noche +
-foto) → Capacitaciones (noche, índice) → Seguridad (foto a sangre + papel 2) → La institución (papel + banda azul) →
-El proyecto (noche 2, índice lateral) → Articulación (papel 2, dos columnas) → Beneficios (monte) → Contacto (noche)
-→ pie (papel).
+**La Regla de la Alternancia.** Dos secciones seguidas nunca comparten superficie y composición: portada (blanco +
+lámina oscura del núcleo) → Capacitaciones (papel, índice y tarjetas 3D blancas) → Seguridad (foto a sangre + blanco)
+→ La institución (blanco + banda papel de misión y visión) → El proyecto (papel, índice lateral) → Articulación
+(blanco, dos columnas) → Beneficios (brote) → Contacto (blanco) → pie (papel).
+
+**La Regla de los Tokens Semánticos.** Los componentes usan `--surface`, `--surface-2/3`, `--heading`, `--text`,
+`--text-2/3`, `--line`, `--line-2`, `--accent` y `--accent-green`. Son claros por defecto; `.theme-dark` los vuelve a la
+paleta de noche. El texto sobre dorado usa siempre `--on-gold`.
+
+**La Regla del Texto Justo.** Cada sección muestra título y una oración; el resto del documento queda completo en
+«Leer más» (`src/components/ReadMore.tsx`, un `<details>` nativo). Nunca se borra contenido institucional.
 
 ## Typography
 

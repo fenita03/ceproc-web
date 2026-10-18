@@ -5,14 +5,18 @@
   min-height: max(100svh, 720px);
   display: flex;
   padding-top: var(--header-h);
-  background: var(--night);
+  background: var(--surface);
+  color: var(--text);
 }
 
-/* --- Fondo: afloramiento de San Juan con parallax, bruma y luz cálida --- */
+/* --- Lámina: afloramiento de San Juan con parallax, bruma y luz cálida, dentro de la tarjeta del núcleo --- */
 .backdrop {
   position: absolute;
   inset: 0;
   z-index: -1;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--night);
 }
 
 /* Al entrar, la fotografía se asienta (1,08 → 1) mientras aparece el texto. */
@@ -30,7 +34,7 @@
 
 .scene {
   position: absolute;
-  inset: -3% -2% -14%;
+  inset: -8% -3% -8%;
   will-change: transform;
 }
 
@@ -113,12 +117,11 @@
 }
 
 /* Velo: lectura a la izquierda, roca viva a la derecha, fundido hacia la sección siguiente. */
+/* Velo parejo: los rótulos claros del núcleo se leen sobre cualquier foto; más denso abajo, donde va la ficha. */
 .shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(6, 17, 31, 0.94) 0%, rgba(6, 17, 31, 0.78) 34%, rgba(6, 17, 31, 0.36) 66%, rgba(6, 17, 31, 0.5) 100%),
-    linear-gradient(180deg, rgba(6, 17, 31, 0.7) 0%, rgba(6, 17, 31, 0.12) 24%, rgba(6, 17, 31, 0.2) 60%, var(--night) 100%);
+  background: linear-gradient(180deg, rgba(6, 17, 31, 0.5) 0%, rgba(6, 17, 31, 0.32) 40%, rgba(6, 17, 31, 0.78) 72%, rgba(6, 17, 31, 0.92) 100%);
 }
 
 /* Estratos al pie de la portada: continúan la roca de la foto hacia la sección siguiente. */
@@ -144,14 +147,14 @@
 }
 
 .kicker {
-  color: var(--on-night-2);
+  color: var(--text-2);
   gap: 14px;
 }
 
 .kickerRule {
   width: 32px;
   height: 1px;
-  background: var(--gold-on-night);
+  background: var(--accent);
 }
 
 /* Titular: Manrope 800, interletrado cerrado; cada línea sube desde su propia máscara. */
@@ -161,7 +164,7 @@
   font-weight: 800;
   line-height: 0.98;
   letter-spacing: -0.045em;
-  color: #fff;
+  color: var(--heading);
 }
 
 .line {
@@ -179,7 +182,7 @@
 }
 
 .line:last-child > span {
-  color: var(--gold-on-night);
+  color: var(--gold-display);
 }
 
 @keyframes lineUp {
@@ -217,12 +220,12 @@
   max-width: 44ch;
   font-size: var(--fs-lead);
   line-height: 1.55;
-  color: var(--on-night-2);
+  color: var(--text-2);
 }
 
 .name {
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
 }
 
 .actions {
@@ -234,19 +237,23 @@
 
 /* Núcleo orbital a la derecha: tan grande como permite la altura de la pantalla. */
 .stage {
-  --ring-max: min(600px, calc(100svh - var(--header-h) - 340px));
+  --ring-max: min(560px, calc(100svh - var(--header-h) - 400px));
   position: relative;
+  isolation: isolate;
   grid-column: 7 / -1;
   align-self: center;
   min-width: 0;
-  margin-right: calc(var(--gutter) * -0.5);
+  /* Margen lateral amplio: los rótulos de los nodos extremos quedan siempre dentro de la lámina. */
+  padding: clamp(28px, 3vw, 40px) clamp(56px, 7.5vw, 128px) clamp(18px, 2vw, 26px);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 40px 80px -48px rgba(11, 37, 69, 0.55);
 }
 
 .coords {
   position: absolute;
-  right: calc(var(--gutter) * 0.5);
-  top: -8px;
-  color: var(--on-night-3);
+  right: clamp(16px, 2vw, 28px);
+  top: 16px;
+  color: var(--text-3);
   letter-spacing: 0.08em;
 }
 
@@ -267,7 +274,7 @@
   position: absolute;
   inset: 0 0 auto;
   height: 1px;
-  background: var(--line-night-2);
+  background: var(--line-2);
   transform-origin: left;
   animation: draw 1200ms var(--ease-out-expo) 700ms backwards;
 }
@@ -295,7 +302,7 @@
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--on-night-2);
+  color: var(--text-2);
 }
 
 .factsList dd {
@@ -304,7 +311,7 @@
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.04em;
-  color: #fff;
+  color: var(--heading);
   font-variant-numeric: tabular-nums lining-nums;
 }
 
@@ -321,7 +328,7 @@
   align-items: center;
   gap: 14px;
   padding: 6px 0;
-  color: var(--on-night-2);
+  color: var(--text-2);
   font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
@@ -334,7 +341,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px var(--line-night-2);
+  box-shadow: inset 0 0 0 1px var(--line-2);
   transition: box-shadow var(--dur-state) var(--ease-out);
 }
 
@@ -355,10 +362,10 @@
 
 @media (hover: hover) and (pointer: fine) {
   .scroll:hover {
-    color: #fff;
+    color: var(--heading);
   }
   .scroll:hover .scrollIcon {
-    box-shadow: inset 0 0 0 1px var(--gold-on-night);
+    box-shadow: inset 0 0 0 1px var(--accent);
   }
 }
 
@@ -387,7 +394,8 @@
   .stage {
     --ring-max: min(520px, 100%);
     grid-column: 1 / -1;
-    margin: 32px 0 0;
+    margin: 36px 0 0;
+    padding-inline: clamp(16px, 5vw, 72px);
   }
   .coords {
     display: none;
@@ -416,10 +424,6 @@
   .factsList dt {
     font-size: 0.6875rem;
     letter-spacing: 0.04em;
-  }
-  .shade {
-    background:
-      linear-gradient(180deg, rgba(6, 17, 31, 0.86) 0%, rgba(6, 17, 31, 0.66) 40%, rgba(6, 17, 31, 0.72) 70%, var(--night) 100%);
   }
 }
 

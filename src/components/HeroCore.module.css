@@ -57,11 +57,11 @@
 }
 
 .flatNodeOn {
-  fill: var(--gold-on-night);
+  fill: var(--accent);
 }
 
 .flatLink {
-  stroke: var(--gold-on-night);
+  stroke: var(--accent);
   stroke-width: 0.006;
 }
 
@@ -101,7 +101,7 @@
   padding: 0;
   border: 0;
   background: none;
-  color: var(--on-night-2);
+  color: var(--text-2);
   pointer-events: auto;
   cursor: pointer;
   transition: opacity 260ms var(--ease-out);
@@ -161,7 +161,7 @@
 }
 
 .label[data-on] {
-  color: #fff;
+  color: var(--heading);
   opacity: 1;
 }
 
@@ -190,13 +190,13 @@
 }
 
 .label:focus-visible .labelText {
-  outline: 2px solid var(--gold-on-night);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .label:hover {
-    color: #fff;
+    color: var(--heading);
   }
 }
 
@@ -204,7 +204,7 @@
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
-  color: var(--gold-on-night);
+  color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
 
@@ -215,7 +215,7 @@
   height: var(--panel-h, 11.75rem);
   overflow: hidden;
   padding-top: 16px;
-  border-top: 1px solid var(--line-night-2);
+  border-top: 1px solid var(--line-2);
 }
 
 .panelIn {
@@ -230,7 +230,7 @@
 }
 
 .meta {
-  color: var(--on-night-2);
+  color: var(--text-2);
   gap: 10px;
   /* Metadato largo: caja mixta (las mayúsculas quedan para rótulos cortos). */
   text-transform: none;
@@ -238,7 +238,7 @@
 }
 
 .metaNum {
-  color: var(--gold-on-night);
+  color: var(--accent);
 }
 
 .title {
@@ -248,7 +248,7 @@
   font-weight: 700;
   line-height: 1.16;
   letter-spacing: -0.025em;
-  color: #fff;
+  color: var(--heading);
 }
 
 .summary {
@@ -256,7 +256,7 @@
   max-width: 60ch;
   font-size: 0.9375rem;
   line-height: 1.5;
-  color: var(--on-night-2);
+  color: var(--text-2);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--summary-lines, 3);
@@ -271,7 +271,7 @@
   padding-block: 6px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--gold-on-night);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -292,7 +292,7 @@
   border-radius: var(--radius);
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  background: var(--night-2);
+  background: var(--surface-2);
 }
 
 .photo img {
@@ -325,8 +325,8 @@
   border: 0;
   border-radius: 999px;
   background: rgba(10, 26, 47, 0.8);
-  box-shadow: inset 0 0 0 1px var(--line-night-2);
-  color: var(--on-night);
+  box-shadow: inset 0 0 0 1px var(--line-2);
+  color: var(--text);
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
@@ -353,7 +353,7 @@
 }
 
 .chip:focus-visible {
-  outline: 2px solid var(--gold-on-night);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 

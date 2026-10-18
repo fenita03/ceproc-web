@@ -1,5 +1,6 @@
 /* Dos mitades: la foto a sangre a la izquierda, el contenido en la retícula a la derecha. */
 .section {
+  background: var(--surface);
   display: grid;
   grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
   min-height: 100svh;
@@ -9,7 +10,7 @@
   position: relative;
   overflow: hidden;
   min-height: 420px;
-  background: var(--night-2);
+  background: var(--surface-2);
 }
 
 .media img {
@@ -73,6 +74,10 @@
 
 .lists ul {
   border-top: 2px solid var(--ink);
+}
+
+.lists :global(.readmore-body) ul {
+  border-top: 0;
 }
 
 .bullets li {

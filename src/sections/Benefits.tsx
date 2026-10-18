@@ -1,5 +1,6 @@
 import strataUrl from "../brand/estratos.svg";
 import { benefits } from "../content/ceproc";
+import { ReadMore } from "../components/ReadMore";
 import styles from "./Benefits.module.css";
 
 const GROUPS = [
@@ -34,10 +35,17 @@ export function Benefits() {
                 </h3>
               </div>
               <ul className={styles.list} data-reveal="stagger">
-                {g.items.map((b) => (
+                {g.items.slice(0, 4).map((b) => (
                   <li key={b}>{b}</li>
                 ))}
               </ul>
+              <ReadMore label={`Ver los ${g.items.length} beneficios`}>
+                <ul className={styles.list}>
+                  {g.items.slice(4).map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              </ReadMore>
             </section>
           ))}
         </div>

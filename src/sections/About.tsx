@@ -1,8 +1,11 @@
 import { LitText } from "../components/LitText";
+import { ReadMore, firstSentence } from "../components/ReadMore";
 import { Mosaic } from "../components/Mosaic";
 import strataUrl from "../brand/estratos.svg";
 import { about, areas, project, team } from "../content/ceproc";
 import styles from "./About.module.css";
+
+const [aboutLead, aboutRest] = firstSentence(about.paragraphs[0]);
 
 export function About() {
   return (
@@ -19,11 +22,13 @@ export function About() {
 
         <div className={styles.story}>
           <div className={styles.text} data-reveal style={{ "--d": "120ms" } as React.CSSProperties}>
-            {about.paragraphs.map((p, i) => (
-              <p key={p.slice(0, 24)} className={i === 0 ? styles.first : undefined}>
-                {p}
-              </p>
-            ))}
+            <p className={styles.first}>{aboutLead}</p>
+            <ReadMore>
+              {aboutRest && <p>{aboutRest}</p>}
+              {about.paragraphs.slice(1).map((p) => (
+                <p key={p.slice(0, 24)}>{p}</p>
+              ))}
+            </ReadMore>
           </div>
           <Mosaic />
         </div>

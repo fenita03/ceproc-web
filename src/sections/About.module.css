@@ -1,5 +1,6 @@
 .section {
   padding-block: var(--section-y);
+  background: var(--surface);
 }
 
 /* --- Apertura: índice y titular a lo ancho --- */
@@ -131,14 +132,15 @@
   position: relative;
   overflow: hidden;
   margin-top: clamp(80px, 10vw, 144px);
-  background: var(--navy);
-  color: var(--on-night);
+  background: var(--paper);
+  color: var(--text);
+  box-shadow: inset 0 1px 0 var(--line), inset 0 -1px 0 var(--line);
 }
 
 .bandStrata {
   bottom: -40px;
-  color: var(--gold-on-night);
-  opacity: 0.12;
+  color: var(--gold);
+  opacity: 0.18;
 }
 
 .mv {
@@ -159,7 +161,7 @@
 .mv > div + div {
   padding-left: clamp(24px, 4vw, 72px);
   padding-right: 0;
-  box-shadow: inset 1px 0 0 rgba(233, 238, 246, 0.16);
+  box-shadow: inset 1px 0 0 var(--line-2);
 }
 
 .mv dt {
@@ -168,7 +170,7 @@
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold-on-night);
+  color: var(--accent);
 }
 
 .mv dd {
@@ -177,7 +179,7 @@
   font-weight: 600;
   line-height: 1.24;
   letter-spacing: -0.025em;
-  color: #fff;
+  color: var(--heading);
   max-width: 30ch;
 }
 
@@ -215,7 +217,7 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: var(--radius);
-  background: var(--night-2);
+  background: var(--surface-2);
 }
 
 .portrait img {
@@ -308,7 +310,7 @@
   .mv > div + div {
     margin-top: 40px;
     padding-top: 40px;
-    box-shadow: inset 0 1px 0 rgba(233, 238, 246, 0.16);
+    box-shadow: inset 0 1px 0 var(--line-2);
   }
 }
 
