@@ -26,6 +26,11 @@ export function TrainingAccess() {
       setOpen(true);
     };
     window.addEventListener(ENROLL_EVENT, onOpen);
+    // Enlace directo al formulario (página de enlaces de Instagram): ceproc.vercel.app/#capacitate
+    if (location.hash === "#capacitate") {
+      history.replaceState(null, "", location.pathname + location.search);
+      openEnroll();
+    }
     const idle = () => ("requestIdleCallback" in window ? requestIdleCallback(() => load(), { timeout: 4000 }) : setTimeout(load, 2500));
     if (document.readyState === "complete") idle();
     else window.addEventListener("load", idle, { once: true });
