@@ -3,15 +3,77 @@ import { areas, safety } from "../content/ceproc";
 import { photo } from "../content/photos";
 import { showArea } from "../hooks/enroll";
 import { ReadMore } from "../components/ReadMore";
+import { useEffect, useRef } from "react";
+import { useReducedMotion } from "../hooks/media";
 import styles from "./Safety.module.css";
 
 const pic = photo("seguridad");
 
+/**
+ * Foto a sangre con «el eje»: al entrar la sección, la imagen se descubre de arriba hacia abajo detrás de una
+ * línea dorada (el eje transversal del título) y después acompaña el scroll con un parallax leve.
+ * El disparo observa la sección, no la foto: una foto recortada por completo no cuenta como visible.
+ */
+function useAxisReveal() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const mediaRef = useRef<HTMLElement>(null);
+  const reduced = useReducedMotion();
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const media = mediaRef.current;
+    if (!section || !media) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          section.dataset.in = "true";
+          io.disconnect();
+        }
+      },
+      { threshold: 0.18 },
+    );
+    io.observe(section);
+    if (reduced) return () => io.disconnect();
+
+    let frame = 0;
+    let visible = false;
+    const read = () => {
+      frame = 0;
+      const r = media.getBoundingClientRect();
+      // -1 cuando la foto entra por abajo, 1 cuando sale por arriba.
+      const p = Math.max(-1, Math.min(1, (innerHeight / 2 - (r.top + r.height / 2)) / ((innerHeight + r.height) / 2)));
+      media.style.setProperty("--shift", p.toFixed(4));
+    };
+    const onScroll = () => {
+      if (visible && !frame) frame = requestAnimationFrame(read);
+    };
+    const vis = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      onScroll();
+    });
+    vis.observe(media);
+    addEventListener("scroll", onScroll, { passive: true });
+    addEventListener("resize", onScroll, { passive: true });
+    read();
+    return () => {
+      io.disconnect();
+      vis.disconnect();
+      removeEventListener("scroll", onScroll);
+      removeEventListener("resize", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, [reduced]);
+
+  return { sectionRef, mediaRef };
+}
+
 export function Safety() {
+  const { sectionRef, mediaRef } = useAxisReveal();
   return (
-    <section id="seguridad" className={`on-paper-2 ${styles.section}`} aria-labelledby="seguridad-title">
+    <section ref={sectionRef} id="seguridad" className={`on-paper-2 ${styles.section}`} aria-labelledby="seguridad-title">
       {/* Fotografía a sangre: la prevención se muestra antes de explicarse. */}
-      <figure className={styles.media} data-reveal="photo">
+      <figure ref={mediaRef} className={styles.media}>
+        <span className={styles.frame}>
         <img
           src={pic.src}
           srcSet={pic.srcSet}
@@ -23,6 +85,8 @@ export function Safety() {
           decoding="async"
           style={{ objectPosition: `${pic.focus[0] * 100}% ${pic.focus[1] * 100}%` }}
         />
+          <span className={styles.curtain} aria-hidden="true" />
+        </span>
       </figure>
 
       <div className={styles.body}>

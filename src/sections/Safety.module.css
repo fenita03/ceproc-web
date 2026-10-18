@@ -15,14 +15,61 @@
 
 .media img {
   position: absolute;
-  inset: 0;
+  inset: -6% 0;
   width: 100%;
-  height: 100%;
+  height: 112%;
   object-fit: cover;
+  /* Parallax leve: --shift va de -1 a 1 según la posición de la foto en pantalla. */
+  transform: translate3d(0, calc(var(--shift, 0) * -4%), 0);
+}
+
+/* «El eje»: una cortina del color de la sección, con una línea dorada en el borde, baja y descubre la foto.
+   Un solo elemento movido con transform: la línea y el borde de la foto nunca se separan. */
+.curtain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  background: var(--surface-2);
+  border-top: 3px solid var(--gold);
+  box-shadow: 0 -10px 28px rgba(196, 154, 69, 0.35);
+  pointer-events: none;
+}
+
+:global(.js) .curtain {
+  display: block;
+  transform: translate3d(0, 0, 0);
+}
+
+:global(.js) .section[data-in] .curtain {
+  transform: translate3d(0, 101%, 0);
+  transition: transform 1100ms var(--ease-out-expo) 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(.js) .curtain {
+    display: none;
+  }
+  :global(.js) .section .frame {
+    opacity: 0;
+  }
+  :global(.js) .section[data-in] .frame {
+    opacity: 1;
+    transition: opacity 300ms linear;
+  }
+  .media img {
+    transform: none;
+  }
 }
 
 /* Velo inferior: une la foto con la noche de Capacitaciones y le da peso. */
-.media::after {
+.frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.frame::after {
   content: "";
   position: absolute;
   inset: 0;
