@@ -1,0 +1,69 @@
+- generic [active] [ref=f66e1] [box=0,0,929,861]:
+  - generic [ref=f66e4] [box=0,0,929,861]:
+    - region "Notifications alt+T" [box=0,0,929,0]
+    - generic [ref=f66e6] [box=0,0,929,861]:
+      - banner [ref=f66e8] [box=245,0,440,72]:
+        - button "Volver" [ref=f66e10] [cursor=pointer] [box=261,16,40,40]
+        - 'progressbar "Progreso de configuración: paso 2 de 2" [ref=f66e11] [box=345,29,240,14]'
+      - main [ref=f66e17] [box=245,72,440,789]:
+        - generic [ref=f66e18] [box=265,92,400,769]:
+          - img "Vista previa del perfil en tiempo real" [ref=f66e21] [box=352,92,225,448]:
+            - iframe [ref=f66e28] [box=359,99,212,435]:
+              - generic [ref=f118e4] [box=0,0,414,851]:
+                - button "Translate profile" [disabled] [ref=f118e8] [box=360,14,40,40]
+                - generic [ref=f118e14] [box=0,0,414,851]:
+                  - generic [ref=f118e18] [box=0,0,0,0]:
+                    - generic [ref=f118e20] [box=0,0,414,331]:
+                      - generic "Profile title" [ref=f118e24] [box=123,216,168,29]:
+                        - heading "ceproc_oficial" [level=1] [ref=f118e26] [box=123,214,168,31]
+                      - generic [box=0,283,414,48]:
+                        - generic [box=0,283,414,48]:
+                          - link "ceproc_oficial Instagram" [ref=f118e32] [cursor=pointer] [box=135,283,48,48]:
+                            - img "ceproc_oficial Instagram" [box=143,291,32,32]
+                          - link "ceproc_oficial TikTok" [ref=f118e34] [cursor=pointer] [box=183,283,48,48]:
+                            - img "ceproc_oficial TikTok" [box=191,291,32,32]
+                          - link "ceproc_oficial YouTube" [ref=f118e36] [cursor=pointer] [box=231,283,48,48]:
+                            - img "ceproc_oficial YouTube" [box=239,291,32,32]
+                    - generic [ref=f118e40] [box=14,363,386,220]:
+                      - generic [ref=f118e43] [box=14,363,386,64]:
+                        - link "https://linktr.ee" [ref=f118e44] [cursor=pointer] [box=14,363,386,64]:
+                          - /url: https://linktr.ee
+                        - button "Share" [ref=f118e47] [cursor=pointer] [box=364,383,24,24]
+                      - generic [ref=f118e52] [box=14,441,386,64]:
+                        - link "https://linktr.ee" [ref=f118e53] [cursor=pointer] [box=14,441,386,64]:
+                          - /url: https://linktr.ee
+                        - button "Share" [ref=f118e56] [cursor=pointer] [box=364,461,24,24]
+                      - generic [ref=f118e61] [box=14,519,386,64]:
+                        - link "https://linktr.ee" [ref=f118e62] [cursor=pointer] [box=14,519,386,64]:
+                          - /url: https://linktr.ee
+                        - button "Share" [ref=f118e65] [cursor=pointer] [box=364,539,24,24]
+                  - generic [box=0,671,414,180]:
+                    - generic [box=0,671,414,180]:
+                      - generic [box=153,751,107,36]:
+                        - generic [box=163,751,89,18]:
+                          - generic [ref=f118e68] [box=163,751,37,18]: Report
+                          - generic [box=200,751,12,18]: •
+                          - generic [ref=f118e69] [box=212,751,40,18]: Privacy
+                        - button "More from Linktree" [ref=f118e70] [cursor=pointer] [box=153,769,107,18]
+          - generic [ref=f66e30] [box=245,497,440,364]:
+            - heading "Dale color 🎨" [level=1] [ref=f66e31] [box=265,517,400,20]
+            - generic [ref=f66e32] [box=265,561,400,204]:
+              - tablist "Opciones de color" [ref=f66e33] [box=265,561,400,40]:
+                - tab "Fondo" [selected] [ref=f66e34] [cursor=pointer] [box=267,563,197,36]
+                - tab "Botones" [ref=f66e36] [cursor=pointer] [box=466,563,197,36]
+              - tabpanel "Fondo" [ref=f66e39] [box=265,625,400,140]:
+                - generic [ref=f66e40] [box=265,625,400,140]:
+                  - radiogroup "Colores de fondo" [ref=f66e41] [box=0,0,0,0]:
+                    - radio "Color 1" [checked] [ref=f66e42] [cursor=pointer] [box=268,625,64,64]
+                    - radio "Color 2" [ref=f66e43] [cursor=pointer] [box=350,625,64,64]
+                    - radio "Color 3" [ref=f66e44] [cursor=pointer] [box=432,625,64,64]
+                    - radio "Color 4" [ref=f66e45] [cursor=pointer] [box=515,625,64,64]
+                    - radio "Color 5" [ref=f66e46] [cursor=pointer] [box=597,625,64,64]
+                    - radio "Color 6" [ref=f66e47] [cursor=pointer] [box=268,701,64,64]
+                    - radio "Color 7" [ref=f66e48] [cursor=pointer] [box=350,701,64,64]
+                    - radio "Color 8" [ref=f66e49] [cursor=pointer] [box=432,701,64,64]
+                    - radio "Color 9" [ref=f66e50] [cursor=pointer] [box=515,701,64,64]
+                  - button "Cambiar entre colores sutiles y vibrantes" [ref=f66e51] [cursor=pointer] [box=597,701,64,64]
+            - button "Continúa" [ref=f66e55] [cursor=pointer] [box=265,789,400,48]
+  - iframe [aria-hidden] [ref=f66e56] [box=0,0,1,1]
+  - button "Open Intercom Messenger" [ref=f66e57] [cursor=pointer] [box=861,793,48,48]

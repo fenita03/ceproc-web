@@ -1,0 +1,46 @@
+- generic [active] [ref=f66e1]:
+  - generic [ref=f66e4]:
+    - region "Notifications alt+T"
+    - main [ref=f66e17]:
+      - generic [ref=f66e67]:
+        - heading "Vas muy bien Sigamos construyéndolo" [level=1] [ref=f66e71]
+        - img "Vista previa del perfil en tiempo real" [ref=f66e77]:
+          - iframe [ref=f66e84]:
+            - generic [ref=f122e4]:
+              - button "Translate profile" [disabled] [ref=f122e8]
+              - generic [ref=f122e14]:
+                - generic [ref=f122e18]:
+                  - generic [ref=f122e20]:
+                    - generic "Profile title" [ref=f122e24]:
+                      - heading "ceproc_oficial" [level=1] [ref=f122e26]
+                    - generic:
+                      - generic:
+                        - link "ceproc_oficial Instagram" [ref=f122e32] [cursor=pointer]:
+                          - img "ceproc_oficial Instagram"
+                        - link "ceproc_oficial TikTok" [ref=f122e34] [cursor=pointer]:
+                          - img "ceproc_oficial TikTok"
+                        - link "ceproc_oficial YouTube" [ref=f122e36] [cursor=pointer]:
+                          - img "ceproc_oficial YouTube"
+                  - generic [ref=f122e40]:
+                    - generic [ref=f122e43]:
+                      - link "https://linktr.ee" [ref=f122e44] [cursor=pointer]:
+                        - /url: https://linktr.ee
+                      - button "Share" [ref=f122e47] [cursor=pointer]
+                    - generic [ref=f122e52]:
+                      - link "https://linktr.ee" [ref=f122e53] [cursor=pointer]:
+                        - /url: https://linktr.ee
+                      - button "Share" [ref=f122e56] [cursor=pointer]
+                    - generic [ref=f122e61]:
+                      - link "https://linktr.ee" [ref=f122e62] [cursor=pointer]:
+                        - /url: https://linktr.ee
+                      - button "Share" [ref=f122e65] [cursor=pointer]
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic [ref=f122e68]: Report
+                        - generic: •
+                        - generic [ref=f122e69]: Privacy
+                      - button "More from Linktree" [ref=f122e70] [cursor=pointer]
+  - iframe [aria-hidden] [ref=f66e56]
+  - button "Open Intercom Messenger" [ref=f66e57] [cursor=pointer]

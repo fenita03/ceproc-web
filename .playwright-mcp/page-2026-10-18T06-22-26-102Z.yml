@@ -1,0 +1,214 @@
+- generic [ref=f43e458]:
+  - generic [ref=f43e6]:
+    - generic [ref=f43e9]:
+      - link [ref=f43e766] [cursor=pointer]:
+        - /url: /
+        - img "Instagram" [ref=f43e767]
+      - generic [ref=f43e22]:
+        - link [ref=f43e768] [cursor=pointer]:
+          - /url: /
+          - img "Inicio" [ref=f43e769]
+        - link [ref=f43e770] [cursor=pointer]:
+          - /url: /reels/
+          - img "Reels" [ref=f43e771]
+        - link [ref=f43e772] [cursor=pointer]:
+          - /url: /direct/inbox/
+          - img "Mensajes" [ref=f43e773]
+        - link [ref=f43e774] [cursor=pointer]:
+          - /url: /explore/
+          - img "Búsqueda" [ref=f43e775]
+        - link [ref=f43e776] [cursor=pointer]:
+          - /url: "#"
+          - img "Notificaciones" [ref=f43e777]
+        - link [ref=f43e778] [cursor=pointer]:
+          - /url: "#"
+          - img "Nueva publicación" [ref=f43e779]
+        - link [ref=f43e780] [cursor=pointer]:
+          - /url: "#"
+          - img "Panel para profesionales" [ref=f43e781]
+        - link [ref=f43e782] [cursor=pointer]:
+          - /url: /ceproc_oficial/
+          - link [ref=f43e783]:
+            - img "Foto del perfil de ceproc_oficial" [ref=f43e784]
+      - generic [ref=f43e115]:
+        - link [ref=f43e785] [cursor=pointer]:
+          - /url: "#"
+          - img "Configuración" [ref=f43e786]
+        - link [ref=f43e787] [cursor=pointer]:
+          - /url: "#"
+          - img "También de Meta" [ref=f43e788]
+    - generic [ref=f43e134]:
+      - main [ref=f43e135]:
+        - generic [ref=f43e137]:
+          - generic [ref=f43e138]:
+            - generic [ref=f43e139]:
+              - generic [ref=f43e143]:
+                - button "Nota..." [ref=f43e789] [cursor=pointer]
+                - button [ref=f43e790] [cursor=pointer]:
+                  - link [ref=f43e791]:
+                    - img "Foto del perfil de ceproc_oficial" [ref=f43e792]
+              - generic [ref=f43e159]:
+                - generic [ref=f43e160]:
+                  - link [ref=f43e793] [cursor=pointer]:
+                    - /url: "#"
+                    - heading "ceproc_oficial" [level=2] [ref=f43e794]
+                  - button [ref=f43e795] [cursor=pointer]:
+                    - img "Opciones" [ref=f43e796]
+                - generic [ref=f43e170]: CEPROC · Capacitación en oficios y minería
+                - generic [ref=f43e172]:
+                  - generic [ref=f43e174]:
+                    - generic [ref=f43e175]: "1"
+                    - text: publicación
+                  - link "0 seguidores" [ref=f43e797] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=f43e178]:
+                      - generic "0" [ref=f43e798]
+                      - text: seguidores
+                  - link "0 seguidos" [ref=f43e799] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=f43e182]:
+                      - generic [ref=f43e183]: "0"
+                      - text: seguidos
+            - generic [ref=f43e186]:
+              - generic [ref=f43e187]:
+                - button [ref=f43e800] [cursor=pointer]:
+                  - generic [ref=f43e189]: Centro Productivo de Capacitación en Oficios Regionales y Minería.Formación práctica · Rawson, San Juan.Informate y
+                - generic [ref=f43e190]:
+                  - text: ...
+                  - button "más" [ref=f43e801] [cursor=pointer]
+              - heading [level=1]
+            - generic [ref=f43e197]:
+              - link "Editar perfil" [ref=f43e802] [cursor=pointer]:
+                - /url: /accounts/edit/
+              - link "Ver archivo" [ref=f43e803] [cursor=pointer]:
+                - /url: /archive/stories/
+            - menu [ref=f43e203]:
+              - list [ref=f43e207]:
+                - listitem [ref=f43e208]
+                - listitem [ref=f43e209]
+                - listitem [ref=f43e804]:
+                  - link "Ver contenido destacado de Contacto" [ref=f43e807] [cursor=pointer]:
+                    - /url: /stories/highlights/18178774954431729/
+                    - button "Foto de historia destacada de ceproc_oficial Contacto" [ref=f43e808]:
+                      - button [ref=f43e809]:
+                        - img "Foto de historia destacada de ceproc_oficial" [ref=f43e812]
+                      - generic [ref=f43e813]: Contacto
+                - listitem [ref=f43e210]:
+                  - button "Icono \"más\" Nuevo" [ref=f43e816] [cursor=pointer]:
+                    - img "Icono \"más\"" [ref=f43e817]
+                    - generic [ref=f43e219]: Nuevo
+          - generic [ref=f43e222]:
+            - tablist [ref=f43e223]:
+              - link [ref=f43e818] [cursor=pointer]:
+                - /url: /ceproc_oficial/
+                - img "Publicaciones" [ref=f43e819]
+              - link [ref=f43e820] [cursor=pointer]:
+                - /url: /ceproc_oficial/saved/
+                - img "Guardadas" [ref=f43e821]
+              - link [ref=f43e822] [cursor=pointer]:
+                - /url: /ceproc_oficial/tagged/
+                - img "Etiquetadas" [ref=f43e823]
+            - tabpanel
+          - link [ref=f43e824] [cursor=pointer]:
+            - /url: /ceproc_oficial/p/DenzaCWAgs7/
+            - 'img "¡Bienvenidos a CEPROC! Somos el Centro Productivo de Capacitación en Oficios Regionales y Minería, en Rawson, San Juan. Una propuesta de formación práctica para jóvenes y adultos, con 7 áreas y 56 talleres pensados para conectar el aprendizaje con el trabajo. ¿Querés capacitarte? Entrá al link de la bio y tocá «Capacitate con nosotros». Formación que construye futuro. #CEPROC #RawsonSanJuan #SanJuanArgentina #FormacionEnOficios #CapacitacionLaboral #OficiosSanJuan" [ref=f43e825]'
+      - contentinfo [ref=f43e262]:
+        - generic [ref=f43e263]:
+          - generic [ref=f43e265]:
+            - link "Meta" [ref=f43e826] [cursor=pointer]:
+              - /url: https://about.meta.com/
+            - link "Información" [ref=f43e827] [cursor=pointer]:
+              - /url: https://about.instagram.com/
+            - link "Blog" [ref=f43e828] [cursor=pointer]:
+              - /url: https://about.instagram.com/blog/
+            - link "Empleo" [ref=f43e829] [cursor=pointer]:
+              - /url: https://about.instagram.com/about-us/careers
+            - link "Ayuda" [ref=f43e830] [cursor=pointer]:
+              - /url: https://help.instagram.com/
+            - link "API" [ref=f43e831] [cursor=pointer]:
+              - /url: https://developers.facebook.com/docs/instagram
+            - link "Privacidad" [ref=f43e832] [cursor=pointer]:
+              - /url: /legal/privacy/
+            - link "Condiciones" [ref=f43e833] [cursor=pointer]:
+              - /url: /legal/terms/
+            - link "Ubicaciones" [ref=f43e834] [cursor=pointer]:
+              - /url: /explore/locations/
+            - link "Popular" [ref=f43e835] [cursor=pointer]:
+              - /url: /popular/
+            - link "Instagram Lite" [ref=f43e836] [cursor=pointer]:
+              - /url: /web/lite/
+            - link "Meta AI" [ref=f43e837] [cursor=pointer]:
+              - /url: https://www.meta.ai/?utm_source=foa_web_footer
+            - link "Muse" [ref=f43e838] [cursor=pointer]:
+              - /url: https://muse.ai/
+            - link "Threads" [ref=f43e839] [cursor=pointer]:
+              - /url: https://www.threads.com/
+            - link "Subir contactos y personas no usuarias" [ref=f43e840] [cursor=pointer]:
+              - /url: https://www.facebook.com/help/instagram/261704639352628
+            - link "Meta Verified" [ref=f43e841] [cursor=pointer]:
+              - /url: /accounts/meta_verified/?entrypoint=web_footer
+          - generic [ref=f43e314]:
+            - generic [ref=f43e315] [cursor=pointer]:
+              - generic [ref=f43e316]:
+                - generic [ref=f43e317]: Español (España)
+                - img "Icono de comilla angular hacia abajo" [ref=f43e842]
+              - combobox "Cambiar idioma de visualización" [ref=f43e843]:
+                - option "Afrikaans"
+                - option "العربية"
+                - option "Čeština"
+                - option "Dansk"
+                - option "Deutsch"
+                - option "Ελληνικά"
+                - option "English"
+                - option "English (UK)"
+                - option "Español (España)" [selected]
+                - option "Español"
+                - option "فارسی"
+                - option "Suomi"
+                - option "Français"
+                - option "עברית"
+                - option "Bahasa Indonesia"
+                - option "Italiano"
+                - option "日本語"
+                - option "한국어"
+                - option "Bahasa Melayu"
+                - option "Norsk"
+                - option "Nederlands"
+                - option "Polski"
+                - option "Português (Brasil)"
+                - option "Português (Portugal)"
+                - option "Русский"
+                - option "Svenska"
+                - option "ภาษาไทย"
+                - option "Filipino"
+                - option "Türkçe"
+                - option "中文(简体)"
+                - option "中文(台灣)"
+                - option "বাংলা"
+                - option "ગુજરાતી"
+                - option "हिन्दी"
+                - option "Hrvatski"
+                - option "Magyar"
+                - option "ಕನ್ನಡ"
+                - option "മലയാളം"
+                - option "मराठी"
+                - option "नेपाली"
+                - option "ਪੰਜਾਬੀ"
+                - option "සිංහල"
+                - option "Slovenčina"
+                - option "தமிழ்"
+                - option "తెలుగు"
+                - option "اردو"
+                - option "Tiếng Việt"
+                - option "中文(香港)"
+                - option "Български"
+                - option "Français (Canada)"
+                - option "Română"
+                - option "Српски"
+                - option "Українська"
+            - generic [ref=f43e323]: © 2026 Instagram from Meta
+  - button [ref=f43e326] [cursor=pointer]:
+    - generic "Mensajes" [ref=f43e327]:
+      - generic [ref=f43e328]:
+        - img "Mensajes" [ref=f43e331]
+        - generic [ref=f43e334]: Mensajes

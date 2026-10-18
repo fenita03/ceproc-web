@@ -1,0 +1,272 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - region "Notifications alt+T"
+        - generic:
+          - generic [aria-hidden]:
+            - generic:
+              - link:
+                - /url: /admin
+                - generic: Linktree admin
+              - generic:
+                - generic:
+                  - button: 7 days of Pro left – see what's included
+                  - generic:
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic: Keep Pro access
+          - generic [aria-hidden]:
+            - generic:
+              - button
+            - generic:
+              - button:
+                - generic: CEPROC
+                - generic: Draft
+            - generic:
+              - generic:
+                - button: Preview
+              - generic:
+                - generic:
+                  - generic:
+                    - button
+                    - button [disabled]
+              - generic:
+                - button:
+                  - generic [aria-hidden]:
+                    - generic: Publish
+                - status
+          - main:
+            - generic [aria-hidden]:
+              - navigation:
+                - generic:
+                  - link:
+                    - /url: /admin/links
+                    - generic: Content
+                  - link:
+                    - /url: /admin/header
+                    - generic: Header
+                  - link:
+                    - /url: /admin/design
+                    - generic: Design
+                  - button:
+                    - generic: Enhance
+                - link:
+                  - /url: /admin/settings
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic [aria-hidden]:
+                              - generic:
+                                - generic:
+                                  - heading [level=1]: Header
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic:
+                                                  - generic:
+                                                    - generic:
+                                                      - generic:
+                                                        - generic [aria-hidden]:
+                                                          - heading [level=4]: Layout
+                                                          - generic:
+                                                            - generic:
+                                                              - generic:
+                                                                - radio [checked]:
+                                                                  - generic: Classic
+                                                            - generic:
+                                                              - generic:
+                                                                - radio:
+                                                                  - generic: Hero
+                                                            - generic:
+                                                              - generic:
+                                                                - radio:
+                                                                  - generic: Banner
+                                                            - generic:
+                                                              - generic:
+                                                                - radio:
+                                                                  - generic: Cutout
+                                                            - generic:
+                                                              - generic:
+                                                                - radio:
+                                                                  - generic: Shape
+                                                        - generic [aria-hidden]:
+                                                          - generic:
+                                                            - generic:
+                                                              - paragraph: Profile image
+                                                            - button
+                                                        - generic:
+                                                          - generic:
+                                                            - generic [aria-hidden]:
+                                                              - paragraph: Title
+                                                            - generic:
+                                                              - generic:
+                                                                - generic [aria-hidden]:
+                                                                  - textbox:
+                                                                    - /placeholder: "@ceproc_oficial"
+                                                                    - text: CEPROC
+                                                                - generic:
+                                                                  - generic [aria-hidden]: 6/30
+                                                                - paragraph [aria-hidden]
+                                                          - generic:
+                                                            - generic [aria-hidden]:
+                                                              - paragraph: Bio
+                                                            - generic:
+                                                              - generic:
+                                                                - generic [aria-hidden]: Bio
+                                                                - generic:
+                                                                  - textbox [aria-hidden]:
+                                                                    - /placeholder: Add a short bio
+                                                                    - text: Centro Productivo de Capacitación en Oficios Regionales y Minería. Formación práctica · Rawson, San Juan.
+                                                                  - generic:
+                                                                    - generic [aria-hidden]: 105/160
+                                                                - paragraph [aria-hidden]
+                                                          - generic [aria-hidden]:
+                                                            - generic:
+                                                              - paragraph: Title style
+                                                            - generic:
+                                                              - generic:
+                                                                - generic:
+                                                                  - radio [checked]:
+                                                                    - generic: Text
+                                                                - generic:
+                                                                  - radio:
+                                                                    - generic: Logo
+                                                          - generic [aria-hidden]:
+                                                            - generic:
+                                                              - generic:
+                                                                - paragraph: Alternative title font
+                                                                - paragraph: Matches page font by default
+                                                          - generic [aria-hidden]:
+                                                            - generic:
+                                                              - paragraph: Title color
+                                                            - generic:
+                                                              - button:
+                                                                - generic: "#111111"
+                - generic [aria-hidden]:
+                  - generic:
+                    - generic:
+                      - iframe [ref=f179e359]:
+                        - generic [ref=f182e4]:
+                          - generic:
+                            - generic:
+                              - button "Linktree" [ref=f182e6] [cursor=pointer]
+                              - button "Share profile" [ref=f182e11] [cursor=pointer]
+                          - generic [ref=f182e17]:
+                            - generic [ref=f182e21]:
+                              - generic [ref=f182e24]:
+                                - generic "Profile title" [ref=f182e27]:
+                                  - heading "CEPROC" [level=1] [ref=f182e106]
+                                - generic "Profile description" [ref=f182e108]:
+                                  - heading "Centro Productivo de Capacitación en Oficios Regionales y Minería. Formación práctica · Rawson, San Juan." [level=2] [ref=f182e110]
+                              - generic [ref=f182e32]:
+                                - generic [ref=f182e35]:
+                                  - link "Capacitate con nosotros" [ref=f182e36] [cursor=pointer]:
+                                    - /url: https://ceproc.vercel.app/#capacitate
+                                  - button "Share" [ref=f182e41] [cursor=pointer]:
+                                    - img "Capacitate con nosotros" [ref=f182e42]
+                                - generic [ref=f182e46]:
+                                  - link "Sitio web" [ref=f182e47] [cursor=pointer]:
+                                    - /url: https://ceproc.vercel.app
+                                  - button "Share" [ref=f182e52] [cursor=pointer]:
+                                    - img "Sitio web" [ref=f182e53]
+                                - generic [ref=f182e57]:
+                                  - link "Áreas de formación" [ref=f182e58] [cursor=pointer]:
+                                    - /url: https://ceproc.vercel.app/#areas
+                                  - button "Share" [ref=f182e63] [cursor=pointer]:
+                                    - img "Áreas de formación" [ref=f182e64]
+                                - generic [ref=f182e68]:
+                                  - link "WhatsApp" [ref=f182e69] [cursor=pointer]:
+                                    - /url: https://wa.me/5492645563755?text=Hola%2C%20CEPROC.%20Quiero%20consultar%20por%20las%20capacitaciones.
+                                  - button "Share" [ref=f182e74] [cursor=pointer]:
+                                    - img "WhatsApp" [ref=f182e75]
+                            - generic:
+                              - generic:
+                                - link "Consigue tu propio Linktree" [ref=f182e99] [cursor=pointer]:
+                                  - /url: https://linktr.ee/?utm_source=linktree&utm_medium=profile&utm_campaign=footer_logo_cta&utm_content=ceproc_oficial
+                                - generic:
+                                  - generic:
+                                    - button "Cookie Preferences" [ref=f182e102] [cursor=pointer]
+                                    - generic: •
+                                    - generic [ref=f182e103]: Report
+                                    - generic: •
+                                    - generic [ref=f182e104]: Privacy
+                                  - button "More from Linktree" [ref=f182e105] [cursor=pointer]
+                      - generic:
+                        - generic:
+                          - button
+                        - button
+            - complementary [aria-hidden]:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic [aria-hidden]:
+                          - generic:
+                            - button:
+                              - generic: New chat
+                          - generic:
+                            - button
+                        - generic:
+                          - generic:
+                            - status
+                            - generic [aria-hidden]:
+                              - generic:
+                                - generic:
+                                  - heading [level=2]: What would you like towork on?
+                                - list:
+                                  - listitem:
+                                    - button:
+                                      - generic: Drive more link clicks
+                                  - listitem:
+                                    - button:
+                                      - generic: Make my profile stand out
+                                  - listitem:
+                                    - button:
+                                      - generic: Drive more visits to Linktree
+                        - generic [aria-hidden]:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - button:
+                                        - generic: "@"
+                                    - generic:
+                                      - generic:
+                                        - textbox:
+                                          - /placeholder: Ask Linktree AI...
+                                    - generic:
+                                      - button
+                                      - button [disabled]
+            - generic [aria-hidden]:
+              - generic:
+                - button [ref=f179e556] [cursor=pointer]:
+                  - generic: Ask Linktree
+                - button [aria-hidden]
+  - iframe [aria-hidden] [ref=f179e370]
+  - dialog [ref=f179e558]:
+    - banner [ref=f179e559]:
+      - heading "Profile Image" [level=2] [ref=f179e560]
+      - button "Close" [ref=f179e561] [cursor=pointer]
+    - listbox "Media picker options" [ref=f179e564]:
+      - option "Upload image or GIF" [active] [selected] [ref=f179e565] [cursor=pointer]
+      - option "Select GIF on Giphy" [ref=f179e573] [cursor=pointer]
+      - option "Select video" [ref=f179e579] [cursor=pointer]
+      - option "Generate with AI" [ref=f179e587] [cursor=pointer]
+      - option "Design with Canva" [ref=f179e595] [cursor=pointer]

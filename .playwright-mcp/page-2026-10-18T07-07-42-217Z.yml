@@ -1,0 +1,164 @@
+- generic [active] [ref=f123e1]:
+  - generic [ref=f123e4]:
+    - region "Notifications alt+T"
+    - generic [ref=f123e5]:
+      - generic [ref=f123e7]:
+        - link "Linktree admin" [ref=f123e12] [cursor=pointer]:
+          - /url: /admin
+        - generic [ref=f123e17]:
+          - button "7 days of Pro left – see what's included" [ref=f123e18] [cursor=pointer]
+          - button "Keep Pro access" [ref=f123e24] [cursor=pointer]
+      - generic [ref=f123e26]:
+        - button "Open navigation" [ref=f123e28] [cursor=pointer]
+        - button "Switch Linktrees" [ref=f123e30] [cursor=pointer]:
+          - generic [ref=f123e31]: ceproc_oficial
+        - generic [ref=f123e34]:
+          - button "Preview" [ref=f123e36] [cursor=pointer]
+          - button "Share" [ref=f123e38] [cursor=pointer]
+      - main [ref=f123e39]:
+        - navigation "Editor" [ref=f123e154]:
+          - generic [ref=f123e155]:
+            - link "Content":
+              - /url: /admin/links
+            - link "Header" [ref=f123e156] [cursor=pointer]:
+              - /url: /admin/header
+            - link "Design" [ref=f123e161] [cursor=pointer]:
+              - /url: /admin/design
+            - button "Enhance" [ref=f123e166] [cursor=pointer]
+          - link "Settings" [ref=f123e171] [cursor=pointer]:
+            - /url: /admin/settings
+        - generic [ref=f123e65]:
+          - generic [ref=f123e70]:
+            - generic [ref=f123e73]:
+              - heading "Content" [level=1] [ref=f123e75]
+              - generic [ref=f123e76]:
+                - generic [ref=f123e77]:
+                  - generic:
+                    - button "Exit selection mode"
+                  - button "Archive" [ref=f123e79] [cursor=pointer]
+                - button "Select links" [ref=f123e83] [cursor=pointer]
+            - generic [ref=f123e87]:
+              - generic [ref=f123e174]:
+                - button "Edit profile picture" [ref=f123e175] [cursor=pointer]:
+                  - img "User avatar" [ref=f123e176]
+                - generic [ref=f123e177]:
+                  - button [ref=f123e178] [cursor=pointer]:
+                    - paragraph [ref=f123e179]: ceproc_oficial
+                  - generic [ref=f123e180]:
+                    - button "Instagram" [ref=f123e181] [cursor=pointer]:
+                      - img "Instagram" [ref=f123e182]
+                      - generic [ref=f123e184]: +
+                    - button "TikTok" [ref=f123e185] [cursor=pointer]:
+                      - img "TikTok" [ref=f123e186]
+                      - generic [ref=f123e188]: +
+                    - button "WhatsApp" [ref=f123e189] [cursor=pointer]:
+                      - img "Whatsapp" [ref=f123e190]
+                      - generic [ref=f123e192]: +
+                    - button "Email" [ref=f123e193] [cursor=pointer]:
+                      - img "Email" [ref=f123e194]
+                      - generic [ref=f123e197]: +
+                    - button "Add new social icon" [ref=f123e198] [cursor=pointer]
+              - button "Show total followers" [ref=f123e201] [cursor=pointer]
+            - group "Add content" [ref=f123e121]:
+              - button "Add collection" [ref=f123e205] [cursor=pointer]
+              - button "Add" [ref=f123e207] [cursor=pointer]
+            - generic [ref=f123e215]:
+              - generic [ref=f123e216]:
+                - list [ref=f123e217]:
+                  - listitem [ref=f123e218]:
+                    - button "Insert link" [ref=f123e219] [cursor=pointer]
+                  - button [ref=f123e224] [cursor=pointer]:
+                    - button "Change thumbnail Instagram 0 clicks Setup More options" [ref=f123e229]:
+                      - generic [ref=f123e232]:
+                        - button "Change thumbnail" [ref=f123e233]:
+                          - img "instagram-profile" [ref=f123e235]
+                        - button [aria-hidden]
+                      - generic [ref=f123e236]:
+                        - generic [ref=f123e237]: Instagram
+                        - generic [ref=f123e238]: 0 clicks
+                      - generic [ref=f123e240]:
+                        - generic [ref=f123e241]: Setup
+                        - button "More options" [ref=f123e246]
+                  - listitem [ref=f123e248]:
+                    - button "Insert link" [ref=f123e249] [cursor=pointer]
+                - status [ref=f123e254]
+              - generic [ref=f123e257]:
+                - generic [ref=f123e258]:
+                  - generic [ref=f123e259]: Linktree footer
+                  - switch "Toggle Linktree footer visibility" [checked] [ref=f123e261] [cursor=pointer]
+                - img "Linktree Logo" [ref=f123e263]
+          - generic [ref=f123e132]:
+            - iframe [ref=f123e267]:
+              - generic [ref=f130e4]:
+                - generic:
+                  - generic:
+                    - button "Linktree" [ref=f130e6] [cursor=pointer]
+                    - button "Share profile" [ref=f130e11] [cursor=pointer]
+                - generic [ref=f130e17]:
+                  - generic "Profile title" [ref=f130e27]:
+                    - heading "ceproc_oficial" [level=1] [ref=f130e29]
+                  - generic:
+                    - generic:
+                      - link "Consigue tu propio Linktree" [ref=f130e31] [cursor=pointer]:
+                        - /url: https://linktr.ee/?utm_source=linktree&utm_medium=profile&utm_campaign=footer_logo_cta&utm_content=ceproc_oficial
+                      - generic:
+                        - generic:
+                          - button "Cookie Preferences" [ref=f130e34] [cursor=pointer]
+                          - generic: •
+                          - generic [ref=f130e35]: Report
+                          - generic: •
+                          - generic [ref=f130e36]: Privacy
+                        - button "More from Linktree" [ref=f130e37] [cursor=pointer]
+            - generic [ref=f123e143]:
+              - button [ref=f123e145] [cursor=pointer]
+              - button [ref=f123e146] [cursor=pointer]
+        - complementary [aria-hidden]:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic: New chat
+                      - generic:
+                        - button
+                    - generic:
+                      - generic:
+                        - status
+                        - generic:
+                          - generic:
+                            - generic:
+                              - heading [level=2]: What would you like towork on?
+                            - list:
+                              - listitem:
+                                - button:
+                                  - generic: Drive more link clicks
+                              - listitem:
+                                - button:
+                                  - generic: Make my profile stand out
+                              - listitem:
+                                - button:
+                                  - generic: Drive more visits to Linktree
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - button:
+                                    - generic: "@"
+                                - generic:
+                                  - generic:
+                                    - textbox:
+                                      - /placeholder: Ask Linktree AI...
+                                - generic:
+                                  - button
+                                  - button [disabled]
+        - generic:
+          - generic:
+            - button "Ask Linktree" [ref=f123e149] [cursor=pointer]
+            - button [aria-hidden]
+  - iframe [aria-hidden] [ref=f123e153]

@@ -1,0 +1,238 @@
+- generic [ref=f28e4]:
+  - generic [ref=f28e18]:
+    - generic [ref=f28e21]:
+      - link [ref=f28e26] [cursor=pointer]:
+        - /url: /
+        - img "Instagram" [ref=f28e31]
+      - generic [ref=f28e34]:
+        - link [ref=f28e39] [cursor=pointer]:
+          - /url: /
+          - img "Inicio" [ref=f28e44]
+        - link [ref=f28e49] [cursor=pointer]:
+          - /url: /reels/
+          - img "Reels" [ref=f28e54]
+        - link [ref=f28e61] [cursor=pointer]:
+          - /url: /direct/inbox/
+          - img "Mensajes" [ref=f28e66]
+        - link [ref=f28e72] [cursor=pointer]:
+          - /url: /explore/
+          - img "Búsqueda" [ref=f28e77]
+        - link [ref=f28e84] [cursor=pointer]:
+          - /url: "#"
+          - img "Notificaciones" [ref=f28e89]
+        - link [ref=f28e97] [cursor=pointer]:
+          - /url: "#"
+          - img "Nueva publicación" [ref=f28e102]
+        - link [ref=f28e107] [cursor=pointer]:
+          - /url: "#"
+          - img "Panel para profesionales" [ref=f28e112]
+        - link [ref=f28e119] [cursor=pointer]:
+          - /url: /ceproc_oficial/
+          - link [ref=f28e124]:
+            - img "Foto del perfil de ceproc_oficial" [ref=f28e125]
+      - generic [ref=f28e126]:
+        - link [ref=f28e129] [cursor=pointer]:
+          - /url: "#"
+          - img "Configuración" [ref=f28e134]
+        - link [ref=f28e137] [cursor=pointer]:
+          - /url: "#"
+          - img "También de Meta" [ref=f28e142]
+    - main [ref=f28e146]:
+      - generic [ref=f28e147]:
+        - generic [ref=f28e150]:
+          - heading "Configuración" [level=3] [ref=f28e152]
+          - generic [ref=f28e153]:
+            - generic [ref=f28e155]:
+              - img "Búsqueda" [ref=f28e157]
+              - textbox "Búsqueda" [ref=f28e160]
+            - generic [ref=f28e161]:
+              - generic [ref=f28e165]:
+                - heading "Tu cuenta" [level=4] [ref=f28e169]
+                - img "Logotipo de Meta" [ref=f28e172]
+              - link "Centro de cuentas Contraseña, seguridad, datos personales, experiencias conectadas, preferencias de anuncios" [ref=f28e180] [cursor=pointer]:
+                - /url: https://accountscenter.instagram.com/?entry_point=app_settings
+                - generic [ref=f28e190]:
+                  - generic [ref=f28e191]: Centro de cuentas
+                  - generic [ref=f28e192]: Contraseña, seguridad, datos personales, experiencias conectadas, preferencias de anuncios
+            - generic [ref=f28e193]:
+              - heading "Cómo usas Instagram" [level=4] [ref=f28e201]
+              - link "Editar perfil" [ref=f28e204] [cursor=pointer]:
+                - /url: /accounts/edit/
+              - link "Notificaciones" [ref=f28e218] [cursor=pointer]:
+                - /url: /accounts/notifications/
+            - generic [ref=f28e230]:
+              - heading "Tus insights y herramientas" [level=4] [ref=f28e238]
+              - link "Cuenta profesional" [ref=f28e241] [cursor=pointer]:
+                - /url: /accounts/professional_account_settings/
+              - link "Controles y herramientas empresariales" [ref=f28e257] [cursor=pointer]:
+                - /url: /accounts/professional_account_tools/
+              - link "Pagos de anuncios" [ref=f28e272] [cursor=pointer]:
+                - /url: /accounts/ad_payments/
+            - generic [ref=f28e285]:
+              - heading "Quién puede ver tu contenido" [level=4] [ref=f28e293]
+              - link "Privacidad de la cuenta" [ref=f28e296] [cursor=pointer]:
+                - /url: /accounts/settings/v2/account_privacy/
+              - link "Mejores amigos" [ref=f28e310] [cursor=pointer]:
+                - /url: /accounts/close_friends/
+              - link "Cuentas bloqueadas" [ref=f28e324] [cursor=pointer]:
+                - /url: /accounts/blocked_accounts/
+              - link "Historia, en directo y ubicación" [ref=f28e338] [cursor=pointer]:
+                - /url: /accounts/hide_story_and_live/
+            - generic [ref=f28e350]:
+              - heading "Cómo pueden interactuar contigo los demás" [level=4] [ref=f28e358]
+              - link "Mensajes y respuestas a historias" [ref=f28e361] [cursor=pointer]:
+                - /url: /accounts/messages_and_story_replies/
+              - link "Etiquetas y menciones" [ref=f28e376] [cursor=pointer]:
+                - /url: /accounts/settings/v2/tags_and_mentions/
+              - link "Comentarios" [ref=f28e391] [cursor=pointer]:
+                - /url: /accounts/comments/
+              - link "Compartir y reutilizar" [ref=f28e405] [cursor=pointer]:
+                - /url: /accounts/settings/v2/sharing_and_reuse/
+              - link "Cuentas restringidas" [ref=f28e419] [cursor=pointer]:
+                - /url: /accounts/restricted_accounts/
+              - link "Palabras filtradas" [ref=f28e435] [cursor=pointer]:
+                - /url: /accounts/settings/v2/hidden_words/
+            - generic [ref=f28e447]:
+              - heading "Lo que tú ves" [level=4] [ref=f28e455]
+              - link "Cuentas silenciadas" [ref=f28e458] [cursor=pointer]:
+                - /url: /accounts/muted_accounts/
+              - link "Preferencias de contenido" [ref=f28e472] [cursor=pointer]:
+                - /url: /accounts/settings/v2/content_preferences/
+              - link "Número de Me gusta y veces que se ha compartido" [ref=f28e486] [cursor=pointer]:
+                - /url: /accounts/settings/v2/hidden_feedback/
+              - link "Suscripciones de creador" [ref=f28e500] [cursor=pointer]:
+                - /url: /accounts/subscriptions/
+            - generic [ref=f28e512]:
+              - heading "Tu aplicación y contenido multimedia" [level=4] [ref=f28e520]
+              - link "Archivo y descarga" [ref=f28e523] [cursor=pointer]:
+                - /url: /accounts/settings/v2/archiving_and_downloading/
+              - link "Accesibilidad" [ref=f28e537] [cursor=pointer]:
+                - /url: /accounts/accessibility/
+              - link "Idioma" [ref=f28e551] [cursor=pointer]:
+                - /url: /language/preferences/
+              - link "Permisos de aplicaciones y sitios web" [ref=f28e565] [cursor=pointer]:
+                - /url: /accounts/website_permissions/
+            - generic [ref=f28e578]:
+              - heading "Centro para familias" [level=4] [ref=f28e586]
+              - link "Supervisión para cuentas de adolescente" [ref=f28e589] [cursor=pointer]:
+                - /url: /accounts/supervision/?supervision_entrypoint=main_settings_screen
+            - generic [ref=f28e601]:
+              - heading "Más información y ayuda" [level=4] [ref=f28e609]
+              - link "Ayuda" [ref=f28e612] [cursor=pointer]:
+                - /url: /settings/help/
+              - link "Centro de privacidad Centro de privacidad" [ref=f28e626] [cursor=pointer]:
+                - /url: https://privacycenter.instagram.com/?entry_point=instagram_settings_page
+                - generic [ref=f28e629]:
+                  - generic [ref=f28e635]: Centro de privacidad
+                  - img "Centro de privacidad" [ref=f28e642]
+              - link "Estado de la cuenta" [ref=f28e647] [cursor=pointer]:
+                - /url: /settings/help/account_status/
+        - generic [ref=f28e659]:
+          - generic [ref=f28e661]:
+            - heading "Archivo y descarga" [level=2] [ref=f28e665]
+            - generic [ref=f28e667]:
+              - heading "Se está guardando en el archivo" [level=3] [ref=f28e669]
+              - generic [ref=f28e674]:
+                - generic [ref=f28e675]: Guardar la historia en el archivo
+                - switch "Guardar la historia en el archivo" [ref=f28e679] [cursor=pointer]
+              - generic [ref=f28e680]: Guarda automáticamente fotos y vídeos en tu archivo para que no tengas que guardarlos en tu teléfono. Solo tú puedes ver tu archivo.
+          - contentinfo [ref=f28e683]:
+            - generic [ref=f28e684]:
+              - generic [ref=f28e686]:
+                - link "Meta" [ref=f28e688] [cursor=pointer]:
+                  - /url: https://about.meta.com/
+                - link "Información" [ref=f28e691] [cursor=pointer]:
+                  - /url: https://about.instagram.com/
+                - link "Blog" [ref=f28e694] [cursor=pointer]:
+                  - /url: https://about.instagram.com/blog/
+                - link "Empleo" [ref=f28e697] [cursor=pointer]:
+                  - /url: https://about.instagram.com/about-us/careers
+                - link "Ayuda" [ref=f28e700] [cursor=pointer]:
+                  - /url: https://help.instagram.com/
+                - link "API" [ref=f28e703] [cursor=pointer]:
+                  - /url: https://developers.facebook.com/docs/instagram
+                - link "Privacidad" [ref=f28e706] [cursor=pointer]:
+                  - /url: /legal/privacy/
+                - link "Condiciones" [ref=f28e709] [cursor=pointer]:
+                  - /url: /legal/terms/
+                - link "Ubicaciones" [ref=f28e712] [cursor=pointer]:
+                  - /url: /explore/locations/
+                - link "Popular" [ref=f28e715] [cursor=pointer]:
+                  - /url: /popular/
+                - link "Instagram Lite" [ref=f28e718] [cursor=pointer]:
+                  - /url: /web/lite/
+                - link "Meta AI" [ref=f28e721] [cursor=pointer]:
+                  - /url: https://www.meta.ai/?utm_source=foa_web_footer
+                - link "Muse" [ref=f28e724] [cursor=pointer]:
+                  - /url: https://muse.ai/
+                - link "Threads" [ref=f28e727] [cursor=pointer]:
+                  - /url: https://www.threads.com/
+                - link "Subir contactos y personas no usuarias" [ref=f28e730] [cursor=pointer]:
+                  - /url: https://www.facebook.com/help/instagram/261704639352628
+                - link "Meta Verified" [ref=f28e733] [cursor=pointer]:
+                  - /url: /accounts/meta_verified/?entrypoint=web_footer
+              - generic [ref=f28e735]:
+                - generic [ref=f28e736] [cursor=pointer]:
+                  - generic [ref=f28e737]:
+                    - generic [ref=f28e738]: Español (España)
+                    - img "Icono de comilla angular hacia abajo" [ref=f28e741]
+                  - combobox "Cambiar idioma de visualización" [ref=f28e743]:
+                    - option "Afrikaans"
+                    - option "العربية"
+                    - option "Čeština"
+                    - option "Dansk"
+                    - option "Deutsch"
+                    - option "Ελληνικά"
+                    - option "English"
+                    - option "English (UK)"
+                    - option "Español (España)" [selected]
+                    - option "Español"
+                    - option "فارسی"
+                    - option "Suomi"
+                    - option "Français"
+                    - option "עברית"
+                    - option "Bahasa Indonesia"
+                    - option "Italiano"
+                    - option "日本語"
+                    - option "한국어"
+                    - option "Bahasa Melayu"
+                    - option "Norsk"
+                    - option "Nederlands"
+                    - option "Polski"
+                    - option "Português (Brasil)"
+                    - option "Português (Portugal)"
+                    - option "Русский"
+                    - option "Svenska"
+                    - option "ภาษาไทย"
+                    - option "Filipino"
+                    - option "Türkçe"
+                    - option "中文(简体)"
+                    - option "中文(台灣)"
+                    - option "বাংলা"
+                    - option "ગુજરાતી"
+                    - option "हिन्दी"
+                    - option "Hrvatski"
+                    - option "Magyar"
+                    - option "ಕನ್ನಡ"
+                    - option "മലയാളം"
+                    - option "मराठी"
+                    - option "नेपाली"
+                    - option "ਪੰਜਾਬੀ"
+                    - option "සිංහල"
+                    - option "Slovenčina"
+                    - option "தமிழ்"
+                    - option "తెలుగు"
+                    - option "اردو"
+                    - option "Tiếng Việt"
+                    - option "中文(香港)"
+                    - option "Български"
+                    - option "Français (Canada)"
+                    - option "Română"
+                    - option "Српски"
+                    - option "Українська"
+                - generic [ref=f28e744]: © 2026 Instagram from Meta
+  - button [ref=f28e747] [cursor=pointer]:
+    - generic "Mensajes" [ref=f28e748]:
+      - generic [ref=f28e749]:
+        - img "Mensajes" [ref=f28e752]
+        - generic [ref=f28e755]: Mensajes

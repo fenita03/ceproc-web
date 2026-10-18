@@ -1,0 +1,25 @@
+- generic [ref=f31e10]:
+  - generic [ref=f31e13]:
+    - generic [ref=f31e15]:
+      - generic [ref=f31e29]:
+        - generic [ref=f31e31]:
+          - link [ref=f31e33] [cursor=pointer]:
+            - /url: /ceproc_oficial/
+          - generic [ref=f31e35]:
+            - link "ceproc_oficial" [ref=f31e37] [cursor=pointer]:
+              - /url: /ceproc_oficial/
+            - time [ref=f31e42]: 1 h
+        - button [ref=f31e44] [cursor=pointer]:
+          - img "Pausar" [ref=f31e46]
+        - button [ref=f31e48] [cursor=pointer]:
+          - img "Menú" [ref=f31e50]
+      - button "Vista por 1" [ref=f31e62] [cursor=pointer]:
+        - button [ref=f31e65]:
+          - link [ref=f31e66]
+    - button [ref=f31e69] [cursor=pointer]:
+      - img "Siguiente" [ref=f31e71]
+  - link [ref=f31e74] [cursor=pointer]:
+    - /url: /
+    - img "Instagram" [ref=f31e75]
+  - button [ref=f31e84] [cursor=pointer]:
+    - img "Cerrar" [ref=f31e86]

@@ -1,0 +1,162 @@
+- generic [ref=f34e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic [ref=f34e18]:
+          - generic [ref=f34e21]:
+            - link [ref=f34e347] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f34e34]:
+              - link [ref=f34e349] [cursor=pointer]:
+                - /url: /
+              - link [ref=f34e351] [cursor=pointer]:
+                - /url: /reels/
+              - link [ref=f34e353] [cursor=pointer]:
+                - /url: /direct/inbox/
+              - link [ref=f34e355] [cursor=pointer]:
+                - /url: /explore/
+              - link [ref=f34e357] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f34e359] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f34e361] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f34e363] [cursor=pointer]:
+                - /url: /ceproc_oficial/
+                - link [ref=f34e364]
+            - generic [ref=f34e127]:
+              - link [ref=f34e366] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f34e368] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f34e146]:
+            - main [ref=f34e147]:
+              - generic [ref=f34e149]:
+                - generic [ref=f34e150]:
+                  - generic [ref=f34e151]:
+                    - generic [ref=f34e155]:
+                      - button [ref=f34e370] [cursor=pointer]:
+                        - generic [ref=f34e157]: Nota...
+                      - button [ref=f34e371] [cursor=pointer]:
+                        - link [ref=f34e372]
+                    - generic [ref=f34e171]:
+                      - generic [ref=f34e172]:
+                        - link [ref=f34e374] [cursor=pointer]:
+                          - /url: "#"
+                          - heading [level=2] [ref=f34e375]:
+                            - generic [ref=f34e176]: ceproc_oficial
+                        - button [ref=f34e376] [cursor=pointer]
+                      - generic [ref=f34e182]: CEPROC · Capacitación en oficios y minería
+                      - generic [ref=f34e184]:
+                        - generic [ref=f34e186]:
+                          - generic [ref=f34e187]: "1"
+                          - text: publicación
+                        - link [ref=f34e378] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=f34e190]:
+                            - generic [ref=f34e379]: "0"
+                            - text: seguidores
+                        - link [ref=f34e380] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=f34e194]:
+                            - generic [ref=f34e195]: "0"
+                            - text: seguidos
+                  - generic [ref=f34e199]:
+                    - button [ref=f34e381] [cursor=pointer]:
+                      - generic [ref=f34e201]: Centro Productivo de Capacitación en Oficios Regionales y Minería. Formación práctica · Rawson, San Juan. Informate y
+                    - generic [ref=f34e202]:
+                      - text: ...
+                      - button [ref=f34e382] [cursor=pointer]:
+                        - generic [ref=f34e204]: más
+                  - generic [ref=f34e209]:
+                    - link [ref=f34e383] [cursor=pointer]:
+                      - /url: /accounts/edit/
+                      - text: Editar perfil
+                    - link [ref=f34e384] [cursor=pointer]:
+                      - /url: /archive/stories/
+                      - text: Ver archivo
+                  - menu [ref=f34e215]:
+                    - list [ref=f34e219]:
+                      - listitem [ref=f34e220]
+                      - listitem [ref=f34e221]
+                      - listitem [ref=f34e222]:
+                        - button [ref=f34e385] [cursor=pointer]:
+                          - generic [ref=f34e231]: Nuevo
+                - tablist [ref=f34e235]:
+                  - link [ref=f34e387] [cursor=pointer]:
+                    - /url: /ceproc_oficial/
+                  - link [ref=f34e389] [cursor=pointer]:
+                    - /url: /ceproc_oficial/saved/
+                  - link [ref=f34e391] [cursor=pointer]:
+                    - /url: /ceproc_oficial/tagged/
+                - link [ref=f34e393] [cursor=pointer]:
+                  - /url: /ceproc_oficial/p/DenzaCWAgs7/
+            - contentinfo [ref=f34e274]:
+              - generic [ref=f34e275]:
+                - generic [ref=f34e277]:
+                  - link [ref=f34e395] [cursor=pointer]:
+                    - /url: https://about.meta.com/
+                    - generic [ref=f34e280]: Meta
+                  - link [ref=f34e396] [cursor=pointer]:
+                    - /url: https://about.instagram.com/
+                    - generic [ref=f34e283]: Información
+                  - link [ref=f34e397] [cursor=pointer]:
+                    - /url: https://about.instagram.com/blog/
+                    - generic [ref=f34e286]: Blog
+                  - link [ref=f34e398] [cursor=pointer]:
+                    - /url: https://about.instagram.com/about-us/careers
+                    - generic [ref=f34e289]: Empleo
+                  - link [ref=f34e399] [cursor=pointer]:
+                    - /url: https://help.instagram.com/
+                    - generic [ref=f34e292]: Ayuda
+                  - link [ref=f34e400] [cursor=pointer]:
+                    - /url: https://developers.facebook.com/docs/instagram
+                    - generic [ref=f34e295]: API
+                  - link [ref=f34e401] [cursor=pointer]:
+                    - /url: /legal/privacy/
+                    - generic [ref=f34e298]: Privacidad
+                  - link [ref=f34e402] [cursor=pointer]:
+                    - /url: /legal/terms/
+                    - generic [ref=f34e301]: Condiciones
+                  - link [ref=f34e403] [cursor=pointer]:
+                    - /url: /explore/locations/
+                    - generic [ref=f34e304]: Ubicaciones
+                  - link [ref=f34e404] [cursor=pointer]:
+                    - /url: /popular/
+                    - generic [ref=f34e307]: Popular
+                  - link [ref=f34e405] [cursor=pointer]:
+                    - /url: /web/lite/
+                    - generic [ref=f34e310]: Instagram Lite
+                  - link [ref=f34e406] [cursor=pointer]:
+                    - /url: https://www.meta.ai/?utm_source=foa_web_footer
+                    - generic [ref=f34e313]: Meta AI
+                  - link [ref=f34e407] [cursor=pointer]:
+                    - /url: https://muse.ai/
+                    - generic [ref=f34e316]: Muse
+                  - link [ref=f34e408] [cursor=pointer]:
+                    - /url: https://www.threads.com/
+                    - generic [ref=f34e319]: Threads
+                  - link [ref=f34e409] [cursor=pointer]:
+                    - /url: https://www.facebook.com/help/instagram/261704639352628
+                    - generic [ref=f34e322]: Subir contactos y personas no usuarias
+                  - link [ref=f34e410] [cursor=pointer]:
+                    - /url: /accounts/meta_verified/?entrypoint=web_footer
+                    - generic [ref=f34e325]: Meta Verified
+                - generic [ref=f34e326]:
+                  - generic [ref=f34e327] [cursor=pointer]:
+                    - generic [ref=f34e328]: Español (España)
+                    - combobox [ref=f34e412]
+                  - generic [ref=f34e335]: © 2026 Instagram from Meta
+        - button [ref=f34e338] [cursor=pointer]:
+          - generic "Mensajes" [ref=f34e339]:
+            - generic [ref=f34e340]:
+              - img "Mensajes" [ref=f34e343]
+              - generic [ref=f34e346]: Mensajes
+  - dialog "Nuevo contenido destacado" [ref=f34e419]:
+    - generic [ref=f34e421]:
+      - generic [ref=f34e422]:
+        - button "Cerrar" [ref=f34e424] [cursor=pointer]:
+          - img "Cerrar" [ref=f34e426]
+        - heading "Nuevo contenido destacado" [level=2] [ref=f34e429]
+      - textbox "Nombre del contenido destacado" [active] [ref=f34e432]
+      - button "Siguiente" [disabled] [ref=f34e433]

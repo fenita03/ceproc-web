@@ -1,0 +1,164 @@
+- generic [ref=f25e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic [ref=f25e9]:
+          - generic [ref=f25e12]:
+            - link [ref=f25e454] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f25e25]:
+              - link [ref=f25e456] [cursor=pointer]:
+                - /url: /
+              - link [ref=f25e458] [cursor=pointer]:
+                - /url: /reels/
+              - link [ref=f25e460] [cursor=pointer]:
+                - /url: /direct/inbox/
+              - link [ref=f25e462] [cursor=pointer]:
+                - /url: /explore/
+              - link [ref=f25e464] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f25e466] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f25e468] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f25e470] [cursor=pointer]:
+                - /url: /ceproc_oficial/
+                - link [ref=f25e471]
+            - generic [ref=f25e115]:
+              - link [ref=f25e473] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f25e475] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f25e134]:
+            - main [ref=f25e135]:
+              - generic [ref=f25e154]:
+                - generic [ref=f25e156]:
+                  - button [ref=f25e478] [cursor=pointer]:
+                    - link [ref=f25e479]
+                  - link [ref=f25e481] [cursor=pointer]:
+                    - /url: /ceproc_oficial/
+                    - generic [ref=f25e181]: ceproc_oficial
+                  - button [ref=f25e482] [cursor=pointer]
+                - separator [ref=f25e193]
+                - generic [ref=f25e195]:
+                  - generic [ref=f25e197]:
+                    - link [ref=f25e484] [cursor=pointer]:
+                      - /url: /ceproc_oficial/
+                    - generic [ref=f25e207]:
+                      - generic [ref=f25e208]:
+                        - link [ref=f25e486] [cursor=pointer]:
+                          - /url: /ceproc_oficial/
+                          - generic [ref=f25e213]: ceproc_oficial
+                        - time [ref=f25e217]: 5 h
+                      - generic [ref=f25e218]:
+                        - text: ¡Bienvenidos a CEPROC! Somos el Centro Productivo de Capacitación en Oficios Regionales y Minería, en Rawson, San Juan. Una propuesta de formación práctica para jóvenes y adultos, con 7 áreas y 56 talleres pensados para conectar el aprendizaje con el trabajo. ¿Querés capacitarte? Entrá al link de la bio y tocá «Capacitate con nosotros». Formación que construye futuro.
+                        - link [ref=f25e487] [cursor=pointer]:
+                          - /url: /explore/tags/ceproc/
+                          - text: "#CEPROC"
+                        - link [ref=f25e488] [cursor=pointer]:
+                          - /url: /explore/tags/rawsonsanjuan/
+                          - text: "#RawsonSanJuan"
+                        - link [ref=f25e489] [cursor=pointer]:
+                          - /url: /explore/tags/sanjuanargentina/
+                          - text: "#SanJuanArgentina"
+                        - link [ref=f25e490] [cursor=pointer]:
+                          - /url: /explore/tags/formacionenoficios/
+                          - text: "#FormacionEnOficios"
+                        - link [ref=f25e491] [cursor=pointer]:
+                          - /url: /explore/tags/capacitacionlaboral/
+                          - text: "#CapacitacionLaboral"
+                        - link [ref=f25e492] [cursor=pointer]:
+                          - /url: /explore/tags/oficiossanjuan/
+                          - text: "#OficiosSanJuan"
+                  - generic [ref=f25e227]:
+                    - heading [level=2] [ref=f25e493]: Todavía no hay comentarios.
+                    - generic [ref=f25e230]: Inicia la conversación.
+                - generic [ref=f25e233]:
+                  - button [ref=f25e494] [cursor=pointer]: Ver insights
+                  - button [ref=f25e495] [cursor=pointer]: Promocionar publicación
+                - generic [ref=f25e238]:
+                  - generic [ref=f25e239]:
+                    - generic [ref=f25e240]:
+                      - button [ref=f25e496] [cursor=pointer]
+                      - button [ref=f25e498] [cursor=pointer]
+                      - button [ref=f25e500] [cursor=pointer]
+                    - button [ref=f25e502] [cursor=pointer]:
+                      - button [ref=f25e503]
+                  - link [ref=f25e505] [cursor=pointer]:
+                    - /url: /ceproc_oficial/p/DenX-NbiCmB/
+                    - time [ref=f25e268]: Hace 5 horas
+                - generic [ref=f25e271]:
+                  - link [ref=f25e272]
+                  - generic [ref=f25e274]:
+                    - button [ref=f25e506] [cursor=pointer]
+                    - textbox [ref=f25e508]:
+                      - /placeholder: Añade un comentario...
+            - contentinfo [ref=f25e281]:
+              - generic [ref=f25e282]:
+                - generic [ref=f25e284]:
+                  - link [ref=f25e509] [cursor=pointer]:
+                    - /url: https://about.meta.com/
+                    - generic [ref=f25e287]: Meta
+                  - link [ref=f25e510] [cursor=pointer]:
+                    - /url: https://about.instagram.com/
+                    - generic [ref=f25e290]: Información
+                  - link [ref=f25e511] [cursor=pointer]:
+                    - /url: https://about.instagram.com/blog/
+                    - generic [ref=f25e293]: Blog
+                  - link [ref=f25e512] [cursor=pointer]:
+                    - /url: https://about.instagram.com/about-us/careers
+                    - generic [ref=f25e296]: Empleo
+                  - link [ref=f25e513] [cursor=pointer]:
+                    - /url: https://help.instagram.com/
+                    - generic [ref=f25e299]: Ayuda
+                  - link [ref=f25e514] [cursor=pointer]:
+                    - /url: https://developers.facebook.com/docs/instagram
+                    - generic [ref=f25e302]: API
+                  - link [ref=f25e515] [cursor=pointer]:
+                    - /url: /legal/privacy/
+                    - generic [ref=f25e305]: Privacidad
+                  - link [ref=f25e516] [cursor=pointer]:
+                    - /url: /legal/terms/
+                    - generic [ref=f25e308]: Condiciones
+                  - link [ref=f25e517] [cursor=pointer]:
+                    - /url: /explore/locations/
+                    - generic [ref=f25e311]: Ubicaciones
+                  - link [ref=f25e518] [cursor=pointer]:
+                    - /url: /popular/
+                    - generic [ref=f25e314]: Popular
+                  - link [ref=f25e519] [cursor=pointer]:
+                    - /url: /web/lite/
+                    - generic [ref=f25e317]: Instagram Lite
+                  - link [ref=f25e520] [cursor=pointer]:
+                    - /url: https://www.meta.ai/?utm_source=foa_web_footer
+                    - generic [ref=f25e320]: Meta AI
+                  - link [ref=f25e521] [cursor=pointer]:
+                    - /url: https://muse.ai/
+                    - generic [ref=f25e323]: Muse
+                  - link [ref=f25e522] [cursor=pointer]:
+                    - /url: https://www.threads.com/
+                    - generic [ref=f25e326]: Threads
+                  - link [ref=f25e523] [cursor=pointer]:
+                    - /url: https://www.facebook.com/help/instagram/261704639352628
+                    - generic [ref=f25e329]: Subir contactos y personas no usuarias
+                  - link [ref=f25e524] [cursor=pointer]:
+                    - /url: /accounts/meta_verified/?entrypoint=web_footer
+                    - generic [ref=f25e332]: Meta Verified
+                - generic [ref=f25e333]:
+                  - generic [ref=f25e334] [cursor=pointer]:
+                    - generic [ref=f25e335]: Español (España)
+                    - combobox [ref=f25e526]
+                  - generic [ref=f25e342]: © 2026 Instagram from Meta
+        - button [ref=f25e365] [cursor=pointer]:
+          - generic "Mensajes" [ref=f25e366]:
+            - generic [ref=f25e367]:
+              - img "Mensajes" [ref=f25e370]
+              - generic [ref=f25e373]: Mensajes
+  - dialog [ref=f25e533]:
+    - generic [ref=f25e536]:
+      - heading "¿Eliminar publicación? ¿Seguro que quieres eliminar esta publicación?" [active] [level=1] [ref=f25e537]:
+        - heading "¿Eliminar publicación?" [level=1] [ref=f25e538]
+        - generic [ref=f25e539]: ¿Seguro que quieres eliminar esta publicación?
+      - generic [ref=f25e541]:
+        - button "Eliminar" [ref=f25e542] [cursor=pointer]
+        - button "Cancelar" [ref=f25e543] [cursor=pointer]

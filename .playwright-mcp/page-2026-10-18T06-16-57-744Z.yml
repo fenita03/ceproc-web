@@ -1,0 +1,164 @@
+- generic [ref=f37e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic [ref=f37e18]:
+          - generic [ref=f37e21]:
+            - link [ref=f37e347] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f37e34]:
+              - link [ref=f37e349] [cursor=pointer]:
+                - /url: /
+              - link [ref=f37e351] [cursor=pointer]:
+                - /url: /reels/
+              - link [ref=f37e353] [cursor=pointer]:
+                - /url: /direct/inbox/
+              - link [ref=f37e355] [cursor=pointer]:
+                - /url: /explore/
+              - link [ref=f37e357] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f37e359] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f37e361] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f37e363] [cursor=pointer]:
+                - /url: /ceproc_oficial/
+                - link [ref=f37e364]
+            - generic [ref=f37e127]:
+              - link [ref=f37e366] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f37e368] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f37e146]:
+            - main [ref=f37e147]:
+              - generic [ref=f37e149]:
+                - generic [ref=f37e150]:
+                  - generic [ref=f37e151]:
+                    - generic [ref=f37e155]:
+                      - button [ref=f37e370] [cursor=pointer]:
+                        - generic [ref=f37e157]: Nota...
+                      - button [ref=f37e371] [cursor=pointer]:
+                        - link [ref=f37e372]
+                    - generic [ref=f37e171]:
+                      - generic [ref=f37e172]:
+                        - link [ref=f37e374] [cursor=pointer]:
+                          - /url: "#"
+                          - heading [level=2] [ref=f37e375]:
+                            - generic [ref=f37e176]: ceproc_oficial
+                        - button [ref=f37e376] [cursor=pointer]
+                      - generic [ref=f37e182]: CEPROC · Capacitación en oficios y minería
+                      - generic [ref=f37e184]:
+                        - generic [ref=f37e186]:
+                          - generic [ref=f37e187]: "1"
+                          - text: publicación
+                        - link [ref=f37e378] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=f37e190]:
+                            - generic [ref=f37e379]: "0"
+                            - text: seguidores
+                        - link [ref=f37e380] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=f37e194]:
+                            - generic [ref=f37e195]: "0"
+                            - text: seguidos
+                  - generic [ref=f37e199]:
+                    - button [ref=f37e381] [cursor=pointer]:
+                      - generic [ref=f37e201]: Centro Productivo de Capacitación en Oficios Regionales y Minería. Formación práctica · Rawson, San Juan. Informate y
+                    - generic [ref=f37e202]:
+                      - text: ...
+                      - button [ref=f37e382] [cursor=pointer]:
+                        - generic [ref=f37e204]: más
+                  - generic [ref=f37e209]:
+                    - link [ref=f37e383] [cursor=pointer]:
+                      - /url: /accounts/edit/
+                      - text: Editar perfil
+                    - link [ref=f37e384] [cursor=pointer]:
+                      - /url: /archive/stories/
+                      - text: Ver archivo
+                  - menu [ref=f37e215]:
+                    - list [ref=f37e219]:
+                      - listitem [ref=f37e220]
+                      - listitem [ref=f37e221]
+                      - listitem [ref=f37e222]:
+                        - button [ref=f37e385] [cursor=pointer]:
+                          - generic [ref=f37e231]: Nuevo
+                - tablist [ref=f37e235]:
+                  - link [ref=f37e387] [cursor=pointer]:
+                    - /url: /ceproc_oficial/
+                  - link [ref=f37e389] [cursor=pointer]:
+                    - /url: /ceproc_oficial/saved/
+                  - link [ref=f37e391] [cursor=pointer]:
+                    - /url: /ceproc_oficial/tagged/
+                - link [ref=f37e393] [cursor=pointer]:
+                  - /url: /ceproc_oficial/p/DenzaCWAgs7/
+            - contentinfo [ref=f37e274]:
+              - generic [ref=f37e275]:
+                - generic [ref=f37e277]:
+                  - link [ref=f37e395] [cursor=pointer]:
+                    - /url: https://about.meta.com/
+                    - generic [ref=f37e280]: Meta
+                  - link [ref=f37e396] [cursor=pointer]:
+                    - /url: https://about.instagram.com/
+                    - generic [ref=f37e283]: Información
+                  - link [ref=f37e397] [cursor=pointer]:
+                    - /url: https://about.instagram.com/blog/
+                    - generic [ref=f37e286]: Blog
+                  - link [ref=f37e398] [cursor=pointer]:
+                    - /url: https://about.instagram.com/about-us/careers
+                    - generic [ref=f37e289]: Empleo
+                  - link [ref=f37e399] [cursor=pointer]:
+                    - /url: https://help.instagram.com/
+                    - generic [ref=f37e292]: Ayuda
+                  - link [ref=f37e400] [cursor=pointer]:
+                    - /url: https://developers.facebook.com/docs/instagram
+                    - generic [ref=f37e295]: API
+                  - link [ref=f37e401] [cursor=pointer]:
+                    - /url: /legal/privacy/
+                    - generic [ref=f37e298]: Privacidad
+                  - link [ref=f37e402] [cursor=pointer]:
+                    - /url: /legal/terms/
+                    - generic [ref=f37e301]: Condiciones
+                  - link [ref=f37e403] [cursor=pointer]:
+                    - /url: /explore/locations/
+                    - generic [ref=f37e304]: Ubicaciones
+                  - link [ref=f37e404] [cursor=pointer]:
+                    - /url: /popular/
+                    - generic [ref=f37e307]: Popular
+                  - link [ref=f37e405] [cursor=pointer]:
+                    - /url: /web/lite/
+                    - generic [ref=f37e310]: Instagram Lite
+                  - link [ref=f37e406] [cursor=pointer]:
+                    - /url: https://www.meta.ai/?utm_source=foa_web_footer
+                    - generic [ref=f37e313]: Meta AI
+                  - link [ref=f37e407] [cursor=pointer]:
+                    - /url: https://muse.ai/
+                    - generic [ref=f37e316]: Muse
+                  - link [ref=f37e408] [cursor=pointer]:
+                    - /url: https://www.threads.com/
+                    - generic [ref=f37e319]: Threads
+                  - link [ref=f37e409] [cursor=pointer]:
+                    - /url: https://www.facebook.com/help/instagram/261704639352628
+                    - generic [ref=f37e322]: Subir contactos y personas no usuarias
+                  - link [ref=f37e410] [cursor=pointer]:
+                    - /url: /accounts/meta_verified/?entrypoint=web_footer
+                    - generic [ref=f37e325]: Meta Verified
+                - generic [ref=f37e326]:
+                  - generic [ref=f37e327] [cursor=pointer]:
+                    - generic [ref=f37e328]: Español (España)
+                    - combobox [ref=f37e412]
+                  - generic [ref=f37e335]: © 2026 Instagram from Meta
+        - button [ref=f37e338] [cursor=pointer]:
+          - generic "Mensajes" [ref=f37e339]:
+            - generic [ref=f37e340]:
+              - img "Mensajes" [ref=f37e343]
+              - generic [ref=f37e346]: Mensajes
+  - dialog "Historias" [ref=f37e436]:
+    - generic [ref=f37e438]:
+      - generic [ref=f37e439]:
+        - button "Atrás" [ref=f37e441] [cursor=pointer]
+        - heading "Historias" [active] [level=2] [ref=f37e445]
+        - button "Cerrar" [ref=f37e448] [cursor=pointer]:
+          - img "Cerrar" [ref=f37e450]
+      - progressbar [ref=f37e455]:
+        - img "Cargando..." [ref=f37e456]
+      - button "Siguiente" [disabled] [ref=f37e469]

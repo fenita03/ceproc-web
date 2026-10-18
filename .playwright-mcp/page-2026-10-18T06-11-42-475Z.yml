@@ -1,0 +1,5 @@
+- dialog "Cargando…" [ref=f20e18]:
+  - generic [ref=f20e27]:
+    - status "Cargando…" [ref=f20e28]
+    - status "Cargando…" [ref=f20e29]
+    - status "Cargando…" [ref=f20e30]

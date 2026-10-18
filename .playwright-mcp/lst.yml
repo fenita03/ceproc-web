@@ -1,0 +1,285 @@
+- generic [active] [ref=f179e1]:
+  - generic [ref=f179e4]:
+    - region "Notifications alt+T"
+    - generic [ref=f179e5]:
+      - generic [ref=f179e7]:
+        - link "Linktree admin" [ref=f179e12] [cursor=pointer]:
+          - /url: /admin
+        - generic [ref=f179e17]:
+          - button "7 days of Pro left – see what's included" [ref=f179e18] [cursor=pointer]
+          - button "Keep Pro access" [ref=f179e24] [cursor=pointer]
+      - generic [ref=f179e26]:
+        - button "Open navigation" [ref=f179e28] [cursor=pointer]
+        - button "Switch Linktrees" [ref=f179e30] [cursor=pointer]:
+          - generic [ref=f179e31]: ceproc_oficial
+          - generic [ref=f179e32]: Draft
+        - generic [ref=f179e35]:
+          - button "Preview" [ref=f179e37] [cursor=pointer]
+          - generic [ref=f179e40]:
+            - button "Undo" [ref=f179e41] [cursor=pointer]
+            - button "Redo" [disabled] [ref=f179e44]
+          - generic [ref=f179e47]:
+            - button "Publish" [ref=f179e48] [cursor=pointer]:
+              - generic [ref=f179e50]: Publish
+            - status [ref=f179e55]
+      - main [ref=f179e56]:
+        - navigation "Editor" [ref=f179e58]:
+          - generic [ref=f179e59]:
+            - link "Content":
+              - /url: /admin/links
+            - link "Header" [ref=f179e60] [cursor=pointer]:
+              - /url: /admin/header
+            - link "Design" [ref=f179e65] [cursor=pointer]:
+              - /url: /admin/design
+            - button "Enhance" [ref=f179e70] [cursor=pointer]
+          - link "Settings" [ref=f179e75] [cursor=pointer]:
+            - /url: /admin/settings
+        - generic [ref=f179e79]:
+          - generic [ref=f179e84]:
+            - generic [ref=f179e87]:
+              - heading "Content" [level=1] [ref=f179e89]
+              - generic [ref=f179e90]:
+                - generic [ref=f179e91]:
+                  - generic:
+                    - button "Exit selection mode"
+                  - button "Archive" [ref=f179e93] [cursor=pointer]
+                - button "Select links" [ref=f179e97] [cursor=pointer]
+            - generic [ref=f179e101]:
+              - generic [ref=f179e102]:
+                - button "Edit profile picture" [ref=f179e103] [cursor=pointer]:
+                  - img "User avatar" [ref=f179e104]
+                - generic [ref=f179e105]:
+                  - button [ref=f179e106] [cursor=pointer]:
+                    - paragraph [ref=f179e107]: ceproc_oficial
+                  - generic [ref=f179e108]:
+                    - button "Instagram" [ref=f179e109] [cursor=pointer]:
+                      - img "Instagram" [ref=f179e110]
+                      - generic [ref=f179e112]: +
+                    - button "TikTok" [ref=f179e113] [cursor=pointer]:
+                      - img "TikTok" [ref=f179e114]
+                      - generic [ref=f179e116]: +
+                    - button "WhatsApp" [ref=f179e117] [cursor=pointer]:
+                      - img "Whatsapp" [ref=f179e118]
+                      - generic [ref=f179e120]: +
+                    - button "Email" [ref=f179e121] [cursor=pointer]:
+                      - img "Email" [ref=f179e122]
+                      - generic [ref=f179e125]: +
+                    - button "Add new social icon" [ref=f179e126] [cursor=pointer]
+              - button "Show total followers" [ref=f179e129] [cursor=pointer]
+            - group "Add content" [ref=f179e134]:
+              - button "Add collection" [ref=f179e135] [cursor=pointer]
+              - button "Add" [ref=f179e137] [cursor=pointer]
+            - generic [ref=f179e145]:
+              - generic [ref=f179e146]:
+                - list [ref=f179e147]:
+                  - listitem [ref=f179e148]:
+                    - button "Insert link" [ref=f179e149] [cursor=pointer]
+                  - button [ref=f179e154] [cursor=pointer]:
+                    - button "Change thumbnail Capacitate con nosotros 0 clicks • ceproc.vercel.app More options" [ref=f179e159]:
+                      - generic [ref=f179e162]:
+                        - button "Change thumbnail" [ref=f179e163]
+                        - button [aria-hidden]
+                      - generic [ref=f179e165]:
+                        - generic [ref=f179e166]: Capacitate con nosotros
+                        - generic [ref=f179e168]:
+                          - text: 0 clicks
+                          - generic [ref=f179e169]: •
+                          - text: ceproc.vercel.app
+                      - button "More options" [ref=f179e171]
+                  - listitem [ref=f179e173]:
+                    - button "Insert link" [ref=f179e174] [cursor=pointer]
+                  - button [ref=f179e179] [cursor=pointer]:
+                    - button "Change thumbnail Sitio web 0 clicks • ceproc.vercel.app More options" [ref=f179e184]:
+                      - generic [ref=f179e187]:
+                        - button "Change thumbnail" [ref=f179e188]
+                        - button [aria-hidden]
+                      - generic [ref=f179e190]:
+                        - generic [ref=f179e191]: Sitio web
+                        - generic [ref=f179e193]:
+                          - text: 0 clicks
+                          - generic [ref=f179e194]: •
+                          - text: ceproc.vercel.app
+                      - button "More options" [ref=f179e196]
+                  - listitem [ref=f179e198]:
+                    - button "Insert link" [ref=f179e199] [cursor=pointer]
+                  - button [ref=f179e204] [cursor=pointer]:
+                    - button "Change thumbnail Áreas de formación 0 clicks • ceproc.vercel.app More options" [ref=f179e209]:
+                      - generic [ref=f179e212]:
+                        - button "Change thumbnail" [ref=f179e213]
+                        - button [aria-hidden]
+                      - generic [ref=f179e215]:
+                        - generic [ref=f179e216]: Áreas de formación
+                        - generic [ref=f179e218]:
+                          - text: 0 clicks
+                          - generic [ref=f179e219]: •
+                          - text: ceproc.vercel.app
+                      - button "More options" [ref=f179e221]
+                  - listitem [ref=f179e223]:
+                    - button "Insert link" [ref=f179e224] [cursor=pointer]
+                  - button [ref=f179e229] [cursor=pointer]:
+                    - button "Change thumbnail WhatsApp 0 clicks • wa.me More options" [ref=f179e234]:
+                      - generic [ref=f179e237]:
+                        - button "Change thumbnail" [ref=f179e238]
+                        - button [aria-hidden]
+                      - generic [ref=f179e240]:
+                        - generic [ref=f179e241]: WhatsApp
+                        - generic [ref=f179e243]:
+                          - text: 0 clicks
+                          - generic [ref=f179e244]: •
+                          - text: wa.me
+                      - button "More options" [ref=f179e246]
+                  - listitem [ref=f179e248]:
+                    - button "Insert link" [ref=f179e249] [cursor=pointer]
+                  - button [ref=f179e254] [cursor=pointer]:
+                    - button "Change thumbnail Capacitate con nosotros 0 clicks • ceproc.vercel.app More options" [ref=f179e259]:
+                      - generic [ref=f179e262]:
+                        - button "Change thumbnail" [ref=f179e263]
+                        - button [aria-hidden]
+                      - generic [ref=f179e265]:
+                        - generic [ref=f179e266]: Capacitate con nosotros
+                        - generic [ref=f179e268]:
+                          - text: 0 clicks
+                          - generic [ref=f179e269]: •
+                          - text: ceproc.vercel.app
+                      - button "More options" [ref=f179e271]
+                  - listitem [ref=f179e273]:
+                    - button "Insert link" [ref=f179e274] [cursor=pointer]
+                  - button [ref=f179e279] [cursor=pointer]:
+                    - button "Change thumbnail Sitio web 0 clicks • ceproc.vercel.app More options" [ref=f179e284]:
+                      - generic [ref=f179e287]:
+                        - button "Change thumbnail" [ref=f179e288]
+                        - button [aria-hidden]
+                      - generic [ref=f179e290]:
+                        - generic [ref=f179e291]: Sitio web
+                        - generic [ref=f179e293]:
+                          - text: 0 clicks
+                          - generic [ref=f179e294]: •
+                          - text: ceproc.vercel.app
+                      - button "More options" [ref=f179e296]
+                  - listitem [ref=f179e298]:
+                    - button "Insert link" [ref=f179e299] [cursor=pointer]
+                  - button [ref=f179e304] [cursor=pointer]:
+                    - button "Change thumbnail Instagram Setup More options" [ref=f179e309]:
+                      - generic [ref=f179e312]:
+                        - button "Change thumbnail" [ref=f179e313]:
+                          - img "instagram-profile" [ref=f179e315]
+                        - button [aria-hidden]
+                      - generic [ref=f179e316]: Instagram
+                      - generic [ref=f179e321]:
+                        - generic [ref=f179e322]: Setup
+                        - button "More options" [ref=f179e327]
+                  - listitem [ref=f179e329]:
+                    - button "Insert link" [ref=f179e330] [cursor=pointer]
+                - status [ref=f179e335]
+              - generic [ref=f179e338]:
+                - generic [ref=f179e339]:
+                  - generic [ref=f179e340]: Linktree footer
+                  - switch "Toggle Linktree footer visibility" [checked] [ref=f179e342] [cursor=pointer]
+                - img "Linktree Logo" [ref=f179e344]
+          - generic [ref=f179e349]:
+            - iframe [ref=f179e359]:
+              - generic [ref=f182e4]:
+                - generic:
+                  - generic:
+                    - button "Linktree" [ref=f182e6] [cursor=pointer]
+                    - button "Share profile" [ref=f182e11] [cursor=pointer]
+                - generic [ref=f182e17]:
+                  - generic [ref=f182e21]:
+                    - generic "Profile title" [ref=f182e27]:
+                      - heading "ceproc_oficial" [level=1] [ref=f182e29]
+                    - generic [ref=f182e32]:
+                      - generic [ref=f182e35]:
+                        - link "Capacitate con nosotros" [ref=f182e36] [cursor=pointer]:
+                          - /url: https://ceproc.vercel.app/#capacitate
+                        - button "Share" [ref=f182e41] [cursor=pointer]:
+                          - img "Capacitate con nosotros" [ref=f182e42]
+                      - generic [ref=f182e46]:
+                        - link "Sitio web" [ref=f182e47] [cursor=pointer]:
+                          - /url: https://ceproc.vercel.app
+                        - button "Share" [ref=f182e52] [cursor=pointer]:
+                          - img "Sitio web" [ref=f182e53]
+                      - generic [ref=f182e57]:
+                        - link "Áreas de formación" [ref=f182e58] [cursor=pointer]:
+                          - /url: https://ceproc.vercel.app/#areas
+                        - button "Share" [ref=f182e63] [cursor=pointer]:
+                          - img "Áreas de formación" [ref=f182e64]
+                      - generic [ref=f182e68]:
+                        - link "WhatsApp" [ref=f182e69] [cursor=pointer]:
+                          - /url: https://wa.me/5492645563755?text=Hola%2C%20CEPROC.%20Quiero%20consultar%20por%20las%20capacitaciones.
+                        - button "Share" [ref=f182e74] [cursor=pointer]:
+                          - img "WhatsApp" [ref=f182e75]
+                      - generic [ref=f182e79]:
+                        - link "Capacitate con nosotros" [ref=f182e80] [cursor=pointer]:
+                          - /url: https://ceproc.vercel.app/#capacitate
+                        - button "Share" [ref=f182e85] [cursor=pointer]:
+                          - img "Capacitate con nosotros" [ref=f182e86]
+                      - generic [ref=f182e90]:
+                        - link "Sitio web" [ref=f182e91] [cursor=pointer]:
+                          - /url: https://ceproc.vercel.app
+                        - button "Share" [ref=f182e96] [cursor=pointer]:
+                          - img "Sitio web" [ref=f182e97]
+                  - generic:
+                    - generic:
+                      - link "Consigue tu propio Linktree" [ref=f182e99] [cursor=pointer]:
+                        - /url: https://linktr.ee/?utm_source=linktree&utm_medium=profile&utm_campaign=footer_logo_cta&utm_content=ceproc_oficial
+                      - generic:
+                        - generic:
+                          - button "Cookie Preferences" [ref=f182e102] [cursor=pointer]
+                          - generic: •
+                          - generic [ref=f182e103]: Report
+                          - generic: •
+                          - generic [ref=f182e104]: Privacy
+                        - button "More from Linktree" [ref=f182e105] [cursor=pointer]
+            - generic [ref=f179e360]:
+              - button [ref=f179e362] [cursor=pointer]
+              - button [ref=f179e363] [cursor=pointer]
+        - complementary [aria-hidden]:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - button:
+                          - generic: New chat
+                      - generic:
+                        - button
+                    - generic:
+                      - generic:
+                        - status
+                        - generic:
+                          - generic:
+                            - generic:
+                              - heading [level=2]: What would you like towork on?
+                            - list:
+                              - listitem:
+                                - button:
+                                  - generic: Drive more link clicks
+                              - listitem:
+                                - button:
+                                  - generic: Make my profile stand out
+                              - listitem:
+                                - button:
+                                  - generic: Drive more visits to Linktree
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - button:
+                                    - generic: "@"
+                                - generic:
+                                  - generic:
+                                    - textbox:
+                                      - /placeholder: Ask Linktree AI...
+                                - generic:
+                                  - button
+                                  - button [disabled]
+        - generic:
+          - generic:
+            - button "Ask Linktree" [ref=f179e366] [cursor=pointer]
+            - button [aria-hidden]
+  - iframe [aria-hidden] [ref=f179e370]

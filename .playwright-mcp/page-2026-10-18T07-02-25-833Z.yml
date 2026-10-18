@@ -1,0 +1,20 @@
+- generic [ref=f61e63]:
+  - link "Inicio de Linktree" [ref=f61e66] [cursor=pointer]:
+    - /url: /
+    - img "Linktree Logo" [ref=f61e67]
+  - generic [ref=f61e71]:
+    - banner [ref=f61e72]:
+      - heading [level=1] [ref=f61e73]:
+        - button "Atrás" [ref=f61e75] [cursor=pointer]
+        - text: Elige tu nombre de usuario
+    - main [ref=f61e78]:
+      - generic [ref=f61e79]:
+        - paragraph [ref=f61e80]: Usa algo parecido a tus nombres de usuario en redes sociales para que te reconozcan fácilmente.
+        - generic [ref=f61e83]:
+          - generic [ref=f61e84]: linktr.ee/
+          - generic [ref=f61e85]:
+            - generic: nombre de usuario
+            - textbox "nombre de usuario" [active] [ref=f61e86]:
+              - /placeholder: ​
+              - text: ceproc_oficial
+        - button "Continúa" [ref=f61e87] [cursor=pointer]

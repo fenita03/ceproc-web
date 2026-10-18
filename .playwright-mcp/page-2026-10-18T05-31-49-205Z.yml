@@ -1,0 +1,108 @@
+- generic [ref=e12]:
+  - generic [ref=e15]:
+    - separator [ref=e21]
+    - generic [ref=e26]:
+      - img "Instagram" [ref=e27]
+      - generic [ref=e35]: Disfruta de la experiencia completa con la aplicación para tabletas
+      - button "Abrir Instagram" [ref=e37] [cursor=pointer]
+      - generic [ref=e38]:
+        - button "Iniciar sesión" [ref=e39] [cursor=pointer]
+        - generic [ref=e41]: o
+        - link "Registrarte" [ref=e43] [cursor=pointer]:
+          - /url: /accounts/emailsignup/?next=
+  - separator [ref=e47]
+  - contentinfo [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e52]:
+        - link "Meta" [ref=e54] [cursor=pointer]:
+          - /url: https://about.meta.com/
+        - link "Información" [ref=e57] [cursor=pointer]:
+          - /url: https://about.instagram.com/
+        - link "Blog" [ref=e60] [cursor=pointer]:
+          - /url: https://about.instagram.com/blog/
+        - link "Empleo" [ref=e63] [cursor=pointer]:
+          - /url: https://about.instagram.com/about-us/careers
+        - link "Ayuda" [ref=e66] [cursor=pointer]:
+          - /url: https://help.instagram.com/
+        - link "API" [ref=e69] [cursor=pointer]:
+          - /url: https://developers.facebook.com/docs/instagram
+        - link "Privacidad" [ref=e72] [cursor=pointer]:
+          - /url: /legal/privacy/
+        - link "Condiciones" [ref=e75] [cursor=pointer]:
+          - /url: /legal/terms/
+        - link "Ubicaciones" [ref=e78] [cursor=pointer]:
+          - /url: /explore/locations/
+        - link "Popular" [ref=e81] [cursor=pointer]:
+          - /url: /popular/
+        - link "Instagram Lite" [ref=e84] [cursor=pointer]:
+          - /url: /web/lite/
+        - link "Meta AI" [ref=e87] [cursor=pointer]:
+          - /url: https://www.meta.ai/?utm_source=foa_web_footer
+        - link "Muse" [ref=e90] [cursor=pointer]:
+          - /url: https://muse.ai/
+        - link "Threads" [ref=e93] [cursor=pointer]:
+          - /url: https://www.threads.com/
+        - link "Subir contactos y personas no usuarias" [ref=e96] [cursor=pointer]:
+          - /url: https://www.facebook.com/help/instagram/261704639352628
+        - link "Meta Verified" [ref=e99] [cursor=pointer]:
+          - /url: /accounts/meta_verified/?entrypoint=web_footer
+      - generic [ref=e101]:
+        - generic [ref=e102] [cursor=pointer]:
+          - generic [ref=e103]:
+            - generic [ref=e104]: Español (España)
+            - img "Icono de comilla angular hacia abajo" [ref=e107]
+          - combobox "Cambiar idioma de visualización" [ref=e109]:
+            - option "Afrikaans"
+            - option "العربية"
+            - option "Čeština"
+            - option "Dansk"
+            - option "Deutsch"
+            - option "Ελληνικά"
+            - option "English"
+            - option "English (UK)"
+            - option "Español (España)" [selected]
+            - option "Español"
+            - option "فارسی"
+            - option "Suomi"
+            - option "Français"
+            - option "עברית"
+            - option "Bahasa Indonesia"
+            - option "Italiano"
+            - option "日本語"
+            - option "한국어"
+            - option "Bahasa Melayu"
+            - option "Norsk"
+            - option "Nederlands"
+            - option "Polski"
+            - option "Português (Brasil)"
+            - option "Português (Portugal)"
+            - option "Русский"
+            - option "Svenska"
+            - option "ภาษาไทย"
+            - option "Filipino"
+            - option "Türkçe"
+            - option "中文(简体)"
+            - option "中文(台灣)"
+            - option "বাংলা"
+            - option "ગુજરાતી"
+            - option "हिन्दी"
+            - option "Hrvatski"
+            - option "Magyar"
+            - option "ಕನ್ನಡ"
+            - option "മലയാളം"
+            - option "मराठी"
+            - option "नेपाली"
+            - option "ਪੰਜਾਬੀ"
+            - option "සිංහල"
+            - option "Slovenčina"
+            - option "தமிழ்"
+            - option "తెలుగు"
+            - option "اردو"
+            - option "Tiếng Việt"
+            - option "中文(香港)"
+            - option "Български"
+            - option "Français (Canada)"
+            - option "Română"
+            - option "Српски"
+            - option "Українська"
+        - generic [ref=e110]: © 2026 Instagram from Meta

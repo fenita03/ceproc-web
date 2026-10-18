@@ -1,0 +1,32 @@
+- generic [ref=f18e19]:
+  - button "Atrás" [ref=f18e22] [cursor=pointer]
+  - main [ref=f18e27]:
+    - main [ref=f18e28]:
+      - generic [ref=f18e30]:
+        - heading [active] [level=2] [ref=f18e31]:
+          - heading "Perfiles y datos personales" [level=2] [ref=f18e33]
+        - generic [ref=f18e34]: Revisa los perfiles y datos personales que has añadido a este Centro de cuentas. Añade tus cuentas para incluir más perfiles.
+      - heading "Perfiles" [level=2] [ref=f18e38]
+      - list [ref=f18e43]:
+        - listitem [ref=f18e44]:
+          - button "ceproc_oficial Instagram" [ref=f18e45] [cursor=pointer]:
+            - generic [ref=f18e66]:
+              - generic [ref=f18e67]: ceproc_oficial
+              - generic [ref=f18e68]: Instagram
+        - separator [aria-hidden] [ref=f18e72]
+        - listitem [ref=f18e73]:
+          - button "Añadir cuentas" [ref=f18e74] [cursor=pointer]
+      - generic [ref=f18e81]:
+        - heading "Datos personales" [level=2] [ref=f18e84]
+        - list [ref=f18e90]:
+          - listitem [ref=f18e91]:
+            - button "Información de contacto +542643185248" [ref=f18e92] [cursor=pointer]:
+              - generic [ref=f18e97]:
+                - generic [ref=f18e98]: Información de contacto
+                - generic [ref=f18e99]: "+542643185248"
+          - separator [aria-hidden] [ref=f18e104]
+          - listitem [ref=f18e105]:
+            - button "Fecha de nacimiento 2 de mayo de 2000" [ref=f18e106] [cursor=pointer]:
+              - generic [ref=f18e111]:
+                - generic [ref=f18e112]: Fecha de nacimiento
+                - generic [ref=f18e113]: 2 de mayo de 2000

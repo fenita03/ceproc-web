@@ -1,0 +1,112 @@
+- generic [ref=f1e12]:
+  - generic [ref=f1e15]:
+    - img "Instagram" [ref=f1e21]
+    - separator [ref=f1e24]
+    - generic [ref=f1e35]:
+      - generic [ref=f1e36]: Iniciar sesión en Instagram
+      - generic [ref=f1e47]:
+        - textbox "Número de móvil, nombre de usuario o correo electrónico" [ref=f1e52]
+        - textbox "Contraseña" [ref=f1e57]
+        - button "Iniciar sesión" [ref=f1e61] [cursor=pointer]
+        - link "¿Has olvidado la contraseña?" [ref=f1e68] [cursor=pointer]:
+          - /url: https://www.instagram.com/accounts/password/reset/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1
+        - button "Iniciar sesión con Facebook" [ref=f1e74] [cursor=pointer]
+        - link "Crear una cuenta" [ref=f1e83] [cursor=pointer]:
+          - /url: /accounts/emailsignup/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1
+        - img "Logotipo de Meta" [ref=f1e88]
+  - separator [ref=f1e93]
+  - contentinfo [ref=f1e95]:
+    - generic [ref=f1e96]:
+      - generic [ref=f1e98]:
+        - link "Meta" [ref=f1e100] [cursor=pointer]:
+          - /url: https://about.meta.com/
+        - link "Información" [ref=f1e103] [cursor=pointer]:
+          - /url: https://about.instagram.com/
+        - link "Blog" [ref=f1e106] [cursor=pointer]:
+          - /url: https://about.instagram.com/blog/
+        - link "Empleo" [ref=f1e109] [cursor=pointer]:
+          - /url: https://about.instagram.com/about-us/careers
+        - link "Ayuda" [ref=f1e112] [cursor=pointer]:
+          - /url: https://help.instagram.com/
+        - link "API" [ref=f1e115] [cursor=pointer]:
+          - /url: https://developers.facebook.com/docs/instagram
+        - link "Privacidad" [ref=f1e118] [cursor=pointer]:
+          - /url: /legal/privacy/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1
+        - link "Condiciones" [ref=f1e121] [cursor=pointer]:
+          - /url: /legal/terms/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1
+        - link "Ubicaciones" [ref=f1e124] [cursor=pointer]:
+          - /url: /explore/locations/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1
+        - link "Popular" [ref=f1e127] [cursor=pointer]:
+          - /url: /popular/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1
+        - link "Instagram Lite" [ref=f1e130] [cursor=pointer]:
+          - /url: /web/lite/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1
+        - link "Meta AI" [ref=f1e133] [cursor=pointer]:
+          - /url: https://www.meta.ai/?utm_source=foa_web_footer
+        - link "Muse" [ref=f1e136] [cursor=pointer]:
+          - /url: https://muse.ai/
+        - link "Threads" [ref=f1e139] [cursor=pointer]:
+          - /url: https://www.threads.com/
+        - link "Subir contactos y personas no usuarias" [ref=f1e142] [cursor=pointer]:
+          - /url: https://www.facebook.com/help/instagram/261704639352628
+        - link "Meta Verified" [ref=f1e145] [cursor=pointer]:
+          - /url: /accounts/meta_verified/?entrypoint=web_footer&next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1
+      - generic [ref=f1e147]:
+        - generic [ref=f1e148] [cursor=pointer]:
+          - generic [ref=f1e149]:
+            - generic [ref=f1e150]: Español (España)
+            - img "Icono de comilla angular hacia abajo" [ref=f1e153]
+          - combobox "Cambiar idioma de visualización" [ref=f1e155]:
+            - option "Afrikaans"
+            - option "العربية"
+            - option "Čeština"
+            - option "Dansk"
+            - option "Deutsch"
+            - option "Ελληνικά"
+            - option "English"
+            - option "English (UK)"
+            - option "Español (España)" [selected]
+            - option "Español"
+            - option "فارسی"
+            - option "Suomi"
+            - option "Français"
+            - option "עברית"
+            - option "Bahasa Indonesia"
+            - option "Italiano"
+            - option "日本語"
+            - option "한국어"
+            - option "Bahasa Melayu"
+            - option "Norsk"
+            - option "Nederlands"
+            - option "Polski"
+            - option "Português (Brasil)"
+            - option "Português (Portugal)"
+            - option "Русский"
+            - option "Svenska"
+            - option "ภาษาไทย"
+            - option "Filipino"
+            - option "Türkçe"
+            - option "中文(简体)"
+            - option "中文(台灣)"
+            - option "বাংলা"
+            - option "ગુજરાતી"
+            - option "हिन्दी"
+            - option "Hrvatski"
+            - option "Magyar"
+            - option "ಕನ್ನಡ"
+            - option "മലയാളം"
+            - option "मराठी"
+            - option "नेपाली"
+            - option "ਪੰਜਾਬੀ"
+            - option "සිංහල"
+            - option "Slovenčina"
+            - option "தமிழ்"
+            - option "తెలుగు"
+            - option "اردو"
+            - option "Tiếng Việt"
+            - option "中文(香港)"
+            - option "Български"
+            - option "Français (Canada)"
+            - option "Română"
+            - option "Српски"
+            - option "Українська"
+        - generic [ref=f1e156]: © 2026 Instagram from Meta
