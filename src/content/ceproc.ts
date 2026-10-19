@@ -22,9 +22,9 @@ export const institution = {
 export { contact } from "./contact";
 
 /**
- * `photo`: silueta temporal (no es la persona). Para publicar la foto real, reemplazar el archivo
- * con el mismo nombre en public/img/equipo/ (WebP o JPG renombrado, proporción 4:5) y cambiar
- * `photoIsPlaceholder` a false.
+ * `photo`: retrato real en public/img/equipo/ (WebP 800×1000, proporción 4:5). Para cambiarlo,
+ * reemplazar el archivo con el mismo nombre. `photoIsPlaceholder: true` vuelve al texto
+ * alternativo de silueta temporal.
  */
 export const team = [
   {
@@ -32,14 +32,14 @@ export const team = [
     name: "Sabrina Araoz",
     detail: "Dirección y coordinación institucional del proyecto.",
     photo: "/img/equipo/directora.webp",
-    photoIsPlaceholder: true,
+    photoIsPlaceholder: false,
   },
   {
     role: "Vicedirector",
     name: "Marcelo Ortega",
     detail: "Coordinación y acompañamiento de las áreas productivas y técnicas.",
     photo: "/img/equipo/vicedirector.webp",
-    photoIsPlaceholder: true,
+    photoIsPlaceholder: false,
   },
 ];
 
