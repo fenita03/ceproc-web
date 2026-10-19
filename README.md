@@ -4,6 +4,9 @@ Sitio de presentación del **Centro Productivo de Capacitación en Oficios Regio
 Todo el contenido proviene del documento del proyecto y vive en `src/content/ceproc.ts`; los datos de contacto, en
 `src/content/contact.ts`. El sistema visual («Estratos»: tipografía, superficies y movimiento) está en `DESIGN.md`.
 
+> **Versión con fotos** (etiqueta `v1.0-con-fotos`): «Dirección del proyecto» muestra los retratos reales de la
+> directora y el vicedirector (`public/img/equipo/`), en lugar de las siluetas temporales.
+
 ## Uso
 
 ```bash
